@@ -1,0 +1,320 @@
+{
+  "contractName": "IStateReceiver",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "onStateReceive",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"onStateReceive\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/child/IStateReceiver.sol\":\"IStateReceiver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/child/IStateReceiver.sol\":{\"keccak256\":\"0xe44a6b288f4c2a7b3da4d67cd2820ef0f4e81432c69463752ae5e7fa37123880\",\"urls\":[\"bzz-raw://fd4c136457a7a75f9fbce53438aba3e46611425040c47110525d4d4f52705e00\",\"dweb:/ipfs/QmQ3PWpvw51b596fKXLzbauVhrj38vKAhJwNc7LEqqZghY\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.6.6;\n\ninterface IStateReceiver {\n    function onStateReceive(uint256 id, bytes calldata data) external;\n}\n",
+  "sourcePath": "/home/moiz/NETSOl/Task-25, Bridge between polygon and ethereum (erc-20) Use-case 2/Ethereum_Polygon_Custom_Bridge_ERC20_Contracts_on_Testnet_without_status_Checks_Use_case_2/contracts/child/IStateReceiver.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/child/IStateReceiver.sol",
+    "exportedSymbols": {
+      "IStateReceiver": [
+        3510
+      ]
+    },
+    "id": 3511,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3502,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:20"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 3510,
+        "linearizedBaseContracts": [
+          3510
+        ],
+        "name": "IStateReceiver",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "26c53bea",
+            "id": 3509,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onStateReceive",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3507,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3504,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3509,
+                  "src": "79:10:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3503,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "79:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3506,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3509,
+                  "src": "91:19:20",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3505,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "91:5:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "78:33:20"
+            },
+            "returnParameters": {
+              "id": 3508,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "120:0:20"
+            },
+            "scope": 3510,
+            "src": "55:66:20",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3511,
+        "src": "24:99:20"
+      }
+    ],
+    "src": "0:124:20"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/child/IStateReceiver.sol",
+      "exportedSymbols": {
+        "IStateReceiver": [
+          3510
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".6"
+          ]
+        },
+        "id": 3502,
+        "name": "PragmaDirective",
+        "src": "0:22:20"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            3510
+          ],
+          "name": "IStateReceiver",
+          "scope": 3511
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "26c53bea",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "onStateReceive",
+              "overrides": null,
+              "scope": 3510,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "id",
+                      "overrides": null,
+                      "scope": 3509,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3503,
+                        "name": "ElementaryTypeName",
+                        "src": "79:7:20"
+                      }
+                    ],
+                    "id": 3504,
+                    "name": "VariableDeclaration",
+                    "src": "79:10:20"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "overrides": null,
+                      "scope": 3509,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 3505,
+                        "name": "ElementaryTypeName",
+                        "src": "91:5:20"
+                      }
+                    ],
+                    "id": 3506,
+                    "name": "VariableDeclaration",
+                    "src": "91:19:20"
+                  }
+                ],
+                "id": 3507,
+                "name": "ParameterList",
+                "src": "78:33:20"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3508,
+                "name": "ParameterList",
+                "src": "120:0:20"
+              }
+            ],
+            "id": 3509,
+            "name": "FunctionDefinition",
+            "src": "55:66:20"
+          }
+        ],
+        "id": 3510,
+        "name": "ContractDefinition",
+        "src": "24:99:20"
+      }
+    ],
+    "id": 3511,
+    "name": "SourceUnit",
+    "src": "0:124:20"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.8",
+  "updatedAt": "2022-09-21T07:45:21.929Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
