@@ -1,14 +1,14 @@
 require('dotenv').config();
 const ethers = require('ethers');
-const INFURA_API_URL_GOERLI = process.env.INFURA_API_URL_GOERLI;
-//const LOCALHOST_URL_ROOT = process.env.LOCALHOST_URL_ROOT;
+//const INFURA_API_URL_GOERLI = process.env.INFURA_API_URL_GOERLI;
+const LOCALHOST_URL_ROOT = process.env.LOCALHOST_URL_ROOT;
 const PRIVATE_KEY_ROOT = process.env.PRIVATE_KEY_ROOT;
 const rootChainManagerAddress = process.env.ROOT_CHAIN_MANAGER_CONTRACT_ADDRESS;
 const rootChainManagerBuild = require('../build/contracts/RootChainManager.json');
 
-const customHttpProviderRoot = new ethers.providers.JsonRpcProvider(INFURA_API_URL_GOERLI);
+const customHttpProviderRoot = new ethers.providers.JsonRpcProvider(LOCALHOST_URL_ROOT);
 
-async function deposit(receiverAddressPolygon, rootTokenContractAddress) {
+async function deposit(receiverAddressPolygon, rootTokenContractAddress, childERC20PredicateAddress) {
 
     try {
         const walletRoot = new ethers.Wallet(PRIVATE_KEY_ROOT, customHttpProviderRoot);
@@ -17,7 +17,7 @@ async function deposit(receiverAddressPolygon, rootTokenContractAddress) {
         const weiAmount = ethers.utils.parseEther('2');
         const depositData = ethers.utils.defaultAbiCoder.encode(['uint256'], [weiAmount])
         console.log("Depositing tokens.....");
-        const result = await rootChainManagerContract.depositFor(receiverAddressPolygon, rootTokenContractAddress, depositData);
+        const result = await rootChainManagerContract.depositFor(receiverAddressPolygon, rootTokenContractAddress, depositData, childERC20PredicateAddress);
 
 
         console.log("Transaction Successfully Done, Tokens deposited.");
@@ -29,6 +29,7 @@ async function deposit(receiverAddressPolygon, rootTokenContractAddress) {
     }
 }
 
-deposit("0xa864f883E78F67a005a94B1B32Bf3375dfd121E6",
-    "0x1739826dc83243ce0BFAE579E9D045AdDe5B334D"
+deposit("0x2262375112F06f445ba155d90FF1a260d7De5269",
+    "0xB811373A8f84Ede53c8aA870E5495bbEF34cb8f4",
+    "0xFc1bbE999C75C862FfBdA5Dba77730E54f5db24B"
 );

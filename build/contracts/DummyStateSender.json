@@ -28,6 +28,19 @@
     },
     {
       "inputs": [],
+      "name": "_childERC20Predicate",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "_data",
       "outputs": [
         {
@@ -37,8 +50,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -51,8 +63,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -65,8 +76,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -85,54 +95,77 @@
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "childERC20Predicate",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "syncStateU2",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"StateSynced\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"_data\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"idOfTheSync\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"receiverContractAddressOnChildChain\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"syncState\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"syncState(address,bytes)\":{\"details\":\"sender and receiver contracts need to be registered in case of actual state sender contract\",\"params\":{\"data\":\"bytes data to be sent\",\"receiver\":\"the contract receiving data on child chain\"}}}},\"userdoc\":{\"methods\":{\"syncState(address,bytes)\":{\"notice\":\"called to send data to child chain\"}},\"notice\":\"Dummy State Sender contract to simulate plasma state sender while testing\"}},\"settings\":{\"compilationTarget\":{\"project:/contracts/root/StateSender/DummyStateSender.sol\":\"DummyStateSender\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/root/StateSender/DummyStateSender.sol\":{\"keccak256\":\"0xe772766cc1b7ce4406608e57068f7954ab7d33afc55396a7c31c3fe5c0f297a6\",\"urls\":[\"bzz-raw://1a702f3f2e3cb9b917d1b86d8a3db609b5afea7070bf5aace2bb9345b728f213\",\"dweb:/ipfs/QmYwwec9FbsaBoP6sHF7eSL8x1M6FJuXkRF4kHQFvvU9tp\"]},\"project:/contracts/root/StateSender/IStateSender.sol\":{\"keccak256\":\"0x8f260b4eeb18f8cd86b144aa410c06f365827b99b177901c1497dff4d55c0e30\",\"urls\":[\"bzz-raw://2954e25696c7e80769d04282f0bfc7d7a3da22ae1928831d6144ffeb2c92fca9\",\"dweb:/ipfs/QmcJZPP4ZusGemWLxi1YBkkvSfpTHvjMHXAdL7U7KfQcLB\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610398806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806316f198311461005157806368beab3f146100d35780637786b6d514610150578063a9ebca3c1461016a575b600080fd5b6100d16004803603604081101561006757600080fd5b6001600160a01b03823516919081019060408101602082013564010000000081111561009257600080fd5b8201836020820111156100a457600080fd5b803590602001918460018302840111640100000000831117156100c657600080fd5b50909250905061018e565b005b6100db610227565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101155781810151838201526020016100fd565b50505050905090810190601f1680156101425780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101586102b2565b60408051918252519081900360200190f35b6101726102b8565b604080516001600160a01b039092168252519081900360200190f35b600180546001600160a01b0319166001600160a01b0385161790556101b5600283836102c7565b50826001600160a01b031660017f103fed9db65eac19c4d870f49ab7520fe03b99f1838e5996caf47e9e43308392848460405180806020018281038252848482818152602001925080828437600083820152604051601f909101601f19169092018290039550909350505050a3505050565b6002805460408051602060018416156101000260001901909316849004601f810184900484028201840190925281815292918301828280156102aa5780601f1061027f576101008083540402835291602001916102aa565b820191906000526020600020905b81548152906001019060200180831161028d57829003601f168201915b505050505081565b60005481565b6001546001600160a01b031681565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106103085782800160ff19823516178555610335565b82800160010185558215610335579182015b8281111561033557823582559160200191906001019061031a565b50610341929150610345565b5090565b61035f91905b80821115610341576000815560010161034b565b9056fea26469706673582212204b4cee431737f5b32885a5de27eedad2aaaea711969dd756cbbd56aee4f8ba0e64736f6c63430006060033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806316f198311461005157806368beab3f146100d35780637786b6d514610150578063a9ebca3c1461016a575b600080fd5b6100d16004803603604081101561006757600080fd5b6001600160a01b03823516919081019060408101602082013564010000000081111561009257600080fd5b8201836020820111156100a457600080fd5b803590602001918460018302840111640100000000831117156100c657600080fd5b50909250905061018e565b005b6100db610227565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101155781810151838201526020016100fd565b50505050905090810190601f1680156101425780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101586102b2565b60408051918252519081900360200190f35b6101726102b8565b604080516001600160a01b039092168252519081900360200190f35b600180546001600160a01b0319166001600160a01b0385161790556101b5600283836102c7565b50826001600160a01b031660017f103fed9db65eac19c4d870f49ab7520fe03b99f1838e5996caf47e9e43308392848460405180806020018281038252848482818152602001925080828437600083820152604051601f909101601f19169092018290039550909350505050a3505050565b6002805460408051602060018416156101000260001901909316849004601f810184900484028201840190925281815292918301828280156102aa5780601f1061027f576101008083540402835291602001916102aa565b820191906000526020600020905b81548152906001019060200180831161028d57829003601f168201915b505050505081565b60005481565b6001546001600160a01b031681565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106103085782800160ff19823516178555610335565b82800160010185558215610335579182015b8281111561033557823582559160200191906001019061031a565b50610341929150610345565b5090565b61035f91905b80821115610341576000815560010161034b565b9056fea26469706673582212204b4cee431737f5b32885a5de27eedad2aaaea711969dd756cbbd56aee4f8ba0e64736f6c63430006060033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"StateSynced\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"_childERC20Predicate\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_data\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"idOfTheSync\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"receiverContractAddressOnChildChain\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"syncState\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"childERC20Predicate\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"syncStateU2\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"syncState(address,bytes)\":{\"details\":\"sender and receiver contracts need to be registered in case of actual state sender contract\",\"params\":{\"data\":\"bytes data to be sent\",\"receiver\":\"the contract receiving data on child chain\"}}}},\"userdoc\":{\"methods\":{\"syncState(address,bytes)\":{\"notice\":\"called to send data to child chain\"}},\"notice\":\"Dummy State Sender contract to simulate plasma state sender while testing\"}},\"settings\":{\"compilationTarget\":{\"project:/contracts/root/StateSender/DummyStateSender.sol\":\"DummyStateSender\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/root/StateSender/DummyStateSender.sol\":{\"keccak256\":\"0x1d1581806a6a2821225e849b126230e30040c88511a2492269354c00c3f0ca5a\",\"urls\":[\"bzz-raw://a483faa6c4361a10022184dd88af0639ff2d916ae93cee8b92f3075090e90911\",\"dweb:/ipfs/QmR71p1pQPs1zyd6w7YoZjFFh2mWHqyo9McSUh3K9tZJpD\"]},\"project:/contracts/root/StateSender/IStateSender.sol\":{\"keccak256\":\"0x70d3796bc77611c921d49978fe249b8c7d238df984320ecbdb75cecd1c8327ee\",\"urls\":[\"bzz-raw://7945febce061d668ed897715a21357780a95ea44c8c5a99a2c11bd1b1c7a4816\",\"dweb:/ipfs/QmSD5jKr5gcjBEBS5iDBifrFGRxjFAbXbtfck3c7pXUcfu\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610500806100206000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c806316f19831146100675780632ed7b94f146100e957806368beab3f1461010d5780636f44a7101461018a5780637786b6d514610213578063a9ebca3c1461022d575b600080fd5b6100e76004803603604081101561007d57600080fd5b6001600160a01b0382351691908101906040810160208201356401000000008111156100a857600080fd5b8201836020820111156100ba57600080fd5b803590602001918460018302840111640100000000831117156100dc57600080fd5b509092509050610235565b005b6100f16102ce565b604080516001600160a01b039092168252519081900360200190f35b6101156102dd565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561014f578181015183820152602001610137565b50505050905090810190601f16801561017c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e7600480360360608110156101a057600080fd5b6001600160a01b0382358116926020810135909116918101906060810160408201356401000000008111156101d457600080fd5b8201836020820111156101e657600080fd5b8035906020019184600183028401116401000000008311171561020857600080fd5b50909250905061036b565b61021b61041a565b60408051918252519081900360200190f35b6100f1610420565b600180546001600160a01b0319166001600160a01b03851617905561025c6003838361042f565b50826001600160a01b031660017f103fed9db65eac19c4d870f49ab7520fe03b99f1838e5996caf47e9e43308392848460405180806020018281038252848482818152602001925080828437600083820152604051601f909101601f19169092018290039550909350505050a3505050565b6002546001600160a01b031681565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156103635780601f1061033857610100808354040283529160200191610363565b820191906000526020600020905b81548152906001019060200180831161034657829003601f168201915b505050505081565b600180546001600160a01b038087166001600160a01b03199283161790925560028054928616929091169190911790556103a76003838361042f565b50836001600160a01b031660017f103fed9db65eac19c4d870f49ab7520fe03b99f1838e5996caf47e9e43308392848460405180806020018281038252848482818152602001925080828437600083820152604051601f909101601f19169092018290039550909350505050a350505050565b60005481565b6001546001600160a01b031681565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106104705782800160ff1982351617855561049d565b8280016001018555821561049d579182015b8281111561049d578235825591602001919060010190610482565b506104a99291506104ad565b5090565b6104c791905b808211156104a957600081556001016104b3565b9056fea26469706673582212203797d6472d509ebc6ea7933ce80abbbbf63264571beb40efcff455928cad023564736f6c63430006060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c806316f19831146100675780632ed7b94f146100e957806368beab3f1461010d5780636f44a7101461018a5780637786b6d514610213578063a9ebca3c1461022d575b600080fd5b6100e76004803603604081101561007d57600080fd5b6001600160a01b0382351691908101906040810160208201356401000000008111156100a857600080fd5b8201836020820111156100ba57600080fd5b803590602001918460018302840111640100000000831117156100dc57600080fd5b509092509050610235565b005b6100f16102ce565b604080516001600160a01b039092168252519081900360200190f35b6101156102dd565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561014f578181015183820152602001610137565b50505050905090810190601f16801561017c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e7600480360360608110156101a057600080fd5b6001600160a01b0382358116926020810135909116918101906060810160408201356401000000008111156101d457600080fd5b8201836020820111156101e657600080fd5b8035906020019184600183028401116401000000008311171561020857600080fd5b50909250905061036b565b61021b61041a565b60408051918252519081900360200190f35b6100f1610420565b600180546001600160a01b0319166001600160a01b03851617905561025c6003838361042f565b50826001600160a01b031660017f103fed9db65eac19c4d870f49ab7520fe03b99f1838e5996caf47e9e43308392848460405180806020018281038252848482818152602001925080828437600083820152604051601f909101601f19169092018290039550909350505050a3505050565b6002546001600160a01b031681565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156103635780601f1061033857610100808354040283529160200191610363565b820191906000526020600020905b81548152906001019060200180831161034657829003601f168201915b505050505081565b600180546001600160a01b038087166001600160a01b03199283161790925560028054928616929091169190911790556103a76003838361042f565b50836001600160a01b031660017f103fed9db65eac19c4d870f49ab7520fe03b99f1838e5996caf47e9e43308392848460405180806020018281038252848482818152602001925080828437600083820152604051601f909101601f19169092018290039550909350505050a350505050565b60005481565b6001546001600160a01b031681565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106104705782800160ff1982351617855561049d565b8280016001018555821561049d579182015b8281111561049d578235825591602001919060010190610482565b506104a99291506104ad565b5090565b6104c791905b808211156104a957600081556001016104b3565b9056fea26469706673582212203797d6472d509ebc6ea7933ce80abbbbf63264571beb40efcff455928cad023564736f6c63430006060033",
   "immutableReferences": {},
-  "sourceMap": "180:1182:43:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;180:1182:43;;;;;;;",
-  "deployedSourceMap": "180:1182:43:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;180:1182:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;1133:227:43;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;;;;;1133:227:43;;;;;;;;;;;;;;;27:11:-1;11:28;;8:2;;;52:1;49;42:12;8:2;1133:227:43;;41:9:-1;34:4;18:14;14:25;11:40;8:2;;;64:1;61;54:12;8:2;1133:227:43;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;1133:227:43;;-1:-1:-1;1133:227:43;-1:-1:-1;1133:227:43;:::i;:::-;;316:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;316:18:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;228:26;;;:::i;:::-;;;;;;;;;;;;;;;;260:50;;;:::i;:::-;;;;-1:-1:-1;;;;;260:50:43;;;;;;;;;;;;;;1133:227;1239:35;:46;;-1:-1:-1;;;;;;1239:46:43;-1:-1:-1;;;;;1239:46:43;;;;;1295:12;:5;1303:4;;1295:12;:::i;:::-;;1338:8;-1:-1:-1;;;;;1323:30:43;1335:1;1323:30;1348:4;;1323:30;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;;74:27;1323:30:43;;137:4:-1;117:14;;;-1:-1;;113:30;157:16;;;1323:30:43;;;;-1:-1:-1;1323:30:43;;-1:-1:-1;;;;1323:30:43;1133:227;;;:::o;316:18::-;;;;;;;;;;;;;;-1:-1:-1;;316:18:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;228:26::-;;;;:::o;260:50::-;;;-1:-1:-1;;;;;260:50:43;;:::o;180:1182::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;180:1182:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;180:1182:43;;;-1:-1:-1;180:1182:43;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity 0.6.6;\n\nimport {IStateSender} from \"../StateSender/IStateSender.sol\";\n\n/**\n * @notice Dummy State Sender contract to simulate plasma state sender while testing\n */\ncontract DummyStateSender is IStateSender {\n    uint256 public idOfTheSync;\n    address public receiverContractAddressOnChildChain;\n    bytes public _data;\n\n    /**\n     * @notice Event emitted when when syncState is called\n     * @dev Heimdall bridge listens to this event and sends the data to receiver contract on child chain\n     * @param id Id of the sync, increamented for each event in case of actual state sender contract\n     * @param contractAddress the contract receiving data on child chain\n     * @param data bytes data to be sent\n     */\n\n    event StateSynced(\n        uint256 indexed id,\n        address indexed contractAddress,\n        bytes data\n    );\n\n    /**\n     * @notice called to send data to child chain\n     * @dev sender and receiver contracts need to be registered in case of actual state sender contract\n     * @param receiver the contract receiving data on child chain\n     * @param data bytes data to be sent\n     */\n    function syncState(address receiver, bytes calldata data)\n        external\n        override\n    {\n        receiverContractAddressOnChildChain = receiver;\n        _data = data;\n\n        emit StateSynced(1, receiver, data);\n    }\n}\n",
-  "sourcePath": "/home/moiz/NETSOl/Task-25, Bridge between polygon and ethereum (erc-20) Use-case 2/Ethereum_Polygon_Custom_Bridge_ERC20_Contracts_on_Testnet_without_status_Checks_Use_case_2/contracts/root/StateSender/DummyStateSender.sol",
+  "sourceMap": "180:1549:31:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;180:1549:31;;;;;;;",
+  "deployedSourceMap": "180:1549:31:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;180:1549:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;1174:227:31;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;;;;;1174:227:31;;;;;;;;;;;;;;;27:11:-1;11:28;;8:2;;;52:1;49;42:12;8:2;1174:227:31;;41:9:-1;34:4;18:14;14:25;11:40;8:2;;;64:1;61;54:12;8:2;1174:227:31;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;1174:227:31;;-1:-1:-1;1174:227:31;-1:-1:-1;1174:227:31;:::i;:::-;;316:35;;;:::i;:::-;;;;-1:-1:-1;;;;;316:35:31;;;;;;;;;;;;;;357:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;357:18:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1407:320;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;;;;;1407:320:31;;;;;;;;;;;;;;;;;;;;;;;27:11:-1;11:28;;8:2;;;52:1;49;42:12;8:2;1407:320:31;;41:9:-1;34:4;18:14;14:25;11:40;8:2;;;64:1;61;54:12;8:2;1407:320:31;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;1407:320:31;;-1:-1:-1;1407:320:31;-1:-1:-1;1407:320:31;:::i;228:26::-;;;:::i;:::-;;;;;;;;;;;;;;;;260:50;;;:::i;1174:227::-;1280:35;:46;;-1:-1:-1;;;;;;1280:46:31;-1:-1:-1;;;;;1280:46:31;;;;;1336:12;:5;1344:4;;1336:12;:::i;:::-;;1379:8;-1:-1:-1;;;;;1364:30:31;1376:1;1364:30;1389:4;;1364:30;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;;74:27;1364:30:31;;137:4:-1;117:14;;;-1:-1;;113:30;157:16;;;1364:30:31;;;;-1:-1:-1;1364:30:31;;-1:-1:-1;;;;1364:30:31;1174:227;;;:::o;316:35::-;;;-1:-1:-1;;;;;316:35:31;;:::o;357:18::-;;;;;;;;;;;;;;;-1:-1:-1;;357:18:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1407:320::-;1554:35;:46;;-1:-1:-1;;;;;1554:46:31;;;-1:-1:-1;;;;;;1554:46:31;;;;;;;1610:20;:42;;;;;;;;;;;;;;;1662:12;:5;1670:4;;1662:12;:::i;:::-;;1705:8;-1:-1:-1;;;;;1690:30:31;1702:1;1690:30;1715:4;;1690:30;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;;74:27;1690:30:31;;137:4:-1;117:14;;;-1:-1;;113:30;157:16;;;1690:30:31;;;;-1:-1:-1;1690:30:31;;-1:-1:-1;;;;1690:30:31;1407:320;;;;:::o;228:26::-;;;;:::o;260:50::-;;;-1:-1:-1;;;;;260:50:31;;:::o;180:1549::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;180:1549:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;180:1549:31;;;-1:-1:-1;180:1549:31;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity 0.6.6;\n\nimport {IStateSender} from \"../StateSender/IStateSender.sol\";\n\n/**\n * @notice Dummy State Sender contract to simulate plasma state sender while testing\n */\ncontract DummyStateSender is IStateSender {\n    uint256 public idOfTheSync;\n    address public receiverContractAddressOnChildChain;\n    address public _childERC20Predicate;\n    bytes public _data;\n\n    /**\n     * @notice Event emitted when when syncState is called\n     * @dev Heimdall bridge listens to this event and sends the data to receiver contract on child chain\n     * @param id Id of the sync, increamented for each event in case of actual state sender contract\n     * @param contractAddress the contract receiving data on child chain\n     * @param data bytes data to be sent\n     */\n\n    event StateSynced(\n        uint256 indexed id,\n        address indexed contractAddress,\n        bytes data\n    );\n\n    /**\n     * @notice called to send data to child chain\n     * @dev sender and receiver contracts need to be registered in case of actual state sender contract\n     * @param receiver the contract receiving data on child chain\n     * @param data bytes data to be sent\n     */\n    function syncState(address receiver, bytes calldata data)\n        external\n        override\n    {\n        receiverContractAddressOnChildChain = receiver;\n        _data = data;\n\n        emit StateSynced(1, receiver, data);\n    }\n\n    function syncStateU2(\n        address receiver,\n        address childERC20Predicate,\n        bytes calldata data\n    ) external override {\n        receiverContractAddressOnChildChain = receiver;\n        _childERC20Predicate = childERC20Predicate;\n        _data = data;\n\n        emit StateSynced(1, receiver, data);\n    }\n}\n",
+  "sourcePath": "/home/moiz/Desktop/Eth_Matic_Custom_Bridge_Use_Case_2-Actual-/contracts/root/StateSender/DummyStateSender.sol",
   "ast": {
     "absolutePath": "project:/contracts/root/StateSender/DummyStateSender.sol",
     "exportedSymbols": {
       "DummyStateSender": [
-        7311
+        5686
       ]
     },
-    "id": 7312,
+    "id": 5687,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7266,
+        "id": 5610,
         "literals": [
           "solidity",
           "0.6",
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:22:43"
+        "src": "0:22:31"
       },
       {
         "absolutePath": "project:/contracts/root/StateSender/IStateSender.sol",
         "file": "../StateSender/IStateSender.sol",
-        "id": 7268,
+        "id": 5612,
         "nodeType": "ImportDirective",
-        "scope": 7312,
-        "sourceUnit": 7322,
-        "src": "24:61:43",
+        "scope": 5687,
+        "sourceUnit": 5706,
+        "src": "24:61:31",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 7267,
+              "id": 5611,
               "name": "IStateSender",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "32:12:43",
+              "src": "32:12:31",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -150,36 +183,36 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 7270,
+              "id": 5614,
               "name": "IStateSender",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 7321,
-              "src": "209:12:43",
+              "referencedDeclaration": 5705,
+              "src": "209:12:31",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IStateSender_$7321",
+                "typeIdentifier": "t_contract$_IStateSender_$5705",
                 "typeString": "contract IStateSender"
               }
             },
-            "id": 7271,
+            "id": 5615,
             "nodeType": "InheritanceSpecifier",
-            "src": "209:12:43"
+            "src": "209:12:31"
           }
         ],
         "contractDependencies": [
-          7321
+          5705
         ],
         "contractKind": "contract",
         "documentation": {
-          "id": 7269,
+          "id": 5613,
           "nodeType": "StructuredDocumentation",
-          "src": "87:92:43",
+          "src": "87:92:31",
           "text": "@notice Dummy State Sender contract to simulate plasma state sender while testing"
         },
         "fullyImplemented": true,
-        "id": 7311,
+        "id": 5686,
         "linearizedBaseContracts": [
-          7311,
-          7321
+          5686,
+          5705
         ],
         "name": "DummyStateSender",
         "nodeType": "ContractDefinition",
@@ -187,13 +220,13 @@
           {
             "constant": false,
             "functionSelector": "7786b6d5",
-            "id": 7273,
+            "id": 5617,
             "mutability": "mutable",
             "name": "idOfTheSync",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7311,
-            "src": "228:26:43",
+            "scope": 5686,
+            "src": "228:26:31",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -201,10 +234,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 7272,
+              "id": 5616,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "228:7:43",
+              "src": "228:7:31",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -216,13 +249,13 @@
           {
             "constant": false,
             "functionSelector": "a9ebca3c",
-            "id": 7275,
+            "id": 5619,
             "mutability": "mutable",
             "name": "receiverContractAddressOnChildChain",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7311,
-            "src": "260:50:43",
+            "scope": 5686,
+            "src": "260:50:31",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -230,10 +263,40 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 7274,
+              "id": 5618,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "260:7:43",
+              "src": "260:7:31",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "2ed7b94f",
+            "id": 5621,
+            "mutability": "mutable",
+            "name": "_childERC20Predicate",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5686,
+            "src": "316:35:31",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 5620,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "316:7:31",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -246,13 +309,13 @@
           {
             "constant": false,
             "functionSelector": "68beab3f",
-            "id": 7277,
+            "id": 5623,
             "mutability": "mutable",
             "name": "_data",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7311,
-            "src": "316:18:43",
+            "scope": 5686,
+            "src": "357:18:31",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -260,10 +323,10 @@
               "typeString": "bytes"
             },
             "typeName": {
-              "id": 7276,
+              "id": 5622,
               "name": "bytes",
               "nodeType": "ElementaryTypeName",
-              "src": "316:5:43",
+              "src": "357:5:31",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes_storage_ptr",
                 "typeString": "bytes"
@@ -275,28 +338,28 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 7278,
+              "id": 5624,
               "nodeType": "StructuredDocumentation",
-              "src": "341:390:43",
+              "src": "382:390:31",
               "text": "@notice Event emitted when when syncState is called\n@dev Heimdall bridge listens to this event and sends the data to receiver contract on child chain\n@param id Id of the sync, increamented for each event in case of actual state sender contract\n@param contractAddress the contract receiving data on child chain\n@param data bytes data to be sent"
             },
-            "id": 7286,
+            "id": 5632,
             "name": "StateSynced",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 7285,
+              "id": 5631,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7280,
+                  "id": 5626,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "id",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 7286,
-                  "src": "764:18:43",
+                  "scope": 5632,
+                  "src": "805:18:31",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -304,10 +367,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7279,
+                    "id": 5625,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "764:7:43",
+                    "src": "805:7:31",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -318,14 +381,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 7282,
+                  "id": 5628,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "contractAddress",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 7286,
-                  "src": "792:31:43",
+                  "scope": 5632,
+                  "src": "833:31:31",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -333,10 +396,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7281,
+                    "id": 5627,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "792:7:43",
+                    "src": "833:7:31",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -348,14 +411,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 7284,
+                  "id": 5630,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "data",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 7286,
-                  "src": "833:10:43",
+                  "scope": 5632,
+                  "src": "874:10:31",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -363,10 +426,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 7283,
+                    "id": 5629,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "833:5:43",
+                    "src": "874:5:31",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -376,35 +439,35 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "754:95:43"
+              "src": "795:95:31"
             },
-            "src": "737:113:43"
+            "src": "778:113:31"
           },
           {
             "baseFunctions": [
-              7320
+              5695
             ],
             "body": {
-              "id": 7309,
+              "id": 5655,
               "nodeType": "Block",
-              "src": "1229:131:43",
+              "src": "1270:131:31",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 7297,
+                    "id": 5643,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 7295,
+                      "id": 5641,
                       "name": "receiverContractAddressOnChildChain",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7275,
-                      "src": "1239:35:43",
+                      "referencedDeclaration": 5619,
+                      "src": "1280:35:31",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -414,43 +477,43 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 7296,
+                      "id": 5642,
                       "name": "receiver",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7289,
-                      "src": "1277:8:43",
+                      "referencedDeclaration": 5635,
+                      "src": "1318:8:31",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "1239:46:43",
+                    "src": "1280:46:31",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 7298,
+                  "id": 5644,
                   "nodeType": "ExpressionStatement",
-                  "src": "1239:46:43"
+                  "src": "1280:46:31"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 7301,
+                    "id": 5647,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 7299,
+                      "id": 5645,
                       "name": "_data",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7277,
-                      "src": "1295:5:43",
+                      "referencedDeclaration": 5623,
+                      "src": "1336:5:31",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_storage",
                         "typeString": "bytes storage ref"
@@ -460,26 +523,26 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 7300,
+                      "id": 5646,
                       "name": "data",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7291,
-                      "src": "1303:4:43",
+                      "referencedDeclaration": 5637,
+                      "src": "1344:4:31",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_calldata_ptr",
                         "typeString": "bytes calldata"
                       }
                     },
-                    "src": "1295:12:43",
+                    "src": "1336:12:31",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage",
                       "typeString": "bytes storage ref"
                     }
                   },
-                  "id": 7302,
+                  "id": 5648,
                   "nodeType": "ExpressionStatement",
-                  "src": "1295:12:43"
+                  "src": "1336:12:31"
                 },
                 {
                   "eventCall": {
@@ -488,14 +551,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "31",
-                        "id": 7304,
+                        "id": 5650,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1335:1:43",
+                        "src": "1376:1:31",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_1_by_1",
@@ -505,12 +568,12 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 7305,
+                        "id": 5651,
                         "name": "receiver",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7289,
-                        "src": "1338:8:43",
+                        "referencedDeclaration": 5635,
+                        "src": "1379:8:31",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -518,12 +581,12 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 7306,
+                        "id": 5652,
                         "name": "data",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7291,
-                        "src": "1348:4:43",
+                        "referencedDeclaration": 5637,
+                        "src": "1389:4:31",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_calldata_ptr",
                           "typeString": "bytes calldata"
@@ -545,18 +608,18 @@
                           "typeString": "bytes calldata"
                         }
                       ],
-                      "id": 7303,
+                      "id": 5649,
                       "name": "StateSynced",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7286,
-                      "src": "1323:11:43",
+                      "referencedDeclaration": 5632,
+                      "src": "1364:11:31",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_address_$_t_bytes_memory_ptr_$returns$__$",
                         "typeString": "function (uint256,address,bytes memory)"
                       }
                     },
-                    "id": 7307,
+                    "id": 5653,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -564,51 +627,51 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1323:30:43",
+                    "src": "1364:30:31",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 7308,
+                  "id": 5654,
                   "nodeType": "EmitStatement",
-                  "src": "1318:35:43"
+                  "src": "1359:35:31"
                 }
               ]
             },
             "documentation": {
-              "id": 7287,
+              "id": 5633,
               "nodeType": "StructuredDocumentation",
-              "src": "856:272:43",
+              "src": "897:272:31",
               "text": "@notice called to send data to child chain\n@dev sender and receiver contracts need to be registered in case of actual state sender contract\n@param receiver the contract receiving data on child chain\n@param data bytes data to be sent"
             },
             "functionSelector": "16f19831",
-            "id": 7310,
+            "id": 5656,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "syncState",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 7293,
+              "id": 5639,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "1216:8:43"
+              "src": "1257:8:31"
             },
             "parameters": {
-              "id": 7292,
+              "id": 5638,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7289,
+                  "id": 5635,
                   "mutability": "mutable",
                   "name": "receiver",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 7310,
-                  "src": "1152:16:43",
+                  "scope": 5656,
+                  "src": "1193:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -616,10 +679,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7288,
+                    "id": 5634,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1152:7:43",
+                    "src": "1193:7:31",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -631,13 +694,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 7291,
+                  "id": 5637,
                   "mutability": "mutable",
                   "name": "data",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 7310,
-                  "src": "1170:19:43",
+                  "scope": 5656,
+                  "src": "1211:19:31",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -645,10 +708,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 7290,
+                    "id": 5636,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1170:5:43",
+                    "src": "1211:5:31",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -658,33 +721,395 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1151:39:43"
+              "src": "1192:39:31"
             },
             "returnParameters": {
-              "id": 7294,
+              "id": 5640,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1229:0:43"
+              "src": "1270:0:31"
             },
-            "scope": 7311,
-            "src": "1133:227:43",
+            "scope": 5686,
+            "src": "1174:227:31",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "baseFunctions": [
+              5704
+            ],
+            "body": {
+              "id": 5684,
+              "nodeType": "Block",
+              "src": "1544:183:31",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5668,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 5666,
+                      "name": "receiverContractAddressOnChildChain",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5619,
+                      "src": "1554:35:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 5667,
+                      "name": "receiver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5658,
+                      "src": "1592:8:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1554:46:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 5669,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1554:46:31"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5672,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 5670,
+                      "name": "_childERC20Predicate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5621,
+                      "src": "1610:20:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 5671,
+                      "name": "childERC20Predicate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5660,
+                      "src": "1633:19:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1610:42:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 5673,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1610:42:31"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5676,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 5674,
+                      "name": "_data",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5623,
+                      "src": "1662:5:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_storage",
+                        "typeString": "bytes storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 5675,
+                      "name": "data",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5662,
+                      "src": "1670:4:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_calldata_ptr",
+                        "typeString": "bytes calldata"
+                      }
+                    },
+                    "src": "1662:12:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage",
+                      "typeString": "bytes storage ref"
+                    }
+                  },
+                  "id": 5677,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1662:12:31"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "31",
+                        "id": 5679,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1702:1:31",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_1_by_1",
+                          "typeString": "int_const 1"
+                        },
+                        "value": "1"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 5680,
+                        "name": "receiver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5658,
+                        "src": "1705:8:31",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 5681,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5662,
+                        "src": "1715:4:31",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_calldata_ptr",
+                          "typeString": "bytes calldata"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_1_by_1",
+                          "typeString": "int_const 1"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes_calldata_ptr",
+                          "typeString": "bytes calldata"
+                        }
+                      ],
+                      "id": 5678,
+                      "name": "StateSynced",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5632,
+                      "src": "1690:11:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_address_$_t_bytes_memory_ptr_$returns$__$",
+                        "typeString": "function (uint256,address,bytes memory)"
+                      }
+                    },
+                    "id": 5682,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1690:30:31",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5683,
+                  "nodeType": "EmitStatement",
+                  "src": "1685:35:31"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "6f44a710",
+            "id": 5685,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "syncStateU2",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 5664,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1535:8:31"
+            },
+            "parameters": {
+              "id": 5663,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5658,
+                  "mutability": "mutable",
+                  "name": "receiver",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5685,
+                  "src": "1437:16:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5657,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1437:7:31",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5660,
+                  "mutability": "mutable",
+                  "name": "childERC20Predicate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5685,
+                  "src": "1463:27:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5659,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1463:7:31",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5662,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5685,
+                  "src": "1500:19:31",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 5661,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1500:5:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1427:98:31"
+            },
+            "returnParameters": {
+              "id": 5665,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1544:0:31"
+            },
+            "scope": 5686,
+            "src": "1407:320:31",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 7312,
-        "src": "180:1182:43"
+        "scope": 5687,
+        "src": "180:1549:31"
       }
     ],
-    "src": "0:1363:43"
+    "src": "0:1730:31"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/root/StateSender/DummyStateSender.sol",
       "exportedSymbols": {
         "DummyStateSender": [
-          7311
+          5686
         ]
       }
     },
@@ -697,16 +1122,16 @@
             ".6"
           ]
         },
-        "id": 7266,
+        "id": 5610,
         "name": "PragmaDirective",
-        "src": "0:22:43"
+        "src": "0:22:31"
       },
       {
         "attributes": {
-          "SourceUnit": 7322,
+          "SourceUnit": 5706,
           "absolutePath": "project:/contracts/root/StateSender/IStateSender.sol",
           "file": "../StateSender/IStateSender.sol",
-          "scope": 7312,
+          "scope": 5687,
           "symbolAliases": [
             {
               "foreign": {
@@ -719,42 +1144,42 @@
                   "type": null,
                   "value": "IStateSender"
                 },
-                "id": 7267,
+                "id": 5611,
                 "name": "Identifier",
-                "src": "32:12:43"
+                "src": "32:12:31"
               },
               "local": null
             }
           ],
           "unitAlias": ""
         },
-        "id": 7268,
+        "id": 5612,
         "name": "ImportDirective",
-        "src": "24:61:43"
+        "src": "24:61:31"
       },
       {
         "attributes": {
           "abstract": false,
           "contractDependencies": [
-            7321
+            5705
           ],
           "contractKind": "contract",
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            7311,
-            7321
+            5686,
+            5705
           ],
           "name": "DummyStateSender",
-          "scope": 7312
+          "scope": 5687
         },
         "children": [
           {
             "attributes": {
               "text": "@notice Dummy State Sender contract to simulate plasma state sender while testing"
             },
-            "id": 7269,
+            "id": 5613,
             "name": "StructuredDocumentation",
-            "src": "87:92:43"
+            "src": "87:92:31"
           },
           {
             "attributes": {
@@ -765,17 +1190,17 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "IStateSender",
-                  "referencedDeclaration": 7321,
+                  "referencedDeclaration": 5705,
                   "type": "contract IStateSender"
                 },
-                "id": 7270,
+                "id": 5614,
                 "name": "UserDefinedTypeName",
-                "src": "209:12:43"
+                "src": "209:12:31"
               }
             ],
-            "id": 7271,
+            "id": 5615,
             "name": "InheritanceSpecifier",
-            "src": "209:12:43"
+            "src": "209:12:31"
           },
           {
             "attributes": {
@@ -784,7 +1209,7 @@
               "mutability": "mutable",
               "name": "idOfTheSync",
               "overrides": null,
-              "scope": 7311,
+              "scope": 5686,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -797,14 +1222,14 @@
                   "name": "uint256",
                   "type": "uint256"
                 },
-                "id": 7272,
+                "id": 5616,
                 "name": "ElementaryTypeName",
-                "src": "228:7:43"
+                "src": "228:7:31"
               }
             ],
-            "id": 7273,
+            "id": 5617,
             "name": "VariableDeclaration",
-            "src": "228:26:43"
+            "src": "228:26:31"
           },
           {
             "attributes": {
@@ -813,7 +1238,7 @@
               "mutability": "mutable",
               "name": "receiverContractAddressOnChildChain",
               "overrides": null,
-              "scope": 7311,
+              "scope": 5686,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "address",
@@ -827,14 +1252,44 @@
                   "stateMutability": "nonpayable",
                   "type": "address"
                 },
-                "id": 7274,
+                "id": 5618,
                 "name": "ElementaryTypeName",
-                "src": "260:7:43"
+                "src": "260:7:31"
               }
             ],
-            "id": 7275,
+            "id": 5619,
             "name": "VariableDeclaration",
-            "src": "260:50:43"
+            "src": "260:50:31"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "2ed7b94f",
+              "mutability": "mutable",
+              "name": "_childERC20Predicate",
+              "overrides": null,
+              "scope": 5686,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 5620,
+                "name": "ElementaryTypeName",
+                "src": "316:7:31"
+              }
+            ],
+            "id": 5621,
+            "name": "VariableDeclaration",
+            "src": "316:35:31"
           },
           {
             "attributes": {
@@ -843,7 +1298,7 @@
               "mutability": "mutable",
               "name": "_data",
               "overrides": null,
-              "scope": 7311,
+              "scope": 5686,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "bytes",
@@ -856,14 +1311,14 @@
                   "name": "bytes",
                   "type": "bytes"
                 },
-                "id": 7276,
+                "id": 5622,
                 "name": "ElementaryTypeName",
-                "src": "316:5:43"
+                "src": "357:5:31"
               }
             ],
-            "id": 7277,
+            "id": 5623,
             "name": "VariableDeclaration",
-            "src": "316:18:43"
+            "src": "357:18:31"
           },
           {
             "attributes": {
@@ -875,9 +1330,9 @@
                 "attributes": {
                   "text": "@notice Event emitted when when syncState is called\n@dev Heimdall bridge listens to this event and sends the data to receiver contract on child chain\n@param id Id of the sync, increamented for each event in case of actual state sender contract\n@param contractAddress the contract receiving data on child chain\n@param data bytes data to be sent"
                 },
-                "id": 7278,
+                "id": 5624,
                 "name": "StructuredDocumentation",
-                "src": "341:390:43"
+                "src": "382:390:31"
               },
               {
                 "children": [
@@ -888,7 +1343,7 @@
                       "mutability": "mutable",
                       "name": "id",
                       "overrides": null,
-                      "scope": 7286,
+                      "scope": 5632,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -901,14 +1356,14 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 7279,
+                        "id": 5625,
                         "name": "ElementaryTypeName",
-                        "src": "764:7:43"
+                        "src": "805:7:31"
                       }
                     ],
-                    "id": 7280,
+                    "id": 5626,
                     "name": "VariableDeclaration",
-                    "src": "764:18:43"
+                    "src": "805:18:31"
                   },
                   {
                     "attributes": {
@@ -917,7 +1372,7 @@
                       "mutability": "mutable",
                       "name": "contractAddress",
                       "overrides": null,
-                      "scope": 7286,
+                      "scope": 5632,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -931,14 +1386,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 7281,
+                        "id": 5627,
                         "name": "ElementaryTypeName",
-                        "src": "792:7:43"
+                        "src": "833:7:31"
                       }
                     ],
-                    "id": 7282,
+                    "id": 5628,
                     "name": "VariableDeclaration",
-                    "src": "792:31:43"
+                    "src": "833:31:31"
                   },
                   {
                     "attributes": {
@@ -947,7 +1402,7 @@
                       "mutability": "mutable",
                       "name": "data",
                       "overrides": null,
-                      "scope": 7286,
+                      "scope": 5632,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bytes",
@@ -960,29 +1415,29 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 7283,
+                        "id": 5629,
                         "name": "ElementaryTypeName",
-                        "src": "833:5:43"
+                        "src": "874:5:31"
                       }
                     ],
-                    "id": 7284,
+                    "id": 5630,
                     "name": "VariableDeclaration",
-                    "src": "833:10:43"
+                    "src": "874:10:31"
                   }
                 ],
-                "id": 7285,
+                "id": 5631,
                 "name": "ParameterList",
-                "src": "754:95:43"
+                "src": "795:95:31"
               }
             ],
-            "id": 7286,
+            "id": 5632,
             "name": "EventDefinition",
-            "src": "737:113:43"
+            "src": "778:113:31"
           },
           {
             "attributes": {
               "baseFunctions": [
-                7320
+                5695
               ],
               "functionSelector": "16f19831",
               "implemented": true,
@@ -992,7 +1447,7 @@
                 null
               ],
               "name": "syncState",
-              "scope": 7311,
+              "scope": 5686,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -1002,9 +1457,9 @@
                 "attributes": {
                   "text": "@notice called to send data to child chain\n@dev sender and receiver contracts need to be registered in case of actual state sender contract\n@param receiver the contract receiving data on child chain\n@param data bytes data to be sent"
                 },
-                "id": 7287,
+                "id": 5633,
                 "name": "StructuredDocumentation",
-                "src": "856:272:43"
+                "src": "897:272:31"
               },
               {
                 "attributes": {
@@ -1012,9 +1467,9 @@
                     null
                   ]
                 },
-                "id": 7293,
+                "id": 5639,
                 "name": "OverrideSpecifier",
-                "src": "1216:8:43"
+                "src": "1257:8:31"
               },
               {
                 "children": [
@@ -1024,7 +1479,7 @@
                       "mutability": "mutable",
                       "name": "receiver",
                       "overrides": null,
-                      "scope": 7310,
+                      "scope": 5656,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -1038,14 +1493,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 7288,
+                        "id": 5634,
                         "name": "ElementaryTypeName",
-                        "src": "1152:7:43"
+                        "src": "1193:7:31"
                       }
                     ],
-                    "id": 7289,
+                    "id": 5635,
                     "name": "VariableDeclaration",
-                    "src": "1152:16:43"
+                    "src": "1193:16:31"
                   },
                   {
                     "attributes": {
@@ -1053,7 +1508,7 @@
                       "mutability": "mutable",
                       "name": "data",
                       "overrides": null,
-                      "scope": 7310,
+                      "scope": 5656,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -1066,19 +1521,19 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 7290,
+                        "id": 5636,
                         "name": "ElementaryTypeName",
-                        "src": "1170:5:43"
+                        "src": "1211:5:31"
                       }
                     ],
-                    "id": 7291,
+                    "id": 5637,
                     "name": "VariableDeclaration",
-                    "src": "1170:19:43"
+                    "src": "1211:19:31"
                   }
                 ],
-                "id": 7292,
+                "id": 5638,
                 "name": "ParameterList",
-                "src": "1151:39:43"
+                "src": "1192:39:31"
               },
               {
                 "attributes": {
@@ -1087,9 +1542,9 @@
                   ]
                 },
                 "children": [],
-                "id": 7294,
+                "id": 5640,
                 "name": "ParameterList",
-                "src": "1229:0:43"
+                "src": "1270:0:31"
               },
               {
                 "children": [
@@ -1112,13 +1567,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7275,
+                              "referencedDeclaration": 5619,
                               "type": "address",
                               "value": "receiverContractAddressOnChildChain"
                             },
-                            "id": 7295,
+                            "id": 5641,
                             "name": "Identifier",
-                            "src": "1239:35:43"
+                            "src": "1280:35:31"
                           },
                           {
                             "attributes": {
@@ -1126,23 +1581,23 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7289,
+                              "referencedDeclaration": 5635,
                               "type": "address",
                               "value": "receiver"
                             },
-                            "id": 7296,
+                            "id": 5642,
                             "name": "Identifier",
-                            "src": "1277:8:43"
+                            "src": "1318:8:31"
                           }
                         ],
-                        "id": 7297,
+                        "id": 5643,
                         "name": "Assignment",
-                        "src": "1239:46:43"
+                        "src": "1280:46:31"
                       }
                     ],
-                    "id": 7298,
+                    "id": 5644,
                     "name": "ExpressionStatement",
-                    "src": "1239:46:43"
+                    "src": "1280:46:31"
                   },
                   {
                     "children": [
@@ -1163,13 +1618,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7277,
+                              "referencedDeclaration": 5623,
                               "type": "bytes storage ref",
                               "value": "_data"
                             },
-                            "id": 7299,
+                            "id": 5645,
                             "name": "Identifier",
-                            "src": "1295:5:43"
+                            "src": "1336:5:31"
                           },
                           {
                             "attributes": {
@@ -1177,23 +1632,23 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7291,
+                              "referencedDeclaration": 5637,
                               "type": "bytes calldata",
                               "value": "data"
                             },
-                            "id": 7300,
+                            "id": 5646,
                             "name": "Identifier",
-                            "src": "1303:4:43"
+                            "src": "1344:4:31"
                           }
                         ],
-                        "id": 7301,
+                        "id": 5647,
                         "name": "Assignment",
-                        "src": "1295:12:43"
+                        "src": "1336:12:31"
                       }
                     ],
-                    "id": 7302,
+                    "id": 5648,
                     "name": "ExpressionStatement",
-                    "src": "1295:12:43"
+                    "src": "1336:12:31"
                   },
                   {
                     "children": [
@@ -1232,13 +1687,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7286,
+                              "referencedDeclaration": 5632,
                               "type": "function (uint256,address,bytes memory)",
                               "value": "StateSynced"
                             },
-                            "id": 7303,
+                            "id": 5649,
                             "name": "Identifier",
-                            "src": "1323:11:43"
+                            "src": "1364:11:31"
                           },
                           {
                             "attributes": {
@@ -1253,9 +1708,9 @@
                               "type": "int_const 1",
                               "value": "1"
                             },
-                            "id": 7304,
+                            "id": 5650,
                             "name": "Literal",
-                            "src": "1335:1:43"
+                            "src": "1376:1:31"
                           },
                           {
                             "attributes": {
@@ -1263,13 +1718,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7289,
+                              "referencedDeclaration": 5635,
                               "type": "address",
                               "value": "receiver"
                             },
-                            "id": 7305,
+                            "id": 5651,
                             "name": "Identifier",
-                            "src": "1338:8:43"
+                            "src": "1379:8:31"
                           },
                           {
                             "attributes": {
@@ -1277,59 +1732,487 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 7291,
+                              "referencedDeclaration": 5637,
                               "type": "bytes calldata",
                               "value": "data"
                             },
-                            "id": 7306,
+                            "id": 5652,
                             "name": "Identifier",
-                            "src": "1348:4:43"
+                            "src": "1389:4:31"
                           }
                         ],
-                        "id": 7307,
+                        "id": 5653,
                         "name": "FunctionCall",
-                        "src": "1323:30:43"
+                        "src": "1364:30:31"
                       }
                     ],
-                    "id": 7308,
+                    "id": 5654,
                     "name": "EmitStatement",
-                    "src": "1318:35:43"
+                    "src": "1359:35:31"
                   }
                 ],
-                "id": 7309,
+                "id": 5655,
                 "name": "Block",
-                "src": "1229:131:43"
+                "src": "1270:131:31"
               }
             ],
-            "id": 7310,
+            "id": 5656,
             "name": "FunctionDefinition",
-            "src": "1133:227:43"
+            "src": "1174:227:31"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                5704
+              ],
+              "documentation": null,
+              "functionSelector": "6f44a710",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "syncStateU2",
+              "scope": 5686,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 5664,
+                "name": "OverrideSpecifier",
+                "src": "1535:8:31"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "receiver",
+                      "overrides": null,
+                      "scope": 5685,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 5657,
+                        "name": "ElementaryTypeName",
+                        "src": "1437:7:31"
+                      }
+                    ],
+                    "id": 5658,
+                    "name": "VariableDeclaration",
+                    "src": "1437:16:31"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "childERC20Predicate",
+                      "overrides": null,
+                      "scope": 5685,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 5659,
+                        "name": "ElementaryTypeName",
+                        "src": "1463:7:31"
+                      }
+                    ],
+                    "id": 5660,
+                    "name": "VariableDeclaration",
+                    "src": "1463:27:31"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "overrides": null,
+                      "scope": 5685,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 5661,
+                        "name": "ElementaryTypeName",
+                        "src": "1500:5:31"
+                      }
+                    ],
+                    "id": 5662,
+                    "name": "VariableDeclaration",
+                    "src": "1500:19:31"
+                  }
+                ],
+                "id": 5663,
+                "name": "ParameterList",
+                "src": "1427:98:31"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 5665,
+                "name": "ParameterList",
+                "src": "1544:0:31"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5619,
+                              "type": "address",
+                              "value": "receiverContractAddressOnChildChain"
+                            },
+                            "id": 5666,
+                            "name": "Identifier",
+                            "src": "1554:35:31"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5658,
+                              "type": "address",
+                              "value": "receiver"
+                            },
+                            "id": 5667,
+                            "name": "Identifier",
+                            "src": "1592:8:31"
+                          }
+                        ],
+                        "id": 5668,
+                        "name": "Assignment",
+                        "src": "1554:46:31"
+                      }
+                    ],
+                    "id": 5669,
+                    "name": "ExpressionStatement",
+                    "src": "1554:46:31"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5621,
+                              "type": "address",
+                              "value": "_childERC20Predicate"
+                            },
+                            "id": 5670,
+                            "name": "Identifier",
+                            "src": "1610:20:31"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5660,
+                              "type": "address",
+                              "value": "childERC20Predicate"
+                            },
+                            "id": 5671,
+                            "name": "Identifier",
+                            "src": "1633:19:31"
+                          }
+                        ],
+                        "id": 5672,
+                        "name": "Assignment",
+                        "src": "1610:42:31"
+                      }
+                    ],
+                    "id": 5673,
+                    "name": "ExpressionStatement",
+                    "src": "1610:42:31"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bytes storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5623,
+                              "type": "bytes storage ref",
+                              "value": "_data"
+                            },
+                            "id": 5674,
+                            "name": "Identifier",
+                            "src": "1662:5:31"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5662,
+                              "type": "bytes calldata",
+                              "value": "data"
+                            },
+                            "id": 5675,
+                            "name": "Identifier",
+                            "src": "1670:4:31"
+                          }
+                        ],
+                        "id": 5676,
+                        "name": "Assignment",
+                        "src": "1662:12:31"
+                      }
+                    ],
+                    "id": 5677,
+                    "name": "ExpressionStatement",
+                    "src": "1662:12:31"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_rational_1_by_1",
+                                  "typeString": "int_const 1"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_bytes_calldata_ptr",
+                                  "typeString": "bytes calldata"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5632,
+                              "type": "function (uint256,address,bytes memory)",
+                              "value": "StateSynced"
+                            },
+                            "id": 5678,
+                            "name": "Identifier",
+                            "src": "1690:11:31"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "31",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 1",
+                              "value": "1"
+                            },
+                            "id": 5679,
+                            "name": "Literal",
+                            "src": "1702:1:31"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5658,
+                              "type": "address",
+                              "value": "receiver"
+                            },
+                            "id": 5680,
+                            "name": "Identifier",
+                            "src": "1705:8:31"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 5662,
+                              "type": "bytes calldata",
+                              "value": "data"
+                            },
+                            "id": 5681,
+                            "name": "Identifier",
+                            "src": "1715:4:31"
+                          }
+                        ],
+                        "id": 5682,
+                        "name": "FunctionCall",
+                        "src": "1690:30:31"
+                      }
+                    ],
+                    "id": 5683,
+                    "name": "EmitStatement",
+                    "src": "1685:35:31"
+                  }
+                ],
+                "id": 5684,
+                "name": "Block",
+                "src": "1544:183:31"
+              }
+            ],
+            "id": 5685,
+            "name": "FunctionDefinition",
+            "src": "1407:320:31"
           }
         ],
-        "id": 7311,
+        "id": 5686,
         "name": "ContractDefinition",
-        "src": "180:1182:43"
+        "src": "180:1549:31"
       }
     ],
-    "id": 7312,
+    "id": 5687,
     "name": "SourceUnit",
-    "src": "0:1363:43"
+    "src": "0:1730:31"
   },
   "compiler": {
     "name": "solc",
     "version": "0.6.6+commit.6c089d02.Emscripten.clang"
   },
   "networks": {
-    "5": {
+    "1664115646539": {
       "events": {},
       "links": {},
-      "address": "0x9001Cc6C5d8f00a98Ca1Ba69b372D7DD9C866953",
-      "transactionHash": "0xb650ff1f70e728eaa4d314f31aaacc2a8bec460ed194e0c002b49f9c04e5fbba"
+      "address": "0x8098036C8A842c8B670F915D1f726a35f646c71B",
+      "transactionHash": "0x902f58e83a53f1d3143b5ccaa169c5c081425bc307a52d007062547029439a3f"
+    },
+    "1664115676462": {
+      "events": {},
+      "links": {},
+      "address": "0xfB484234aeBF617Fa47fd5e0fC5047178a1Ad339",
+      "transactionHash": "0x78812d9ea35749525fdae24e9509cc6bdf7939dac39f4497446ba85883be2ceb"
+    },
+    "1664125692659": {
+      "events": {},
+      "links": {},
+      "address": "0xF4129c9ef8b648dad055bAcA961bFD1f9f1D7105",
+      "transactionHash": "0x3ce6ea67fc21afd14730f013ddf75e0411699f4479e0e76a8d21cf1ae7d02277"
+    },
+    "1664176532823": {
+      "events": {},
+      "links": {},
+      "address": "0xF4129c9ef8b648dad055bAcA961bFD1f9f1D7105",
+      "transactionHash": "0x3ce6ea67fc21afd14730f013ddf75e0411699f4479e0e76a8d21cf1ae7d02277"
+    },
+    "1664176546091": {
+      "events": {},
+      "links": {},
+      "address": "0x8259dFC65F47e4e234F8f7e9C9fcbDA86e55282b",
+      "transactionHash": "0xdca0bb6d07cc12ece15d5cd98cb248289c180a2512a35e3e144df2a6539ae096"
+    },
+    "1664185648819": {
+      "events": {},
+      "links": {},
+      "address": "0xe6611A66bD40a663f0cfA5f5d06814B7d2E05885",
+      "transactionHash": "0x40d74356440a195dc2ebf725ab26d011ea09791eabc55f2cab35a3fd593a46e0"
     }
   },
-  "schemaVersion": "3.4.8",
-  "updatedAt": "2022-09-21T07:54:15.217Z",
-  "networkType": "ethereum",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-26T13:08:30.005Z",
   "devdoc": {
     "methods": {
       "syncState(address,bytes)": {

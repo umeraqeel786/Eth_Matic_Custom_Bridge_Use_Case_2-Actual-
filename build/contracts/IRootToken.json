@@ -1,0 +1,385 @@
+{
+  "contractName": "IRootToken",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "depositData",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "rootERC20Predicate",
+          "type": "address"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"depositData\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"rootERC20Predicate\",\"type\":\"address\"}],\"name\":\"transfer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/root/RootToken/IRootToken.sol\":\"IRootToken\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/root/RootToken/IRootToken.sol\":{\"keccak256\":\"0xefe775a65f1bd0bc608bc81d18dde9ff5b7388b0932d5cc25317d96ab3095d02\",\"urls\":[\"bzz-raw://ba65f337d7e3d92baa7db8bc46e3225eec482f388cbdd90f3b0709573d438b8a\",\"dweb:/ipfs/QmdQirBPBweaWZsnjpneadNWqPAscZDQswjn9ScCQB4qDc\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.6.6;\n\ninterface IRootToken {\n    //function deposit(address user, bytes calldata depositData) external;\n\n    function transfer(\n        address user,\n        bytes calldata depositData,\n        address rootERC20Predicate\n    ) external;\n}\n",
+  "sourcePath": "/home/moiz/Desktop/Eth_Matic_Custom_Bridge_Use_Case_2-Actual-/contracts/root/RootToken/IRootToken.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/root/RootToken/IRootToken.sol",
+    "exportedSymbols": {
+      "IRootToken": [
+        7229
+      ]
+    },
+    "id": 7230,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7219,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:37"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7229,
+        "linearizedBaseContracts": [
+          7229
+        ],
+        "name": "IRootToken",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "49d5f3f2",
+            "id": 7228,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transfer",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7226,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7221,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7228,
+                  "src": "154:12:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7220,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "154:7:37",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7223,
+                  "mutability": "mutable",
+                  "name": "depositData",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7228,
+                  "src": "176:26:37",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 7222,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "176:5:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7225,
+                  "mutability": "mutable",
+                  "name": "rootERC20Predicate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7228,
+                  "src": "212:26:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7224,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "212:7:37",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "144:100:37"
+            },
+            "returnParameters": {
+              "id": 7227,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "253:0:37"
+            },
+            "scope": 7229,
+            "src": "127:127:37",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 7230,
+        "src": "24:232:37"
+      }
+    ],
+    "src": "0:257:37"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/root/RootToken/IRootToken.sol",
+      "exportedSymbols": {
+        "IRootToken": [
+          7229
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".6"
+          ]
+        },
+        "id": 7219,
+        "name": "PragmaDirective",
+        "src": "0:22:37"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            7229
+          ],
+          "name": "IRootToken",
+          "scope": 7230
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "49d5f3f2",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "transfer",
+              "overrides": null,
+              "scope": 7229,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "user",
+                      "overrides": null,
+                      "scope": 7228,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7220,
+                        "name": "ElementaryTypeName",
+                        "src": "154:7:37"
+                      }
+                    ],
+                    "id": 7221,
+                    "name": "VariableDeclaration",
+                    "src": "154:12:37"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "depositData",
+                      "overrides": null,
+                      "scope": 7228,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 7222,
+                        "name": "ElementaryTypeName",
+                        "src": "176:5:37"
+                      }
+                    ],
+                    "id": 7223,
+                    "name": "VariableDeclaration",
+                    "src": "176:26:37"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "rootERC20Predicate",
+                      "overrides": null,
+                      "scope": 7228,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7224,
+                        "name": "ElementaryTypeName",
+                        "src": "212:7:37"
+                      }
+                    ],
+                    "id": 7225,
+                    "name": "VariableDeclaration",
+                    "src": "212:26:37"
+                  }
+                ],
+                "id": 7226,
+                "name": "ParameterList",
+                "src": "144:100:37"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7227,
+                "name": "ParameterList",
+                "src": "253:0:37"
+              }
+            ],
+            "id": 7228,
+            "name": "FunctionDefinition",
+            "src": "127:127:37"
+          }
+        ],
+        "id": 7229,
+        "name": "ContractDefinition",
+        "src": "24:232:37"
+      }
+    ],
+    "id": 7230,
+    "name": "SourceUnit",
+    "src": "0:257:37"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-26T07:14:52.824Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

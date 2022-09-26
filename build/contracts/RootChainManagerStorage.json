@@ -110,52 +110,52 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"childChainManagerAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"childToRootToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"processedExits\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"rootToChildToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"tokenToType\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"typeToPredicate\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/root/RootChainManager/RootChainManagerStorage.sol\":\"RootChainManagerStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/root/ICheckpointManager.sol\":{\"keccak256\":\"0x25072d6d7bb929e75338478e0995e86a46a8e64617f109d9479aab65a2f40793\",\"urls\":[\"bzz-raw://dafccce1d0dd9f5a595e4674e83448016e3553c500699fd8da6a4e7432ddb80b\",\"dweb:/ipfs/QmUxowPJo7CNwKkrLZMvaiHwqVHxNYTRPM2oDu9VNrvpp4\"]},\"project:/contracts/root/RootChainManager/RootChainManagerStorage.sol\":{\"keccak256\":\"0xd19ac175c3165ea8ade71c5485c90b2c443f305ce93f64d0e307e9944bb54a02\",\"urls\":[\"bzz-raw://ef94ea09c4663d94d88b69e9d30b8b9c2c55faf4fd702e48e2f4c61c2facee09\",\"dweb:/ipfs/QmeBZx7cQZ3RvLDJ7ZbZMZ9Jp2GZMM6QXk96R7cipgtWEY\"]},\"project:/contracts/root/StateSender/IStateSender.sol\":{\"keccak256\":\"0x8f260b4eeb18f8cd86b144aa410c06f365827b99b177901c1497dff4d55c0e30\",\"urls\":[\"bzz-raw://2954e25696c7e80769d04282f0bfc7d7a3da22ae1928831d6144ffeb2c92fca9\",\"dweb:/ipfs/QmcJZPP4ZusGemWLxi1YBkkvSfpTHvjMHXAdL7U7KfQcLB\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"childChainManagerAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"childToRootToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"processedExits\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"rootToChildToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"tokenToType\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"typeToPredicate\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/root/RootChainManager/RootChainManagerStorage.sol\":\"RootChainManagerStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/root/ICheckpointManager.sol\":{\"keccak256\":\"0x25072d6d7bb929e75338478e0995e86a46a8e64617f109d9479aab65a2f40793\",\"urls\":[\"bzz-raw://dafccce1d0dd9f5a595e4674e83448016e3553c500699fd8da6a4e7432ddb80b\",\"dweb:/ipfs/QmUxowPJo7CNwKkrLZMvaiHwqVHxNYTRPM2oDu9VNrvpp4\"]},\"project:/contracts/root/RootChainManager/RootChainManagerStorage.sol\":{\"keccak256\":\"0xd19ac175c3165ea8ade71c5485c90b2c443f305ce93f64d0e307e9944bb54a02\",\"urls\":[\"bzz-raw://ef94ea09c4663d94d88b69e9d30b8b9c2c55faf4fd702e48e2f4c61c2facee09\",\"dweb:/ipfs/QmeBZx7cQZ3RvLDJ7ZbZMZ9Jp2GZMM6QXk96R7cipgtWEY\"]},\"project:/contracts/root/StateSender/IStateSender.sol\":{\"keccak256\":\"0x70d3796bc77611c921d49978fe249b8c7d238df984320ecbdb75cecd1c8327ee\",\"urls\":[\"bzz-raw://7945febce061d668ed897715a21357780a95ea44c8c5a99a2c11bd1b1c7a4816\",\"dweb:/ipfs/QmSD5jKr5gcjBEBS5iDBifrFGRxjFAbXbtfck3c7pXUcfu\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity 0.6.6;\n\nimport {IStateSender} from \"../StateSender/IStateSender.sol\";\nimport {ICheckpointManager} from \"../ICheckpointManager.sol\";\n\nabstract contract RootChainManagerStorage {\n    mapping(bytes32 => address) public typeToPredicate;\n    mapping(address => address) public rootToChildToken;\n    mapping(address => address) public childToRootToken;\n    mapping(address => bytes32) public tokenToType;\n    mapping(bytes32 => bool) public processedExits;\n    IStateSender internal _stateSender;\n    ICheckpointManager internal _checkpointManager;\n    address public childChainManagerAddress;\n}\n",
-  "sourcePath": "/home/moiz/NETSOl/Task-25, Bridge between polygon and ethereum (erc-20) Use-case 2/Ethereum_Polygon_Custom_Bridge_ERC20_Contracts_on_Testnet_without_status_Checks_Use_case_2/contracts/root/RootChainManager/RootChainManagerStorage.sol",
+  "sourcePath": "/home/moiz/Desktop/Eth_Matic_Custom_Bridge_Use_Case_2-Actual-/contracts/root/RootChainManager/RootChainManagerStorage.sol",
   "ast": {
     "absolutePath": "project:/contracts/root/RootChainManager/RootChainManagerStorage.sol",
     "exportedSymbols": {
       "RootChainManagerStorage": [
-        7048
+        5596
       ]
     },
-    "id": 7049,
+    "id": 5597,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7017,
+        "id": 5565,
         "literals": [
           "solidity",
           "0.6",
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:22:39"
+        "src": "0:22:29"
       },
       {
         "absolutePath": "project:/contracts/root/StateSender/IStateSender.sol",
         "file": "../StateSender/IStateSender.sol",
-        "id": 7019,
+        "id": 5567,
         "nodeType": "ImportDirective",
-        "scope": 7049,
-        "sourceUnit": 7322,
-        "src": "24:61:39",
+        "scope": 5597,
+        "sourceUnit": 5706,
+        "src": "24:61:29",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 7018,
+              "id": 5566,
               "name": "IStateSender",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "32:12:39",
+              "src": "32:12:29",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -169,21 +169,21 @@
       {
         "absolutePath": "project:/contracts/root/ICheckpointManager.sol",
         "file": "../ICheckpointManager.sol",
-        "id": 7021,
+        "id": 5569,
         "nodeType": "ImportDirective",
-        "scope": 7049,
-        "sourceUnit": 6120,
-        "src": "86:61:39",
+        "scope": 5597,
+        "sourceUnit": 4544,
+        "src": "86:61:29",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 7020,
+              "id": 5568,
               "name": "ICheckpointManager",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "94:18:39",
+              "src": "94:18:29",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -201,9 +201,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 7048,
+        "id": 5596,
         "linearizedBaseContracts": [
-          7048
+          5596
         ],
         "name": "RootChainManagerStorage",
         "nodeType": "ContractDefinition",
@@ -211,13 +211,13 @@
           {
             "constant": false,
             "functionSelector": "e66f9603",
-            "id": 7025,
+            "id": 5573,
             "mutability": "mutable",
             "name": "typeToPredicate",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7048,
-            "src": "197:50:39",
+            "scope": 5596,
+            "src": "197:50:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -225,28 +225,28 @@
               "typeString": "mapping(bytes32 => address)"
             },
             "typeName": {
-              "id": 7024,
+              "id": 5572,
               "keyType": {
-                "id": 7022,
+                "id": 5570,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "205:7:39",
+                "src": "205:7:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "197:27:39",
+              "src": "197:27:29",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
                 "typeString": "mapping(bytes32 => address)"
               },
               "valueType": {
-                "id": 7023,
+                "id": 5571,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "216:7:39",
+                "src": "216:7:29",
                 "stateMutability": "nonpayable",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
@@ -260,13 +260,13 @@
           {
             "constant": false,
             "functionSelector": "ea60c7c4",
-            "id": 7029,
+            "id": 5577,
             "mutability": "mutable",
             "name": "rootToChildToken",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7048,
-            "src": "253:51:39",
+            "scope": 5596,
+            "src": "253:51:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -274,28 +274,28 @@
               "typeString": "mapping(address => address)"
             },
             "typeName": {
-              "id": 7028,
+              "id": 5576,
               "keyType": {
-                "id": 7026,
+                "id": 5574,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "261:7:39",
+                "src": "261:7:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "253:27:39",
+              "src": "253:27:29",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                 "typeString": "mapping(address => address)"
               },
               "valueType": {
-                "id": 7027,
+                "id": 5575,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "272:7:39",
+                "src": "272:7:29",
                 "stateMutability": "nonpayable",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
@@ -309,13 +309,13 @@
           {
             "constant": false,
             "functionSelector": "6e86b770",
-            "id": 7033,
+            "id": 5581,
             "mutability": "mutable",
             "name": "childToRootToken",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7048,
-            "src": "310:51:39",
+            "scope": 5596,
+            "src": "310:51:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -323,28 +323,28 @@
               "typeString": "mapping(address => address)"
             },
             "typeName": {
-              "id": 7032,
+              "id": 5580,
               "keyType": {
-                "id": 7030,
+                "id": 5578,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "318:7:39",
+                "src": "318:7:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "310:27:39",
+              "src": "310:27:29",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                 "typeString": "mapping(address => address)"
               },
               "valueType": {
-                "id": 7031,
+                "id": 5579,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "329:7:39",
+                "src": "329:7:29",
                 "stateMutability": "nonpayable",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
@@ -358,13 +358,13 @@
           {
             "constant": false,
             "functionSelector": "e43009a6",
-            "id": 7037,
+            "id": 5585,
             "mutability": "mutable",
             "name": "tokenToType",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7048,
-            "src": "367:46:39",
+            "scope": 5596,
+            "src": "367:46:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -372,28 +372,28 @@
               "typeString": "mapping(address => bytes32)"
             },
             "typeName": {
-              "id": 7036,
+              "id": 5584,
               "keyType": {
-                "id": 7034,
+                "id": 5582,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "375:7:39",
+                "src": "375:7:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "367:27:39",
+              "src": "367:27:29",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
                 "typeString": "mapping(address => bytes32)"
               },
               "valueType": {
-                "id": 7035,
+                "id": 5583,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "386:7:39",
+                "src": "386:7:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
@@ -406,13 +406,13 @@
           {
             "constant": false,
             "functionSelector": "607f2d42",
-            "id": 7041,
+            "id": 5589,
             "mutability": "mutable",
             "name": "processedExits",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7048,
-            "src": "419:46:39",
+            "scope": 5596,
+            "src": "419:46:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -420,28 +420,28 @@
               "typeString": "mapping(bytes32 => bool)"
             },
             "typeName": {
-              "id": 7040,
+              "id": 5588,
               "keyType": {
-                "id": 7038,
+                "id": 5586,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "427:7:39",
+                "src": "427:7:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "419:24:39",
+              "src": "419:24:29",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
                 "typeString": "mapping(bytes32 => bool)"
               },
               "valueType": {
-                "id": 7039,
+                "id": 5587,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "438:4:39",
+                "src": "438:4:29",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -453,28 +453,28 @@
           },
           {
             "constant": false,
-            "id": 7043,
+            "id": 5591,
             "mutability": "mutable",
             "name": "_stateSender",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7048,
-            "src": "471:34:39",
+            "scope": 5596,
+            "src": "471:34:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IStateSender_$7321",
+              "typeIdentifier": "t_contract$_IStateSender_$5705",
               "typeString": "contract IStateSender"
             },
             "typeName": {
               "contractScope": null,
-              "id": 7042,
+              "id": 5590,
               "name": "IStateSender",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 7321,
-              "src": "471:12:39",
+              "referencedDeclaration": 5705,
+              "src": "471:12:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IStateSender_$7321",
+                "typeIdentifier": "t_contract$_IStateSender_$5705",
                 "typeString": "contract IStateSender"
               }
             },
@@ -483,28 +483,28 @@
           },
           {
             "constant": false,
-            "id": 7045,
+            "id": 5593,
             "mutability": "mutable",
             "name": "_checkpointManager",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7048,
-            "src": "511:46:39",
+            "scope": 5596,
+            "src": "511:46:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ICheckpointManager_$6119",
+              "typeIdentifier": "t_contract$_ICheckpointManager_$4543",
               "typeString": "contract ICheckpointManager"
             },
             "typeName": {
               "contractScope": null,
-              "id": 7044,
+              "id": 5592,
               "name": "ICheckpointManager",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6119,
-              "src": "511:18:39",
+              "referencedDeclaration": 4543,
+              "src": "511:18:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ICheckpointManager_$6119",
+                "typeIdentifier": "t_contract$_ICheckpointManager_$4543",
                 "typeString": "contract ICheckpointManager"
               }
             },
@@ -514,13 +514,13 @@
           {
             "constant": false,
             "functionSelector": "04967702",
-            "id": 7047,
+            "id": 5595,
             "mutability": "mutable",
             "name": "childChainManagerAddress",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 7048,
-            "src": "563:39:39",
+            "scope": 5596,
+            "src": "563:39:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -528,10 +528,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 7046,
+              "id": 5594,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "563:7:39",
+              "src": "563:7:29",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -542,18 +542,18 @@
             "visibility": "public"
           }
         ],
-        "scope": 7049,
-        "src": "149:456:39"
+        "scope": 5597,
+        "src": "149:456:29"
       }
     ],
-    "src": "0:606:39"
+    "src": "0:606:29"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/root/RootChainManager/RootChainManagerStorage.sol",
       "exportedSymbols": {
         "RootChainManagerStorage": [
-          7048
+          5596
         ]
       }
     },
@@ -566,16 +566,16 @@
             ".6"
           ]
         },
-        "id": 7017,
+        "id": 5565,
         "name": "PragmaDirective",
-        "src": "0:22:39"
+        "src": "0:22:29"
       },
       {
         "attributes": {
-          "SourceUnit": 7322,
+          "SourceUnit": 5706,
           "absolutePath": "project:/contracts/root/StateSender/IStateSender.sol",
           "file": "../StateSender/IStateSender.sol",
-          "scope": 7049,
+          "scope": 5597,
           "symbolAliases": [
             {
               "foreign": {
@@ -588,25 +588,25 @@
                   "type": null,
                   "value": "IStateSender"
                 },
-                "id": 7018,
+                "id": 5566,
                 "name": "Identifier",
-                "src": "32:12:39"
+                "src": "32:12:29"
               },
               "local": null
             }
           ],
           "unitAlias": ""
         },
-        "id": 7019,
+        "id": 5567,
         "name": "ImportDirective",
-        "src": "24:61:39"
+        "src": "24:61:29"
       },
       {
         "attributes": {
-          "SourceUnit": 6120,
+          "SourceUnit": 4544,
           "absolutePath": "project:/contracts/root/ICheckpointManager.sol",
           "file": "../ICheckpointManager.sol",
-          "scope": 7049,
+          "scope": 5597,
           "symbolAliases": [
             {
               "foreign": {
@@ -619,18 +619,18 @@
                   "type": null,
                   "value": "ICheckpointManager"
                 },
-                "id": 7020,
+                "id": 5568,
                 "name": "Identifier",
-                "src": "94:18:39"
+                "src": "94:18:29"
               },
               "local": null
             }
           ],
           "unitAlias": ""
         },
-        "id": 7021,
+        "id": 5569,
         "name": "ImportDirective",
-        "src": "86:61:39"
+        "src": "86:61:29"
       },
       {
         "attributes": {
@@ -645,10 +645,10 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            7048
+            5596
           ],
           "name": "RootChainManagerStorage",
-          "scope": 7049
+          "scope": 5597
         },
         "children": [
           {
@@ -658,7 +658,7 @@
               "mutability": "mutable",
               "name": "typeToPredicate",
               "overrides": null,
-              "scope": 7048,
+              "scope": 5596,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(bytes32 => address)",
@@ -676,9 +676,9 @@
                       "name": "bytes32",
                       "type": "bytes32"
                     },
-                    "id": 7022,
+                    "id": 5570,
                     "name": "ElementaryTypeName",
-                    "src": "205:7:39"
+                    "src": "205:7:29"
                   },
                   {
                     "attributes": {
@@ -686,19 +686,19 @@
                       "stateMutability": "nonpayable",
                       "type": "address"
                     },
-                    "id": 7023,
+                    "id": 5571,
                     "name": "ElementaryTypeName",
-                    "src": "216:7:39"
+                    "src": "216:7:29"
                   }
                 ],
-                "id": 7024,
+                "id": 5572,
                 "name": "Mapping",
-                "src": "197:27:39"
+                "src": "197:27:29"
               }
             ],
-            "id": 7025,
+            "id": 5573,
             "name": "VariableDeclaration",
-            "src": "197:50:39"
+            "src": "197:50:29"
           },
           {
             "attributes": {
@@ -707,7 +707,7 @@
               "mutability": "mutable",
               "name": "rootToChildToken",
               "overrides": null,
-              "scope": 7048,
+              "scope": 5596,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(address => address)",
@@ -725,9 +725,9 @@
                       "name": "address",
                       "type": "address"
                     },
-                    "id": 7026,
+                    "id": 5574,
                     "name": "ElementaryTypeName",
-                    "src": "261:7:39"
+                    "src": "261:7:29"
                   },
                   {
                     "attributes": {
@@ -735,19 +735,19 @@
                       "stateMutability": "nonpayable",
                       "type": "address"
                     },
-                    "id": 7027,
+                    "id": 5575,
                     "name": "ElementaryTypeName",
-                    "src": "272:7:39"
+                    "src": "272:7:29"
                   }
                 ],
-                "id": 7028,
+                "id": 5576,
                 "name": "Mapping",
-                "src": "253:27:39"
+                "src": "253:27:29"
               }
             ],
-            "id": 7029,
+            "id": 5577,
             "name": "VariableDeclaration",
-            "src": "253:51:39"
+            "src": "253:51:29"
           },
           {
             "attributes": {
@@ -756,7 +756,7 @@
               "mutability": "mutable",
               "name": "childToRootToken",
               "overrides": null,
-              "scope": 7048,
+              "scope": 5596,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(address => address)",
@@ -774,9 +774,9 @@
                       "name": "address",
                       "type": "address"
                     },
-                    "id": 7030,
+                    "id": 5578,
                     "name": "ElementaryTypeName",
-                    "src": "318:7:39"
+                    "src": "318:7:29"
                   },
                   {
                     "attributes": {
@@ -784,19 +784,19 @@
                       "stateMutability": "nonpayable",
                       "type": "address"
                     },
-                    "id": 7031,
+                    "id": 5579,
                     "name": "ElementaryTypeName",
-                    "src": "329:7:39"
+                    "src": "329:7:29"
                   }
                 ],
-                "id": 7032,
+                "id": 5580,
                 "name": "Mapping",
-                "src": "310:27:39"
+                "src": "310:27:29"
               }
             ],
-            "id": 7033,
+            "id": 5581,
             "name": "VariableDeclaration",
-            "src": "310:51:39"
+            "src": "310:51:29"
           },
           {
             "attributes": {
@@ -805,7 +805,7 @@
               "mutability": "mutable",
               "name": "tokenToType",
               "overrides": null,
-              "scope": 7048,
+              "scope": 5596,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(address => bytes32)",
@@ -823,28 +823,28 @@
                       "name": "address",
                       "type": "address"
                     },
-                    "id": 7034,
+                    "id": 5582,
                     "name": "ElementaryTypeName",
-                    "src": "375:7:39"
+                    "src": "375:7:29"
                   },
                   {
                     "attributes": {
                       "name": "bytes32",
                       "type": "bytes32"
                     },
-                    "id": 7035,
+                    "id": 5583,
                     "name": "ElementaryTypeName",
-                    "src": "386:7:39"
+                    "src": "386:7:29"
                   }
                 ],
-                "id": 7036,
+                "id": 5584,
                 "name": "Mapping",
-                "src": "367:27:39"
+                "src": "367:27:29"
               }
             ],
-            "id": 7037,
+            "id": 5585,
             "name": "VariableDeclaration",
-            "src": "367:46:39"
+            "src": "367:46:29"
           },
           {
             "attributes": {
@@ -853,7 +853,7 @@
               "mutability": "mutable",
               "name": "processedExits",
               "overrides": null,
-              "scope": 7048,
+              "scope": 5596,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(bytes32 => bool)",
@@ -871,28 +871,28 @@
                       "name": "bytes32",
                       "type": "bytes32"
                     },
-                    "id": 7038,
+                    "id": 5586,
                     "name": "ElementaryTypeName",
-                    "src": "427:7:39"
+                    "src": "427:7:29"
                   },
                   {
                     "attributes": {
                       "name": "bool",
                       "type": "bool"
                     },
-                    "id": 7039,
+                    "id": 5587,
                     "name": "ElementaryTypeName",
-                    "src": "438:4:39"
+                    "src": "438:4:29"
                   }
                 ],
-                "id": 7040,
+                "id": 5588,
                 "name": "Mapping",
-                "src": "419:24:39"
+                "src": "419:24:29"
               }
             ],
-            "id": 7041,
+            "id": 5589,
             "name": "VariableDeclaration",
-            "src": "419:46:39"
+            "src": "419:46:29"
           },
           {
             "attributes": {
@@ -900,7 +900,7 @@
               "mutability": "mutable",
               "name": "_stateSender",
               "overrides": null,
-              "scope": 7048,
+              "scope": 5596,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "contract IStateSender",
@@ -912,17 +912,17 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "IStateSender",
-                  "referencedDeclaration": 7321,
+                  "referencedDeclaration": 5705,
                   "type": "contract IStateSender"
                 },
-                "id": 7042,
+                "id": 5590,
                 "name": "UserDefinedTypeName",
-                "src": "471:12:39"
+                "src": "471:12:29"
               }
             ],
-            "id": 7043,
+            "id": 5591,
             "name": "VariableDeclaration",
-            "src": "471:34:39"
+            "src": "471:34:29"
           },
           {
             "attributes": {
@@ -930,7 +930,7 @@
               "mutability": "mutable",
               "name": "_checkpointManager",
               "overrides": null,
-              "scope": 7048,
+              "scope": 5596,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "contract ICheckpointManager",
@@ -942,17 +942,17 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "ICheckpointManager",
-                  "referencedDeclaration": 6119,
+                  "referencedDeclaration": 4543,
                   "type": "contract ICheckpointManager"
                 },
-                "id": 7044,
+                "id": 5592,
                 "name": "UserDefinedTypeName",
-                "src": "511:18:39"
+                "src": "511:18:29"
               }
             ],
-            "id": 7045,
+            "id": 5593,
             "name": "VariableDeclaration",
-            "src": "511:46:39"
+            "src": "511:46:29"
           },
           {
             "attributes": {
@@ -961,7 +961,7 @@
               "mutability": "mutable",
               "name": "childChainManagerAddress",
               "overrides": null,
-              "scope": 7048,
+              "scope": 5596,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "address",
@@ -975,32 +975,32 @@
                   "stateMutability": "nonpayable",
                   "type": "address"
                 },
-                "id": 7046,
+                "id": 5594,
                 "name": "ElementaryTypeName",
-                "src": "563:7:39"
+                "src": "563:7:29"
               }
             ],
-            "id": 7047,
+            "id": 5595,
             "name": "VariableDeclaration",
-            "src": "563:39:39"
+            "src": "563:39:29"
           }
         ],
-        "id": 7048,
+        "id": 5596,
         "name": "ContractDefinition",
-        "src": "149:456:39"
+        "src": "149:456:29"
       }
     ],
-    "id": 7049,
+    "id": 5597,
     "name": "SourceUnit",
-    "src": "0:606:39"
+    "src": "0:606:29"
   },
   "compiler": {
     "name": "solc",
     "version": "0.6.6+commit.6c089d02.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.8",
-  "updatedAt": "2022-09-21T07:45:21.967Z",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-26T13:08:30.004Z",
   "devdoc": {
     "methods": {}
   },

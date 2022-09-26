@@ -84,7 +84,7 @@ module.exports = {
       //   gasPrice: 10000000000,
       networkCheckTimeout: 100000,
       // confirmations: 1,    // # of confs to wait between deployments. (default: 0)
-      // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true
     },
     rinkeby: {
@@ -122,7 +122,7 @@ module.exports = {
       // gasPrice: 10000000000,
       networkCheckTimeout: 100000,
       //  confirmations: 1,    // # of confs to wait between deployments. (default: 0)
-      // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true
     },
 

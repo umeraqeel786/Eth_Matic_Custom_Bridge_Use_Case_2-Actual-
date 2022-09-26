@@ -34,7 +34,8 @@ interface IRootChainManager {
     function depositFor(
         address user,
         address rootToken,
-        bytes calldata depositData
+        bytes calldata depositData,
+        address childERC20Predicate
     ) external;
 
     function exit(

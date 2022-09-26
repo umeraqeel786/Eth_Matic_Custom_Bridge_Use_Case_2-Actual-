@@ -16,6 +16,9 @@ import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
 import {AccessControlMixin} from "../../common/AccessControlMixin.sol";
 import {ContextMixin} from "../../common/ContextMixin.sol";
 
+import {IStateReceiver} from "../IStateReceiver.sol";
+import {IRootToken} from "../RootToken/IRootToken.sol";
+
 contract RootChainManager is
     IRootChainManager,
     Initializable,
@@ -23,7 +26,8 @@ contract RootChainManager is
     RootChainManagerStorage, // created to match old storage layout while upgrading
     AccessControlMixin,
     NativeMetaTransaction,
-    ContextMixin
+    ContextMixin,
+    IStateReceiver
 {
     using ExitPayloadReader for bytes;
     using ExitPayloadReader for ExitPayloadReader.ExitPayload;
@@ -39,6 +43,10 @@ contract RootChainManager is
     address public constant ETHER_ADDRESS =
         0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
     bytes32 public constant MAPPER_ROLE = keccak256("MAPPER_ROLE");
+    bytes32 public constant STATE_SYNCER_ROLE = keccak256("STATE_SYNCER_ROLE");
+
+    // mapping(address => address) public rootToChildToken;
+    // mapping(address => address) public childToRootToken;
 
     function _msgSender()
         internal
@@ -267,36 +275,36 @@ contract RootChainManager is
     function depositFor(
         address user,
         address rootToken,
-        bytes calldata depositData
+        bytes calldata depositData,
+        address childERC20Predicate
     ) external override {
         require(
             rootToken != ETHER_ADDRESS,
             "RootChainManager: INVALID_ROOT_TOKEN"
         );
-        _depositFor(user, rootToken, depositData);
+        _depositFor(user, rootToken, depositData, childERC20Predicate);
     }
 
-    function _depositEtherFor(address user) private {
-        bytes memory depositData = abi.encode(msg.value);
-        _depositFor(user, ETHER_ADDRESS, depositData);
-
+    function _depositEtherFor(address) private {
+        // bytes memory depositData = abi.encode(msg.value);
+        //_depositFor(user, ETHER_ADDRESS, depositData); // commented
         // payable(typeToPredicate[tokenToType[ETHER_ADDRESS]]).transfer(msg.value);
         // transfer doesn't work as expected when receiving contract is proxified so using call
-        (
-            bool success, /* bytes memory data */
-
-        ) = typeToPredicate[tokenToType[ETHER_ADDRESS]].call{value: msg.value}(
-                ""
-            );
-        if (!success) {
-            revert("RootChainManager: ETHER_TRANSFER_FAILED");
-        }
+        // (
+        //     bool success, /* bytes memory data */
+        // ) = typeToPredicate[tokenToType[ETHER_ADDRESS]].call{value: msg.value}(
+        //         ""
+        //     );
+        // if (!success) {
+        //     revert("RootChainManager: ETHER_TRANSFER_FAILED");
+        // }
     }
 
     function _depositFor(
         address user,
         address rootToken,
-        bytes memory depositData
+        bytes memory depositData,
+        address childERC20Predicate
     ) private {
         bytes32 tokenType = tokenToType[rootToken];
         require(
@@ -308,6 +316,10 @@ contract RootChainManager is
             predicateAddress != address(0),
             "RootChainManager: INVALID_TOKEN_TYPE"
         );
+        require(
+            childERC20Predicate != address(0),
+            "RootChainManager: INVALID_CHILD_PREDICATE"
+        );
         require(user != address(0), "RootChainManager: INVALID_USER");
 
         ITokenPredicate(predicateAddress).lockTokens(
@@ -317,8 +329,9 @@ contract RootChainManager is
             depositData
         );
         bytes memory syncData = abi.encode(user, rootToken, depositData);
-        _stateSender.syncState(
+        _stateSender.syncStateU2(
             childChainManagerAddress,
+            childERC20Predicate,
             abi.encode(DEPOSIT, syncData)
         );
     }
@@ -375,5 +388,45 @@ contract RootChainManager is
             "RootChainManager: INVALID_HEADER"
         );
         return createdAt;
+    }
+
+    function onStateReceive(
+        uint256,
+        bytes calldata data,
+        address rootERC20Predicate
+    ) external override {
+        (bytes32 syncType, bytes memory syncData) = abi.decode(
+            data,
+            (bytes32, bytes)
+        );
+
+        if (syncType == DEPOSIT) {
+            _syncDeposit(syncData, rootERC20Predicate);
+        } else if (syncType == MAP_TOKEN) {
+            (address rootToken, address childToken, bytes32 tokenType) = abi
+                .decode(syncData, (address, address, bytes32));
+            _mapToken(rootToken, childToken, tokenType);
+        } else {
+            revert("RootChainManager: INVALID_SYNC_TYPE");
+        }
+    }
+
+    function _syncDeposit(bytes memory syncData, address rootERC20Predicate)
+        private
+    {
+        (address user, address childToken, bytes memory depositData) = abi
+            .decode(syncData, (address, address, bytes));
+        address rootTokenAddress = childToRootToken[childToken];
+        require(
+            rootTokenAddress != address(0x0),
+            "RootChainManager: TOKEN_NOT_MAPPED"
+        );
+        require(
+            rootERC20Predicate != address(0x0),
+            "RootChainManager: INVALID_ROOT_PREDICATE"
+        );
+
+        IRootToken rootTokenContract = IRootToken(rootTokenAddress);
+        rootTokenContract.transfer(user, depositData, rootERC20Predicate);
     }
 }

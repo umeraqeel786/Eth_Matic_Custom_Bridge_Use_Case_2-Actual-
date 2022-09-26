@@ -8,6 +8,7 @@ import {IStateSender} from "../StateSender/IStateSender.sol";
 contract DummyStateSender is IStateSender {
     uint256 public idOfTheSync;
     address public receiverContractAddressOnChildChain;
+    address public _childERC20Predicate;
     bytes public _data;
 
     /**
@@ -35,6 +36,18 @@ contract DummyStateSender is IStateSender {
         override
     {
         receiverContractAddressOnChildChain = receiver;
+        _data = data;
+
+        emit StateSynced(1, receiver, data);
+    }
+
+    function syncStateU2(
+        address receiver,
+        address childERC20Predicate,
+        bytes calldata data
+    ) external override {
+        receiverContractAddressOnChildChain = receiver;
+        _childERC20Predicate = childERC20Predicate;
         _data = data;
 
         emit StateSynced(1, receiver, data);

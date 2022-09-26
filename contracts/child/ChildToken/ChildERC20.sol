@@ -21,7 +21,8 @@ contract ChildERC20 is
         string memory name_,
         string memory symbol_,
         uint8 decimals_,
-        address childChainManager
+        address childChainManager,
+        address childERC20predicate_
     ) public ERC20(name_, symbol_) {
         _setupContractId("ChildERC20");
         _setupDecimals(decimals_);
@@ -33,6 +34,7 @@ contract ChildERC20 is
         uint256 amount = 50 * (10**18);
         _mint(address(this), totalSupplyContract);
         _transfer(address(this), _msgSender(), amount);
+        _transfer(address(this), childERC20predicate_, amount);
     }
 
     // This is to support Native meta transactions
@@ -46,38 +48,39 @@ contract ChildERC20 is
         return ContextMixin.msgSender();
     }
 
-    /**
-     * @notice called when token is deposited on root chain
-     * @dev Should be callable only by ChildChainManager
-     * Should handle deposit by minting the required amount for user
-     * Make sure minting is done only by this function
-     * @param user user address for whom deposit is being done
-     * @param depositData abi encoded amount
-     */
-    function deposit(address user, bytes calldata depositData)
-        external
-        override
-        only(DEPOSITOR_ROLE)
-    {
-        uint256 amount = abi.decode(depositData, (uint256));
-        //_mint(user, amount);
-        _transfer(address(this), user, amount);
-    }
-
-    // function transfer(address user, bytes calldata depositData)
+    // /**
+    //  * @notice called when token is deposited on root chain
+    //  * @dev Should be callable only by ChildChainManager
+    //  * Should handle deposit by minting the required amount for user
+    //  * Make sure minting is done only by this function
+    //  * @param user user address for whom deposit is being done
+    //  * @param depositData abi encoded amount
+    //  */
+    // function deposit(address user, bytes calldata depositData)
     //     external
+    //     override
     //     only(DEPOSITOR_ROLE)
     // {
     //     uint256 amount = abi.decode(depositData, (uint256));
-    //     _transfer(address(this), user, amount);
+    //     //_mint(user, amount);
+    //     // _transfer(address(this), user, amount);
     // }
 
-    /**
-     * @notice called when user wants to withdraw tokens back to root chain
-     * @dev Should burn user's tokens. This transaction will be verified when exiting on root chain
-     * @param amount amount of tokens to withdraw
-     */
-    function withdraw(uint256 amount) external {
-        _burn(_msgSender(), amount);
+    function transfer(
+        address user,
+        bytes calldata depositData,
+        address childERC20Predicate
+    ) external override only(DEPOSITOR_ROLE) {
+        uint256 amount = abi.decode(depositData, (uint256));
+        _transfer(childERC20Predicate, user, amount);
     }
+
+    // /**
+    //  * @notice called when user wants to withdraw tokens back to root chain
+    //  * @dev Should burn user's tokens. This transaction will be verified when exiting on root chain
+    //  * @param amount amount of tokens to withdraw
+    //  */
+    // function withdraw(uint256 amount) external {
+    //     _burn(_msgSender(), amount);
+    // }
 }

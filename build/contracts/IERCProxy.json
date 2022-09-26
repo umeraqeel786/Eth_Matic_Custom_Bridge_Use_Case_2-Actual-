@@ -35,26 +35,26 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity 0.6.6;\n\ninterface IERCProxy {\n    function proxyType() external pure returns (uint256 proxyTypeId);\n\n    function implementation() external view returns (address codeAddr);\n}\n",
-  "sourcePath": "/home/moiz/NETSOl/Task-25, Bridge between polygon and ethereum (erc-20) Use-case 2/Ethereum_Polygon_Custom_Bridge_ERC20_Contracts_on_Testnet_without_status_Checks_Use_case_2/contracts/common/Proxy/IERCProxy.sol",
+  "sourcePath": "/home/moiz/Desktop/Eth_Matic_Custom_Bridge_Use_Case_2-Actual-/contracts/common/Proxy/IERCProxy.sol",
   "ast": {
     "absolutePath": "project:/contracts/common/Proxy/IERCProxy.sol",
     "exportedSymbols": {
       "IERCProxy": [
-        3931
+        4059
       ]
     },
-    "id": 3932,
+    "id": 4060,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3920,
+        "id": 4048,
         "literals": [
           "solidity",
           "0.6",
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:22:26"
+        "src": "0:22:28"
       },
       {
         "abstract": false,
@@ -63,9 +63,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3931,
+        "id": 4059,
         "linearizedBaseContracts": [
-          3931
+          4059
         ],
         "name": "IERCProxy",
         "nodeType": "ContractDefinition",
@@ -74,7 +74,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "4555d5c9",
-            "id": 3925,
+            "id": 4053,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -82,24 +82,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3921,
+              "id": 4049,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "68:2:26"
+              "src": "68:2:28"
             },
             "returnParameters": {
-              "id": 3924,
+              "id": 4052,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3923,
+                  "id": 4051,
                   "mutability": "mutable",
                   "name": "proxyTypeId",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3925,
-                  "src": "94:19:26",
+                  "scope": 4053,
+                  "src": "94:19:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -107,10 +107,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3922,
+                    "id": 4050,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "94:7:26",
+                    "src": "94:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -120,10 +120,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "93:21:26"
+              "src": "93:21:28"
             },
-            "scope": 3931,
-            "src": "50:65:26",
+            "scope": 4059,
+            "src": "50:65:28",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "external"
@@ -132,7 +132,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "5c60da1b",
-            "id": 3930,
+            "id": 4058,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -140,24 +140,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3926,
+              "id": 4054,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "144:2:26"
+              "src": "144:2:28"
             },
             "returnParameters": {
-              "id": 3929,
+              "id": 4057,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3928,
+                  "id": 4056,
                   "mutability": "mutable",
                   "name": "codeAddr",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3930,
-                  "src": "170:16:26",
+                  "scope": 4058,
+                  "src": "170:16:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -165,10 +165,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3927,
+                    "id": 4055,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "170:7:26",
+                    "src": "170:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -179,27 +179,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "169:18:26"
+              "src": "169:18:28"
             },
-            "scope": 3931,
-            "src": "121:67:26",
+            "scope": 4059,
+            "src": "121:67:28",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 3932,
-        "src": "24:166:26"
+        "scope": 4060,
+        "src": "24:166:28"
       }
     ],
-    "src": "0:191:26"
+    "src": "0:191:28"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/common/Proxy/IERCProxy.sol",
       "exportedSymbols": {
         "IERCProxy": [
-          3931
+          4059
         ]
       }
     },
@@ -212,9 +212,9 @@
             ".6"
           ]
         },
-        "id": 3920,
+        "id": 4048,
         "name": "PragmaDirective",
-        "src": "0:22:26"
+        "src": "0:22:28"
       },
       {
         "attributes": {
@@ -229,10 +229,10 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            3931
+            4059
           ],
           "name": "IERCProxy",
-          "scope": 3932
+          "scope": 4060
         },
         "children": [
           {
@@ -248,7 +248,7 @@
               ],
               "name": "proxyType",
               "overrides": null,
-              "scope": 3931,
+              "scope": 4059,
               "stateMutability": "pure",
               "virtual": false,
               "visibility": "external"
@@ -261,9 +261,9 @@
                   ]
                 },
                 "children": [],
-                "id": 3921,
+                "id": 4049,
                 "name": "ParameterList",
-                "src": "68:2:26"
+                "src": "68:2:28"
               },
               {
                 "children": [
@@ -273,7 +273,7 @@
                       "mutability": "mutable",
                       "name": "proxyTypeId",
                       "overrides": null,
-                      "scope": 3925,
+                      "scope": 4053,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -286,24 +286,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 3922,
+                        "id": 4050,
                         "name": "ElementaryTypeName",
-                        "src": "94:7:26"
+                        "src": "94:7:28"
                       }
                     ],
-                    "id": 3923,
+                    "id": 4051,
                     "name": "VariableDeclaration",
-                    "src": "94:19:26"
+                    "src": "94:19:28"
                   }
                 ],
-                "id": 3924,
+                "id": 4052,
                 "name": "ParameterList",
-                "src": "93:21:26"
+                "src": "93:21:28"
               }
             ],
-            "id": 3925,
+            "id": 4053,
             "name": "FunctionDefinition",
-            "src": "50:65:26"
+            "src": "50:65:28"
           },
           {
             "attributes": {
@@ -318,7 +318,7 @@
               ],
               "name": "implementation",
               "overrides": null,
-              "scope": 3931,
+              "scope": 4059,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -331,9 +331,9 @@
                   ]
                 },
                 "children": [],
-                "id": 3926,
+                "id": 4054,
                 "name": "ParameterList",
-                "src": "144:2:26"
+                "src": "144:2:28"
               },
               {
                 "children": [
@@ -343,7 +343,7 @@
                       "mutability": "mutable",
                       "name": "codeAddr",
                       "overrides": null,
-                      "scope": 3930,
+                      "scope": 4058,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -357,34 +357,34 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 3927,
+                        "id": 4055,
                         "name": "ElementaryTypeName",
-                        "src": "170:7:26"
+                        "src": "170:7:28"
                       }
                     ],
-                    "id": 3928,
+                    "id": 4056,
                     "name": "VariableDeclaration",
-                    "src": "170:16:26"
+                    "src": "170:16:28"
                   }
                 ],
-                "id": 3929,
+                "id": 4057,
                 "name": "ParameterList",
-                "src": "169:18:26"
+                "src": "169:18:28"
               }
             ],
-            "id": 3930,
+            "id": 4058,
             "name": "FunctionDefinition",
-            "src": "121:67:26"
+            "src": "121:67:28"
           }
         ],
-        "id": 3931,
+        "id": 4059,
         "name": "ContractDefinition",
-        "src": "24:166:26"
+        "src": "24:166:28"
       }
     ],
-    "id": 3932,
+    "id": 4060,
     "name": "SourceUnit",
-    "src": "0:191:26"
+    "src": "0:191:28"
   },
   "compiler": {
     "name": "solc",
@@ -392,7 +392,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
-  "updatedAt": "2022-09-21T07:45:21.934Z",
+  "updatedAt": "2022-09-25T12:21:43.536Z",
   "devdoc": {
     "methods": {}
   },
