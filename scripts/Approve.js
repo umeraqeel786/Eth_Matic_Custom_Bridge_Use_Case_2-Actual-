@@ -28,6 +28,6 @@ async function approve(rootERC20Predicate, tokenAmount) {
 let weiAmount = ethers.utils.parseEther('10');
 
 approve(
-    "0x286459A7bad31D4F8a4E3B52F9B54C1E268a7cF6",
+    "0x1DAf03D5F32176049c4F7F6633ef4aCeb3d0C22C",
     weiAmount
 );

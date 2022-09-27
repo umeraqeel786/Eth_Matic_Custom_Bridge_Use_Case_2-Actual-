@@ -32,4 +32,10 @@ interface IChildChainManager {
         bytes calldata depositData,
         address childERC20Predicate
     ) external;
+
+    function exit(
+        address _predicateAddress,
+        address _childTokenAddress,
+        uint256 _tokenAmount
+    ) external;
 }

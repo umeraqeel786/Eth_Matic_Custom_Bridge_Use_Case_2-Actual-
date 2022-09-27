@@ -78,14 +78,14 @@
     "absolutePath": "project:/contracts/child/TokenPredicates/ITokenPredicate.sol",
     "exportedSymbols": {
       "ITokenPredicate": [
-        3065
+        3097
       ]
     },
-    "id": 3066,
+    "id": 3098,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3034,
+        "id": 3066,
         "literals": [
           "solidity",
           "0.6",
@@ -97,16 +97,16 @@
       {
         "absolutePath": "project:/contracts/lib/RLPReader.sol",
         "file": "../../lib/RLPReader.sol",
-        "id": 3036,
+        "id": 3068,
         "nodeType": "ImportDirective",
-        "scope": 3066,
-        "sourceUnit": 5304,
+        "scope": 3098,
+        "sourceUnit": 5336,
         "src": "24:50:17",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 3035,
+              "id": 3067,
               "name": "RLPReader",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -128,15 +128,15 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 3037,
+          "id": 3069,
           "nodeType": "StructuredDocumentation",
           "src": "76:141:17",
           "text": "@title Token predicate interface for all pos portal predicates\n @notice Abstract interface that defines methods for custom predicates"
         },
         "fullyImplemented": false,
-        "id": 3065,
+        "id": 3097,
         "linearizedBaseContracts": [
-          3065
+          3097
         ],
         "name": "ITokenPredicate",
         "nodeType": "ContractDefinition",
@@ -144,13 +144,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 3038,
+              "id": 3070,
               "nodeType": "StructuredDocumentation",
               "src": "249:471:17",
               "text": "@notice Deposit tokens into pos portal\n@dev When `depositor` deposits tokens into pos portal, tokens get locked into predicate contract.\n@param depositor Address who wants to deposit tokens\n@param depositReceiver Address (address) who wants to receive tokens on side chain\n@param rootToken Token which gets deposited\n@param depositData Extra data for deposit (amount for ERC20, token id for ERC721 etc.) [ABI encoded]"
             },
             "functionSelector": "e375b64e",
-            "id": 3049,
+            "id": 3081,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -158,17 +158,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3047,
+              "id": 3079,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3040,
+                  "id": 3072,
                   "mutability": "mutable",
                   "name": "depositor",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3049,
+                  "scope": 3081,
                   "src": "754:17:17",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -177,7 +177,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3039,
+                    "id": 3071,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "754:7:17",
@@ -192,12 +192,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 3042,
+                  "id": 3074,
                   "mutability": "mutable",
                   "name": "depositReceiver",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3049,
+                  "scope": 3081,
                   "src": "781:23:17",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -206,7 +206,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3041,
+                    "id": 3073,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "781:7:17",
@@ -221,12 +221,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 3044,
+                  "id": 3076,
                   "mutability": "mutable",
                   "name": "rootToken",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3049,
+                  "scope": 3081,
                   "src": "814:17:17",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -235,7 +235,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3043,
+                    "id": 3075,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "814:7:17",
@@ -250,12 +250,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 3046,
+                  "id": 3078,
                   "mutability": "mutable",
                   "name": "depositData",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3049,
+                  "scope": 3081,
                   "src": "841:26:17",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -264,7 +264,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3045,
+                    "id": 3077,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "841:5:17",
@@ -280,12 +280,12 @@
               "src": "744:129:17"
             },
             "returnParameters": {
-              "id": 3048,
+              "id": 3080,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "882:0:17"
             },
-            "scope": 3065,
+            "scope": 3097,
             "src": "725:158:17",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -294,13 +294,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 3050,
+              "id": 3082,
               "nodeType": "StructuredDocumentation",
               "src": "889:488:17",
               "text": "@notice processes exit while withdraw process\n@dev This function releases the ERC20 Tokens that where locked in by ERC20Predicate contract when RootchainManagers depositFor() was called.\n     * @param _withdrawer: Root chain Address whose ERC20Tokens were deposited and locked.\n@param _rootTokenAddress: Root Token address  on Ethereum Chain.\n@param _tokenAmount: ERC20 Tokens Amount which needs to be unlocked and refunded on the root chain"
             },
             "functionSelector": "988ec987",
-            "id": 3059,
+            "id": 3091,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -308,17 +308,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3057,
+              "id": 3089,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3052,
+                  "id": 3084,
                   "mutability": "mutable",
                   "name": "_withdrawer",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3059,
+                  "scope": 3091,
                   "src": "1411:19:17",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -327,7 +327,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3051,
+                    "id": 3083,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1411:7:17",
@@ -342,12 +342,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 3054,
+                  "id": 3086,
                   "mutability": "mutable",
                   "name": "_rootTokenAddress",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3059,
+                  "scope": 3091,
                   "src": "1440:25:17",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -356,7 +356,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3053,
+                    "id": 3085,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1440:7:17",
@@ -371,12 +371,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 3056,
+                  "id": 3088,
                   "mutability": "mutable",
                   "name": "_tokenAmount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3059,
+                  "scope": 3091,
                   "src": "1475:20:17",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -385,7 +385,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3055,
+                    "id": 3087,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1475:7:17",
@@ -401,12 +401,12 @@
               "src": "1401:100:17"
             },
             "returnParameters": {
-              "id": 3058,
+              "id": 3090,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1510:0:17"
             },
-            "scope": 3065,
+            "scope": 3097,
             "src": "1382:129:17",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -416,7 +416,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "8b7afe2e",
-            "id": 3064,
+            "id": 3096,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -424,23 +424,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3060,
+              "id": 3092,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1541:2:17"
             },
             "returnParameters": {
-              "id": 3063,
+              "id": 3095,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3062,
+                  "id": 3094,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3064,
+                  "scope": 3096,
                   "src": "1567:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -449,7 +449,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3061,
+                    "id": 3093,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1567:7:17",
@@ -464,14 +464,14 @@
               ],
               "src": "1566:9:17"
             },
-            "scope": 3065,
+            "scope": 3097,
             "src": "1517:59:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 3066,
+        "scope": 3098,
         "src": "217:1361:17"
       }
     ],
@@ -482,7 +482,7 @@
       "absolutePath": "project:/contracts/child/TokenPredicates/ITokenPredicate.sol",
       "exportedSymbols": {
         "ITokenPredicate": [
-          3065
+          3097
         ]
       }
     },
@@ -495,16 +495,16 @@
             ".6"
           ]
         },
-        "id": 3034,
+        "id": 3066,
         "name": "PragmaDirective",
         "src": "0:22:17"
       },
       {
         "attributes": {
-          "SourceUnit": 5304,
+          "SourceUnit": 5336,
           "absolutePath": "project:/contracts/lib/RLPReader.sol",
           "file": "../../lib/RLPReader.sol",
-          "scope": 3066,
+          "scope": 3098,
           "symbolAliases": [
             {
               "foreign": {
@@ -517,7 +517,7 @@
                   "type": null,
                   "value": "RLPReader"
                 },
-                "id": 3035,
+                "id": 3067,
                 "name": "Identifier",
                 "src": "32:9:17"
               },
@@ -526,7 +526,7 @@
           ],
           "unitAlias": ""
         },
-        "id": 3036,
+        "id": 3068,
         "name": "ImportDirective",
         "src": "24:50:17"
       },
@@ -542,17 +542,17 @@
           "contractKind": "interface",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            3065
+            3097
           ],
           "name": "ITokenPredicate",
-          "scope": 3066
+          "scope": 3098
         },
         "children": [
           {
             "attributes": {
               "text": "@title Token predicate interface for all pos portal predicates\n @notice Abstract interface that defines methods for custom predicates"
             },
-            "id": 3037,
+            "id": 3069,
             "name": "StructuredDocumentation",
             "src": "76:141:17"
           },
@@ -568,7 +568,7 @@
               ],
               "name": "lockTokens",
               "overrides": null,
-              "scope": 3065,
+              "scope": 3097,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -578,7 +578,7 @@
                 "attributes": {
                   "text": "@notice Deposit tokens into pos portal\n@dev When `depositor` deposits tokens into pos portal, tokens get locked into predicate contract.\n@param depositor Address who wants to deposit tokens\n@param depositReceiver Address (address) who wants to receive tokens on side chain\n@param rootToken Token which gets deposited\n@param depositData Extra data for deposit (amount for ERC20, token id for ERC721 etc.) [ABI encoded]"
                 },
-                "id": 3038,
+                "id": 3070,
                 "name": "StructuredDocumentation",
                 "src": "249:471:17"
               },
@@ -590,7 +590,7 @@
                       "mutability": "mutable",
                       "name": "depositor",
                       "overrides": null,
-                      "scope": 3049,
+                      "scope": 3081,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -604,12 +604,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 3039,
+                        "id": 3071,
                         "name": "ElementaryTypeName",
                         "src": "754:7:17"
                       }
                     ],
-                    "id": 3040,
+                    "id": 3072,
                     "name": "VariableDeclaration",
                     "src": "754:17:17"
                   },
@@ -619,7 +619,7 @@
                       "mutability": "mutable",
                       "name": "depositReceiver",
                       "overrides": null,
-                      "scope": 3049,
+                      "scope": 3081,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -633,12 +633,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 3041,
+                        "id": 3073,
                         "name": "ElementaryTypeName",
                         "src": "781:7:17"
                       }
                     ],
-                    "id": 3042,
+                    "id": 3074,
                     "name": "VariableDeclaration",
                     "src": "781:23:17"
                   },
@@ -648,7 +648,7 @@
                       "mutability": "mutable",
                       "name": "rootToken",
                       "overrides": null,
-                      "scope": 3049,
+                      "scope": 3081,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -662,12 +662,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 3043,
+                        "id": 3075,
                         "name": "ElementaryTypeName",
                         "src": "814:7:17"
                       }
                     ],
-                    "id": 3044,
+                    "id": 3076,
                     "name": "VariableDeclaration",
                     "src": "814:17:17"
                   },
@@ -677,7 +677,7 @@
                       "mutability": "mutable",
                       "name": "depositData",
                       "overrides": null,
-                      "scope": 3049,
+                      "scope": 3081,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -690,17 +690,17 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 3045,
+                        "id": 3077,
                         "name": "ElementaryTypeName",
                         "src": "841:5:17"
                       }
                     ],
-                    "id": 3046,
+                    "id": 3078,
                     "name": "VariableDeclaration",
                     "src": "841:26:17"
                   }
                 ],
-                "id": 3047,
+                "id": 3079,
                 "name": "ParameterList",
                 "src": "744:129:17"
               },
@@ -711,12 +711,12 @@
                   ]
                 },
                 "children": [],
-                "id": 3048,
+                "id": 3080,
                 "name": "ParameterList",
                 "src": "882:0:17"
               }
             ],
-            "id": 3049,
+            "id": 3081,
             "name": "FunctionDefinition",
             "src": "725:158:17"
           },
@@ -732,7 +732,7 @@
               ],
               "name": "exitTokens",
               "overrides": null,
-              "scope": 3065,
+              "scope": 3097,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -742,7 +742,7 @@
                 "attributes": {
                   "text": "@notice processes exit while withdraw process\n@dev This function releases the ERC20 Tokens that where locked in by ERC20Predicate contract when RootchainManagers depositFor() was called.\n     * @param _withdrawer: Root chain Address whose ERC20Tokens were deposited and locked.\n@param _rootTokenAddress: Root Token address  on Ethereum Chain.\n@param _tokenAmount: ERC20 Tokens Amount which needs to be unlocked and refunded on the root chain"
                 },
-                "id": 3050,
+                "id": 3082,
                 "name": "StructuredDocumentation",
                 "src": "889:488:17"
               },
@@ -754,7 +754,7 @@
                       "mutability": "mutable",
                       "name": "_withdrawer",
                       "overrides": null,
-                      "scope": 3059,
+                      "scope": 3091,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -768,12 +768,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 3051,
+                        "id": 3083,
                         "name": "ElementaryTypeName",
                         "src": "1411:7:17"
                       }
                     ],
-                    "id": 3052,
+                    "id": 3084,
                     "name": "VariableDeclaration",
                     "src": "1411:19:17"
                   },
@@ -783,7 +783,7 @@
                       "mutability": "mutable",
                       "name": "_rootTokenAddress",
                       "overrides": null,
-                      "scope": 3059,
+                      "scope": 3091,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -797,12 +797,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 3053,
+                        "id": 3085,
                         "name": "ElementaryTypeName",
                         "src": "1440:7:17"
                       }
                     ],
-                    "id": 3054,
+                    "id": 3086,
                     "name": "VariableDeclaration",
                     "src": "1440:25:17"
                   },
@@ -812,7 +812,7 @@
                       "mutability": "mutable",
                       "name": "_tokenAmount",
                       "overrides": null,
-                      "scope": 3059,
+                      "scope": 3091,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -825,17 +825,17 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 3055,
+                        "id": 3087,
                         "name": "ElementaryTypeName",
                         "src": "1475:7:17"
                       }
                     ],
-                    "id": 3056,
+                    "id": 3088,
                     "name": "VariableDeclaration",
                     "src": "1475:20:17"
                   }
                 ],
-                "id": 3057,
+                "id": 3089,
                 "name": "ParameterList",
                 "src": "1401:100:17"
               },
@@ -846,12 +846,12 @@
                   ]
                 },
                 "children": [],
-                "id": 3058,
+                "id": 3090,
                 "name": "ParameterList",
                 "src": "1510:0:17"
               }
             ],
-            "id": 3059,
+            "id": 3091,
             "name": "FunctionDefinition",
             "src": "1382:129:17"
           },
@@ -868,7 +868,7 @@
               ],
               "name": "contractBalance",
               "overrides": null,
-              "scope": 3065,
+              "scope": 3097,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -881,7 +881,7 @@
                   ]
                 },
                 "children": [],
-                "id": 3060,
+                "id": 3092,
                 "name": "ParameterList",
                 "src": "1541:2:17"
               },
@@ -893,7 +893,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 3064,
+                      "scope": 3096,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -906,32 +906,32 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 3061,
+                        "id": 3093,
                         "name": "ElementaryTypeName",
                         "src": "1567:7:17"
                       }
                     ],
-                    "id": 3062,
+                    "id": 3094,
                     "name": "VariableDeclaration",
                     "src": "1567:7:17"
                   }
                 ],
-                "id": 3063,
+                "id": 3095,
                 "name": "ParameterList",
                 "src": "1566:9:17"
               }
             ],
-            "id": 3064,
+            "id": 3096,
             "name": "FunctionDefinition",
             "src": "1517:59:17"
           }
         ],
-        "id": 3065,
+        "id": 3097,
         "name": "ContractDefinition",
         "src": "217:1361:17"
       }
     ],
-    "id": 3066,
+    "id": 3098,
     "name": "SourceUnit",
     "src": "0:1579:17"
   },
@@ -941,7 +941,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-27T07:32:37.021Z",
+  "updatedAt": "2022-09-27T10:31:04.855Z",
   "devdoc": {
     "methods": {
       "exitTokens(address,address,uint256)": {

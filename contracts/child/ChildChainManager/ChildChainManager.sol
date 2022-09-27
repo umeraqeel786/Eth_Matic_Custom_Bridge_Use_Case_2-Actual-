@@ -285,4 +285,20 @@ contract ChildChainManager is
             abi.encode(MAP_TOKEN, syncData)
         );
     }
+
+    function exit(
+        address _predicateAddress,
+        address _childTokenAddress,
+        uint256 _tokenAmount
+    ) external override only(DEFAULT_ADMIN_ROLE) {
+        // address rootToken = childToRootToken[log.getEmitter()];
+        // require(rootToken != address(0), "RootChainManager: TOKEN_NOT_MAPPED");
+        // address predicateAddress = typeToPredicate[tokenToType[rootToken]];
+
+        ITokenPredicate(_predicateAddress).exitTokens(
+            _msgSender(),
+            _childTokenAddress,
+            _tokenAmount
+        );
+    }
 }

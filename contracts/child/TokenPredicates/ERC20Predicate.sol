@@ -32,7 +32,7 @@ contract ChildERC20Predicate is
 
     event ExitedERC20(
         address indexed exitor,
-        address indexed rootToken,
+        address indexed childToken,
         uint256 amount
     );
 
@@ -68,22 +68,14 @@ contract ChildERC20Predicate is
         IERC20(rootToken).safeTransferFrom(depositor, address(this), amount);
     }
 
-    /**
-     * @notice Sends the correct amount of ERC20Tokens to withdrawer address that locked ERC20Tokens on the rootChain.
-     * callable only by manager
-     * @param _withdrawer: Root chain Address whose ERC20Tokens were deposited and locked.
-     * @param _rootTokenAddress: Root Token address  on Ethereum Chain.
-     * @param _tokenAmount: ERC20 Tokens Amount which needs to be unlocked and refunded on the root chain
-     */
-
     function exitTokens(
         address _withdrawer,
-        address _rootTokenAddress,
+        address _childTokenAddress,
         uint256 _tokenAmount
     ) public override only(MANAGER_ROLE) {
-        IERC20(_rootTokenAddress).safeTransfer(_withdrawer, _tokenAmount);
+        IERC20(_childTokenAddress).safeTransfer(_withdrawer, _tokenAmount);
 
-        emit ExitedERC20(_withdrawer, _rootTokenAddress, _tokenAmount);
+        emit ExitedERC20(_withdrawer, _childTokenAddress, _tokenAmount);
     }
 
     function contractBalance() external view override returns (uint256) {

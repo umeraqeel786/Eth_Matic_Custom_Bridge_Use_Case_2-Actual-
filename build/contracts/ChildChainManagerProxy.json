@@ -929,10 +929,100 @@
       "links": {},
       "address": "0x8a1b2A94092AB24062FC210392ac4Bcd48b97c9d",
       "transactionHash": "0xb3ef18e3afac1425ce74883265424eaff3a0ce85f10826c9c5063759f36bf922"
+    },
+    "1664273137734": {
+      "events": {
+        "0xdbe5fd65bcdbae152f24ab660ea68e72b4d4705b57b16e0caae994e214680ee2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_new",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_old",
+              "type": "address"
+            }
+          ],
+          "name": "ProxyOwnerUpdate",
+          "type": "event"
+        },
+        "0xd32d24edea94f55e932d9a008afc425a8561462d1b1f57bc6e508e9a6b9509e1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_new",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_old",
+              "type": "address"
+            }
+          ],
+          "name": "ProxyUpdated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x8a1b2A94092AB24062FC210392ac4Bcd48b97c9d",
+      "transactionHash": "0xb3ef18e3afac1425ce74883265424eaff3a0ce85f10826c9c5063759f36bf922"
+    },
+    "1664273145661": {
+      "events": {
+        "0xdbe5fd65bcdbae152f24ab660ea68e72b4d4705b57b16e0caae994e214680ee2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_new",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_old",
+              "type": "address"
+            }
+          ],
+          "name": "ProxyOwnerUpdate",
+          "type": "event"
+        },
+        "0xd32d24edea94f55e932d9a008afc425a8561462d1b1f57bc6e508e9a6b9509e1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_new",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_old",
+              "type": "address"
+            }
+          ],
+          "name": "ProxyUpdated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xF0eF03aE996C460246DfF31585AB4b14e1CB615A",
+      "transactionHash": "0x0c3cb6275fda6ab8550b6516cb28b06d483f02cebae3d0416542d6012b2da9f4"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-27T07:31:52.291Z",
+  "updatedAt": "2022-09-27T10:29:12.580Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
