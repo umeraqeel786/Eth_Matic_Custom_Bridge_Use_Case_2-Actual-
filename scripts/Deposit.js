@@ -30,6 +30,6 @@ async function deposit(receiverAddressPolygon, rootTokenContractAddress, childER
 }
 
 deposit("0x2262375112F06f445ba155d90FF1a260d7De5269",
-    "0xB811373A8f84Ede53c8aA870E5495bbEF34cb8f4",
-    "0xFc1bbE999C75C862FfBdA5Dba77730E54f5db24B"
+    "0x55FDDC8A0c5367d50682d76cd9674F5aB362A6Bf",
+    "0xA36B49537996fE54986B019d8eF3138b8cfff1aC"
 );

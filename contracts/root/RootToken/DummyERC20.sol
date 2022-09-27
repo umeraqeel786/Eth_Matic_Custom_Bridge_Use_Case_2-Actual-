@@ -9,7 +9,13 @@ import {ContextMixin} from "../../common/ContextMixin.sol";
 import {IRootToken} from "./IRootToken.sol";
 import {AccessControlMixin} from "../../common/AccessControlMixin.sol";
 
-contract DummyERC20 is ERC20, NativeMetaTransaction, ContextMixin, IRootToken {
+contract DummyERC20 is
+    ERC20,
+    NativeMetaTransaction,
+    ContextMixin,
+    IRootToken,
+    AccessControlMixin
+{
     bytes32 public constant DEPOSITOR_ROLE = keccak256("DEPOSITOR_ROLE");
 
     uint256 private totalSupplyContract;
@@ -17,10 +23,10 @@ contract DummyERC20 is ERC20, NativeMetaTransaction, ContextMixin, IRootToken {
     constructor(
         string memory name_,
         string memory symbol_,
-        // address rootChainManager,
+        address rootChainManager,
         address rootERC20Predicate_
     ) public ERC20(name_, symbol_) {
-        // _setupRole(DEPOSITOR_ROLE, rootChainManager);
+        _setupRole(DEPOSITOR_ROLE, rootChainManager);
         _initializeEIP712(name_);
 
         totalSupplyContract = 100 * (10**18);
@@ -39,7 +45,7 @@ contract DummyERC20 is ERC20, NativeMetaTransaction, ContextMixin, IRootToken {
         address user,
         bytes calldata depositData,
         address rootERC20Predicate
-    ) external override {
+    ) external override only(DEPOSITOR_ROLE) {
         uint256 amount = abi.decode(depositData, (uint256));
         _transfer(rootERC20Predicate, user, amount);
     }

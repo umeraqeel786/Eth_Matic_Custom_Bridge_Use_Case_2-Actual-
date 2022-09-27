@@ -19,7 +19,7 @@ const DummyERC20 = artifacts.require('DummyERC20')
 // const TestRootTunnel = artifacts.require('TestRootTunnel')
 // const TestChildTunnel = artifacts.require('TestChildTunnel')
 
-const utils = require('./utils')
+const utils = require('../migrations/utils')
 
 module.exports = async (deployer, network, accounts) => {
   await deployer
@@ -39,7 +39,7 @@ module.exports = async (deployer, network, accounts) => {
   await deployer.deploy(DummyStateSender)
 
   // -- Dummy version of ERC20
-  await deployer.deploy(DummyERC20, 'WRLDTest', 'WRLDERC20', ERC20PredicateProxy.address)
+  await deployer.deploy(DummyERC20, 'WRLDTest', 'WRLDERC20', RootChainManagerProxy.address, ERC20PredicateProxy.address)
   // await deployer.deploy(DummyMintableERC20, 'WRLDTest Mintable ERC20', 'WRLDMERC20')
   // -- ends
 

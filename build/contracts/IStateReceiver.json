@@ -25,33 +25,33 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"childERC20Predicate\",\"type\":\"address\"}],\"name\":\"onStateReceive\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/child/IStateReceiver.sol\":\"IStateReceiver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/child/IStateReceiver.sol\":{\"keccak256\":\"0xcca9891fcb4b717083a970229c2ed22d5d0605cd711e2d7a87159bc1b185aaa5\",\"urls\":[\"bzz-raw://e5528f2450f29ce37edabab1b353d38bd870e4c026e75a4c9339a28b863cc9a7\",\"dweb:/ipfs/QmP5srYAgKLa7iz2hTF9ztbdUtAi5ENHuwQFHYPV7uCWAm\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"childERC20Predicate\",\"type\":\"address\"}],\"name\":\"onStateReceive\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/root/IStateReceiver.sol\":\"IStateReceiver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/root/IStateReceiver.sol\":{\"keccak256\":\"0xcca9891fcb4b717083a970229c2ed22d5d0605cd711e2d7a87159bc1b185aaa5\",\"urls\":[\"bzz-raw://e5528f2450f29ce37edabab1b353d38bd870e4c026e75a4c9339a28b863cc9a7\",\"dweb:/ipfs/QmP5srYAgKLa7iz2hTF9ztbdUtAi5ENHuwQFHYPV7uCWAm\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity 0.6.6;\n\ninterface IStateReceiver {\n    function onStateReceive(\n        uint256 id,\n        bytes calldata data,\n        address childERC20Predicate\n    ) external;\n}\n",
-  "sourcePath": "/home/moiz/Desktop/Eth_Matic_Custom_Bridge_Use_Case_2-Actual-/contracts/child/IStateReceiver.sol",
+  "sourcePath": "/home/moiz/Desktop/Eth_Matic_Custom_Bridge_Use_Case_2-Actual-/contracts/root/IStateReceiver.sol",
   "ast": {
-    "absolutePath": "project:/contracts/child/IStateReceiver.sol",
+    "absolutePath": "project:/contracts/root/IStateReceiver.sol",
     "exportedSymbols": {
       "IStateReceiver": [
-        2235
+        5333
       ]
     },
-    "id": 2236,
+    "id": 5334,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2225,
+        "id": 5323,
         "literals": [
           "solidity",
           "0.6",
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:22:12"
+        "src": "0:22:28"
       },
       {
         "abstract": false,
@@ -60,9 +60,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 2235,
+        "id": 5333,
         "linearizedBaseContracts": [
-          2235
+          5333
         ],
         "name": "IStateReceiver",
         "nodeType": "ContractDefinition",
@@ -71,7 +71,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "9e657a34",
-            "id": 2234,
+            "id": 5332,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -79,18 +79,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 2232,
+              "id": 5330,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2227,
+                  "id": 5325,
                   "mutability": "mutable",
                   "name": "id",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 2234,
-                  "src": "88:10:12",
+                  "scope": 5332,
+                  "src": "88:10:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -98,10 +98,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2226,
+                    "id": 5324,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "88:7:12",
+                    "src": "88:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -112,13 +112,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2229,
+                  "id": 5327,
                   "mutability": "mutable",
                   "name": "data",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 2234,
-                  "src": "108:19:12",
+                  "scope": 5332,
+                  "src": "108:19:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -126,10 +126,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 2228,
+                    "id": 5326,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "108:5:12",
+                    "src": "108:5:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -140,13 +140,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2231,
+                  "id": 5329,
                   "mutability": "mutable",
                   "name": "childERC20Predicate",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 2234,
-                  "src": "137:27:12",
+                  "scope": 5332,
+                  "src": "137:27:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -154,10 +154,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2230,
+                    "id": 5328,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "137:7:12",
+                    "src": "137:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -168,33 +168,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "78:92:12"
+              "src": "78:92:28"
             },
             "returnParameters": {
-              "id": 2233,
+              "id": 5331,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "179:0:12"
+              "src": "179:0:28"
             },
-            "scope": 2235,
-            "src": "55:125:12",
+            "scope": 5333,
+            "src": "55:125:28",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 2236,
-        "src": "24:158:12"
+        "scope": 5334,
+        "src": "24:158:28"
       }
     ],
-    "src": "0:183:12"
+    "src": "0:183:28"
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "project:/contracts/child/IStateReceiver.sol",
+      "absolutePath": "project:/contracts/root/IStateReceiver.sol",
       "exportedSymbols": {
         "IStateReceiver": [
-          2235
+          5333
         ]
       }
     },
@@ -207,9 +207,9 @@
             ".6"
           ]
         },
-        "id": 2225,
+        "id": 5323,
         "name": "PragmaDirective",
-        "src": "0:22:12"
+        "src": "0:22:28"
       },
       {
         "attributes": {
@@ -224,10 +224,10 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            2235
+            5333
           ],
           "name": "IStateReceiver",
-          "scope": 2236
+          "scope": 5334
         },
         "children": [
           {
@@ -243,7 +243,7 @@
               ],
               "name": "onStateReceive",
               "overrides": null,
-              "scope": 2235,
+              "scope": 5333,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -257,7 +257,7 @@
                       "mutability": "mutable",
                       "name": "id",
                       "overrides": null,
-                      "scope": 2234,
+                      "scope": 5332,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -270,14 +270,14 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 2226,
+                        "id": 5324,
                         "name": "ElementaryTypeName",
-                        "src": "88:7:12"
+                        "src": "88:7:28"
                       }
                     ],
-                    "id": 2227,
+                    "id": 5325,
                     "name": "VariableDeclaration",
-                    "src": "88:10:12"
+                    "src": "88:10:28"
                   },
                   {
                     "attributes": {
@@ -285,7 +285,7 @@
                       "mutability": "mutable",
                       "name": "data",
                       "overrides": null,
-                      "scope": 2234,
+                      "scope": 5332,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -298,14 +298,14 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 2228,
+                        "id": 5326,
                         "name": "ElementaryTypeName",
-                        "src": "108:5:12"
+                        "src": "108:5:28"
                       }
                     ],
-                    "id": 2229,
+                    "id": 5327,
                     "name": "VariableDeclaration",
-                    "src": "108:19:12"
+                    "src": "108:19:28"
                   },
                   {
                     "attributes": {
@@ -313,7 +313,7 @@
                       "mutability": "mutable",
                       "name": "childERC20Predicate",
                       "overrides": null,
-                      "scope": 2234,
+                      "scope": 5332,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -327,19 +327,19 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 2230,
+                        "id": 5328,
                         "name": "ElementaryTypeName",
-                        "src": "137:7:12"
+                        "src": "137:7:28"
                       }
                     ],
-                    "id": 2231,
+                    "id": 5329,
                     "name": "VariableDeclaration",
-                    "src": "137:27:12"
+                    "src": "137:27:28"
                   }
                 ],
-                "id": 2232,
+                "id": 5330,
                 "name": "ParameterList",
-                "src": "78:92:12"
+                "src": "78:92:28"
               },
               {
                 "attributes": {
@@ -348,24 +348,24 @@
                   ]
                 },
                 "children": [],
-                "id": 2233,
+                "id": 5331,
                 "name": "ParameterList",
-                "src": "179:0:12"
+                "src": "179:0:28"
               }
             ],
-            "id": 2234,
+            "id": 5332,
             "name": "FunctionDefinition",
-            "src": "55:125:12"
+            "src": "55:125:28"
           }
         ],
-        "id": 2235,
+        "id": 5333,
         "name": "ContractDefinition",
-        "src": "24:158:12"
+        "src": "24:158:28"
       }
     ],
-    "id": 2236,
+    "id": 5334,
     "name": "SourceUnit",
-    "src": "0:183:12"
+    "src": "0:183:28"
   },
   "compiler": {
     "name": "solc",
@@ -373,7 +373,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-26T13:08:29.990Z",
+  "updatedAt": "2022-09-27T07:32:37.022Z",
   "devdoc": {
     "methods": {}
   },

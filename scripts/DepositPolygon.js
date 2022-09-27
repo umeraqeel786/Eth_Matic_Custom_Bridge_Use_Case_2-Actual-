@@ -32,6 +32,6 @@ async function deposit(receiverAddressEthereum, childTokenContractAddress, rootE
 }
 
 deposit("0x2262375112F06f445ba155d90FF1a260d7De5269",
-    "0xe6611A66bD40a663f0cfA5f5d06814B7d2E05885",
-    "0x8eb9fF3D248EB573f7b312aaae9febCD5e6D792b"
+    "0xF6e609C16f2ce718a2D5Bce94Eb02b499438e104",
+    "0x286459A7bad31D4F8a4E3B52F9B54C1E268a7cF6"
 );

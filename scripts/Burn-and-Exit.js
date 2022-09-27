@@ -24,16 +24,16 @@ async function Burn_And_Exit(_predicateAddress, _rootTokenAddress, _tokenAmount)
         const childTokenContract = new ethers.Contract(childTokenAddress, childTokenBuild.abi, walletChild);
         const rootChainManagerContract = new ethers.Contract(rootChainManagerAddress, rootChainManagerBuild.abi, walletRoot);
 
-        // burning process mechanism
-        console.log("Withdrawing the ERC20 tokens from child-chain (burning the token on polygon).");
-        console.log("Burning!...");
-        const burnTx = await childTokenContract.withdraw(_tokenAmount);
-        console.log("This is burnTxHash:", burnTx);
-        console.log("This is burnTxHash:", burnTx.hash);
-        console.log("Transaction Successfully Done, ERC20 Tokens burned on the CHILD chain (polygon)");
+        // // burning process mechanism
+        // console.log("Withdrawing the ERC20 tokens from child-chain (burning the token on polygon).");
+        // console.log("Burning!...");
+        // const burnTx = await childTokenContract.withdraw(_tokenAmount);
+        // console.log("This is burnTxHash:", burnTx);
+        // console.log("This is burnTxHash:", burnTx.hash);
+        // console.log("Transaction Successfully Done, ERC20 Tokens burned on the CHILD chain (polygon)");
 
         //exiting process mechanism
-        console.log("Releasing ERC20 Tokens Locked in ERC20 Predicate on User account on Ethereum (Exiting process getting executed).");
+        console.log("Releasing ERC20 Tokens Locked in root ERC20 Predicate on User account on Ethereum (Exiting process getting executed).");
         console.log("Exiting.......");
         const result = await rootChainManagerContract.exit(_predicateAddress, _rootTokenAddress, _tokenAmount);
         console.log("Transaction Successfully Done, Tokens Released on the ROOT Chain (Ethereum) by the ERC20Predicate.");

@@ -1,6 +1,8 @@
 pragma solidity 0.6.6;
 
 interface IRootChainManager {
+    event TokenMapped(address indexed rootToken, address indexed childToken);
+
     event TokenMapped(
         address indexed rootToken,
         address indexed childToken,
@@ -11,6 +13,8 @@ interface IRootChainManager {
         bytes32 indexed tokenType,
         address indexed predicateAddress
     );
+
+    function mapToken(address rootToken, address childToken) external;
 
     function registerPredicate(bytes32 tokenType, address predicateAddress)
         external;

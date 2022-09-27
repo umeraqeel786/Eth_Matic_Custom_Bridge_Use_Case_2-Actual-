@@ -18,21 +18,21 @@ chai
 
 const should = chai.should()
 
-contract('RootChainManager', async(accounts) => {
-  describe('Set values', async() => {
+contract('RootChainManager', async (accounts) => {
+  describe('Set values', async () => {
     let contracts
-    before(async() => {
+    before(async () => {
       contracts = await deployer.deployFreshRootContracts(accounts)
     })
 
-    it('Can set stateSenderAddress', async() => {
+    it('Can set stateSenderAddress', async () => {
       const mockStateSenderAddress = mockValues.addresses[0]
       await contracts.rootChainManager.setStateSender(mockStateSenderAddress)
       const stateSenderAddress = await contracts.rootChainManager.stateSenderAddress()
       stateSenderAddress.should.equal(mockStateSenderAddress)
     })
 
-    it('Should revert while setting stateSenderAddress from non admin account', async() => {
+    it('Should revert while setting stateSenderAddress from non admin account', async () => {
       const mockStateSenderAddress = mockValues.addresses[3]
       await expectRevert(
         contracts.rootChainManager.setStateSender(mockStateSenderAddress, { from: accounts[4] }),
@@ -40,14 +40,14 @@ contract('RootChainManager', async(accounts) => {
       )
     })
 
-    it('Can set childChainManagerAddress', async() => {
+    it('Can set childChainManagerAddress', async () => {
       const mockChildChainManagerAddress = mockValues.addresses[1]
       await contracts.rootChainManager.setChildChainManagerAddress(mockChildChainManagerAddress)
       const childChainManagerAddress = await contracts.rootChainManager.childChainManagerAddress()
       childChainManagerAddress.should.equal(mockChildChainManagerAddress)
     })
 
-    it('Should revert while setting childChainManagerAddress from non admin account', async() => {
+    it('Should revert while setting childChainManagerAddress from non admin account', async () => {
       const mockChildChainManagerAddress = mockValues.addresses[3]
       await expectRevert(
         contracts.rootChainManager.setChildChainManagerAddress(mockChildChainManagerAddress, { from: accounts[4] }),
@@ -55,7 +55,7 @@ contract('RootChainManager', async(accounts) => {
       )
     })
 
-    it('Can register predicate', async() => {
+    it('Can register predicate', async () => {
       const mockType = mockValues.bytes32[2]
       const mockPredicate = mockValues.addresses[4]
       await contracts.rootChainManager.registerPredicate(mockType, mockPredicate)
@@ -63,7 +63,7 @@ contract('RootChainManager', async(accounts) => {
       predicate.should.equal(mockPredicate)
     })
 
-    it('Should revert while registering predicate from non mapper account', async() => {
+    it('Should revert while registering predicate from non mapper account', async () => {
       const mockType = mockValues.bytes32[3]
       const mockPredicate = mockValues.addresses[5]
       await expectRevert(
@@ -73,7 +73,7 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Token Mapping', async() => {
+  describe('Token Mapping', async () => {
     describe('Map fresh token', () => {
       let contracts
       // first set of mock values
@@ -85,7 +85,7 @@ contract('RootChainManager', async(accounts) => {
       const spockParent = mockValues.addresses[5]
       const spockChild = mockValues.addresses[6]
 
-      before(async() => {
+      before(async () => {
         contracts = await deployer.deployFreshRootContracts(accounts)
         await contracts.rootChainManager.setStateSender(contracts.dummyStateSender.address)
 
@@ -96,28 +96,28 @@ contract('RootChainManager', async(accounts) => {
         await contracts.rootChainManager.registerPredicate(mockType, mockPredicate)
       })
 
-      it('Can map token', async() => {
+      it('Can map token', async () => {
         await contracts.rootChainManager.mapToken(mockParent, mockChild, mockType)
       })
 
-      it('Should set correct rootToChildToken map', async() => {
+      it('Should set correct rootToChildToken map', async () => {
         const childTokenAddress = await contracts.rootChainManager.rootToChildToken(mockParent)
         childTokenAddress.should.equal(mockChild)
       })
 
-      it('Should set correct childToRootToken map', async() => {
+      it('Should set correct childToRootToken map', async () => {
         const parentTokenAddress = await contracts.rootChainManager.childToRootToken(mockChild)
         parentTokenAddress.should.equal(mockParent)
       })
 
-      it('Should fail while mapping token from non mapper account', async() => {
+      it('Should fail while mapping token from non mapper account', async () => {
         await expectRevert(
           contracts.rootChainManager.mapToken(spockParent, spockChild, mockType, { from: accounts[4] }),
           'RootChainManager: INSUFFICIENT_PERMISSIONS'
         )
       })
 
-      it('Should fail while mapping token using non existant predicate', async() => {
+      it('Should fail while mapping token using non existant predicate', async () => {
         const mockType = mockValues.bytes32[0]
         await expectRevert(
           contracts.rootChainManager.mapToken(spockParent, spockChild, mockType),
@@ -127,14 +127,14 @@ contract('RootChainManager', async(accounts) => {
     })
 
     // Keep same child token, change mapped parent token
-    describe('Tomato has Vegetable as parent, remap to have Fruit as parent', async() => {
+    describe('Tomato has Vegetable as parent, remap to have Fruit as parent', async () => {
       let contracts
       const vegetable = mockValues.addresses[3]
       const fruit = mockValues.addresses[4]
       const tomato = mockValues.addresses[5]
       const tokenType = mockValues.bytes32[3]
 
-      before(async() => {
+      before(async () => {
         contracts = await deployer.deployFreshRootContracts(accounts)
         await contracts.rootChainManager.setStateSender(contracts.dummyStateSender.address)
 
@@ -147,52 +147,52 @@ contract('RootChainManager', async(accounts) => {
         await contracts.rootChainManager.mapToken(vegetable, tomato, tokenType)
       })
 
-      it('Should have Tomato as child of Vegetable', async() => {
+      it('Should have Tomato as child of Vegetable', async () => {
         const childTokenAddress = await contracts.rootChainManager.rootToChildToken(vegetable)
         childTokenAddress.should.equal(tomato)
       })
 
-      it('Should have Vegetable as parent of Tomato', async() => {
+      it('Should have Vegetable as parent of Tomato', async () => {
         const parentTokenAddress = await contracts.rootChainManager.childToRootToken(tomato)
         parentTokenAddress.should.equal(vegetable)
       })
 
-      it('Should fail to noramlly map Tomato as child of Fruit', async() => {
+      it('Should fail to noramlly map Tomato as child of Fruit', async () => {
         await expectRevert(
           contracts.rootChainManager.mapToken(fruit, tomato, tokenType),
           'RootChainManager: ALREADY_MAPPED'
         )
       })
 
-      it('Should be able to explicitly remap Tomato as child of Fruit', async() => {
+      it('Should be able to explicitly remap Tomato as child of Fruit', async () => {
         await contracts.rootChainManager.remapToken(fruit, tomato, tokenType)
       })
 
-      it('Should have Tomato as child of Fruit', async() => {
+      it('Should have Tomato as child of Fruit', async () => {
         const childTokenAddress = await contracts.rootChainManager.rootToChildToken(fruit)
         childTokenAddress.should.equal(tomato)
       })
 
-      it('Should have Fruit as parent of Tomato', async() => {
+      it('Should have Fruit as parent of Tomato', async () => {
         const parentTokenAddress = await contracts.rootChainManager.childToRootToken(tomato)
         parentTokenAddress.should.equal(fruit)
       })
 
-      it('Vegetable should not have any child', async() => {
+      it('Vegetable should not have any child', async () => {
         const parentTokenAddress = await contracts.rootChainManager.rootToChildToken(vegetable)
         parentTokenAddress.should.equal(mockValues.zeroAddress)
       })
     })
 
     // Keep same parent token, change mapped child token
-    describe('Chimp has Baboon as child, remap to have Man as child', async() => {
+    describe('Chimp has Baboon as child, remap to have Man as child', async () => {
       let contracts
       const chimp = mockValues.addresses[3]
       const baboon = mockValues.addresses[4]
       const man = mockValues.addresses[5]
       const tokenType = mockValues.bytes32[3]
 
-      before(async() => {
+      before(async () => {
         contracts = await deployer.deployFreshRootContracts(accounts)
         await contracts.rootChainManager.setStateSender(contracts.dummyStateSender.address)
 
@@ -205,45 +205,45 @@ contract('RootChainManager', async(accounts) => {
         await contracts.rootChainManager.mapToken(chimp, baboon, tokenType)
       })
 
-      it('Should have Baboon as child of Chimp', async() => {
+      it('Should have Baboon as child of Chimp', async () => {
         const childTokenAddress = await contracts.rootChainManager.rootToChildToken(chimp)
         childTokenAddress.should.equal(baboon)
       })
 
-      it('Should have Chimp as parent of Baboon', async() => {
+      it('Should have Chimp as parent of Baboon', async () => {
         const parentTokenAddress = await contracts.rootChainManager.childToRootToken(baboon)
         parentTokenAddress.should.equal(chimp)
       })
 
-      it('Should fail to noramlly map Chimp to Man', async() => {
+      it('Should fail to noramlly map Chimp to Man', async () => {
         await expectRevert(
           contracts.rootChainManager.mapToken(chimp, man, tokenType),
           'RootChainManager: ALREADY_MAPPED'
         )
       })
 
-      it('Should be able to explicitly remap Chimp to Man', async() => {
+      it('Should be able to explicitly remap Chimp to Man', async () => {
         await contracts.rootChainManager.remapToken(chimp, man, tokenType)
       })
 
-      it('Should have Man as child of Chimp', async() => {
+      it('Should have Man as child of Chimp', async () => {
         const childTokenAddress = await contracts.rootChainManager.rootToChildToken(chimp)
         childTokenAddress.should.equal(man)
       })
 
-      it('Should have Chimp as parent of Man', async() => {
+      it('Should have Chimp as parent of Man', async () => {
         const parentTokenAddress = await contracts.rootChainManager.childToRootToken(man)
         parentTokenAddress.should.equal(chimp)
       })
 
-      it('Baboon should not have any parent', async() => {
+      it('Baboon should not have any parent', async () => {
         const parentTokenAddress = await contracts.rootChainManager.childToRootToken(baboon)
         parentTokenAddress.should.equal(mockValues.zeroAddress)
       })
     })
   })
 
-  describe('Deposit ERC20', async() => {
+  describe('Deposit ERC20', async () => {
     const depositAmount = mockValues.amounts[1]
     const depositForAccount = mockValues.addresses[0]
     let contracts
@@ -255,7 +255,7 @@ contract('RootChainManager', async(accounts) => {
     let lockedLog
     let stateSyncedlog
 
-    before(async() => {
+    before(async () => {
       contracts = await deployer.deployInitializedContracts(accounts)
       dummyERC20 = contracts.root.dummyERC20
       rootChainManager = contracts.root.rootChainManager
@@ -267,7 +267,7 @@ contract('RootChainManager', async(accounts) => {
       depositAmount.should.be.a.bignumber.lessThan(oldAccountBalance)
     })
 
-    it('Depositor should be able to approve and deposit', async() => {
+    it('Depositor should be able to approve and deposit', async () => {
       await dummyERC20.approve(contracts.root.erc20Predicate.address, depositAmount)
       const depositData = abi.encode(['uint256'], [depositAmount.toString()])
       depositTx = await rootChainManager.depositFor(depositForAccount, dummyERC20.address, depositData)
@@ -348,14 +348,14 @@ contract('RootChainManager', async(accounts) => {
       })
     })
 
-    it('Deposit amount should be deducted from depositor account', async() => {
+    it('Deposit amount should be deducted from depositor account', async () => {
       const newAccountBalance = await dummyERC20.balanceOf(accounts[0])
       newAccountBalance.should.be.a.bignumber.that.equals(
         oldAccountBalance.sub(depositAmount)
       )
     })
 
-    it('Deposit amount should be credited to correct contract', async() => {
+    it('Deposit amount should be credited to correct contract', async () => {
       const newContractBalance = await dummyERC20.balanceOf(contracts.root.erc20Predicate.address)
       newContractBalance.should.be.a.bignumber.that.equals(
         oldContractBalance.add(depositAmount)
@@ -363,20 +363,20 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Deposit ERC20 for zero address', async() => {
+  describe('Deposit ERC20 for zero address', async () => {
     const depositAmount = mockValues.amounts[1]
     const depositForAccount = mockValues.zeroAddress
     let rootChainManager
     let dummyERC20
 
-    before(async() => {
+    before(async () => {
       const contracts = await deployer.deployInitializedContracts(accounts)
       rootChainManager = contracts.root.rootChainManager
       dummyERC20 = contracts.root.dummyERC20
       await dummyERC20.approve(contracts.root.erc20Predicate.address, depositAmount)
     })
 
-    it('transaction should revert', async() => {
+    it('transaction should revert', async () => {
       const depositData = abi.encode(['uint256'], [depositAmount.toString()])
       await expectRevert(
         rootChainManager.depositFor(depositForAccount, dummyERC20.address, depositData),
@@ -385,7 +385,7 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Deposit Ether', async() => {
+  describe('Deposit Ether', async () => {
     const depositAmount = mockValues.amounts[1]
     const depositForAccount = mockValues.addresses[0]
     const gasPrice = new BN('30000000000')
@@ -397,7 +397,7 @@ contract('RootChainManager', async(accounts) => {
     let lockedLog
     let stateSyncedlog
 
-    before(async() => {
+    before(async () => {
       contracts = await deployer.deployInitializedContracts(accounts)
       rootChainManager = contracts.root.rootChainManager
       oldAccountBalance = new BN(await web3.eth.getBalance(accounts[0]))
@@ -408,7 +408,7 @@ contract('RootChainManager', async(accounts) => {
       depositAmount.should.be.a.bignumber.lessThan(oldAccountBalance)
     })
 
-    it('Depositor should be able to deposit', async() => {
+    it('Depositor should be able to deposit', async () => {
       depositTx = await rootChainManager.depositEtherFor(depositForAccount, {
         value: depositAmount,
         gasPrice
@@ -486,7 +486,7 @@ contract('RootChainManager', async(accounts) => {
       })
     })
 
-    it('Deposit amount should be deducted from depositor account', async() => {
+    it('Deposit amount should be deducted from depositor account', async () => {
       const newAccountBalance = new BN(await web3.eth.getBalance(accounts[0]))
       const gasUsed = new BN(depositTx.receipt.gasUsed)
       const gasCost = gasPrice.mul(gasUsed)
@@ -495,7 +495,7 @@ contract('RootChainManager', async(accounts) => {
       )
     })
 
-    it('Deposit amount should be credited to correct contract', async() => {
+    it('Deposit amount should be credited to correct contract', async () => {
       const newContractBalance = new BN(await web3.eth.getBalance(contracts.root.etherPredicate.address))
       newContractBalance.should.be.a.bignumber.that.equals(
         oldContractBalance.add(depositAmount)
@@ -503,7 +503,7 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Deposit Ether by sending to RootChainManager', async() => {
+  describe('Deposit Ether by sending to RootChainManager', async () => {
     const depositAmount = mockValues.amounts[1]
     const gasPrice = new BN('30000000000')
     let contracts
@@ -514,7 +514,7 @@ contract('RootChainManager', async(accounts) => {
     let lockedLog
     let stateSyncedlog
 
-    before(async() => {
+    before(async () => {
       contracts = await deployer.deployInitializedContracts(accounts)
       rootChainManager = contracts.root.rootChainManager
       oldAccountBalance = new BN(await web3.eth.getBalance(accounts[0]))
@@ -525,7 +525,7 @@ contract('RootChainManager', async(accounts) => {
       depositAmount.should.be.a.bignumber.lessThan(oldAccountBalance)
     })
 
-    it('Depositor should be able to deposit', async() => {
+    it('Depositor should be able to deposit', async () => {
       depositTx = await rootChainManager.send(depositAmount, {
         gasPrice
       })
@@ -602,7 +602,7 @@ contract('RootChainManager', async(accounts) => {
       })
     })
 
-    it('Deposit amount and gas should be deducted from depositor account', async() => {
+    it('Deposit amount and gas should be deducted from depositor account', async () => {
       const newAccountBalance = new BN(await web3.eth.getBalance(accounts[0]))
       const gasUsed = new BN(depositTx.receipt.gasUsed)
       const gasCost = gasPrice.mul(gasUsed)
@@ -611,7 +611,7 @@ contract('RootChainManager', async(accounts) => {
       )
     })
 
-    it('Deposit amount should be credited to correct contract', async() => {
+    it('Deposit amount should be credited to correct contract', async () => {
       const newContractBalance = new BN(await web3.eth.getBalance(contracts.root.etherPredicate.address))
       newContractBalance.should.be.a.bignumber.that.equals(
         oldContractBalance.add(depositAmount)
@@ -619,17 +619,17 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Deposit Ether by directly calling depositFor', async() => {
+  describe('Deposit Ether by directly calling depositFor', async () => {
     const depositAmount = mockValues.amounts[1]
     const depositForAccount = mockValues.addresses[0]
     let rootChainManager
 
-    before(async() => {
+    before(async () => {
       const contracts = await deployer.deployInitializedContracts(accounts)
       rootChainManager = contracts.root.rootChainManager
     })
 
-    it('transaction should revert', async() => {
+    it('transaction should revert', async () => {
       const depositData = abi.encode(['uint256'], [depositAmount.toString()])
       await expectRevert(
         rootChainManager.depositFor(depositForAccount, etherAddress, depositData),
@@ -638,17 +638,17 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Deposit Ether for zero address', async() => {
+  describe('Deposit Ether for zero address', async () => {
     const depositAmount = mockValues.amounts[1]
     const depositForAccount = mockValues.zeroAddress
     let rootChainManager
 
-    before(async() => {
+    before(async () => {
       const contracts = await deployer.deployInitializedContracts(accounts)
       rootChainManager = contracts.root.rootChainManager
     })
 
-    it('transaction should revert', async() => {
+    it('transaction should revert', async () => {
       await expectRevert(
         rootChainManager.depositEtherFor(depositForAccount, { value: depositAmount }),
         'RootChainManager: INVALID_USER'
@@ -656,7 +656,7 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Deposit ERC721', async() => {
+  describe('Deposit ERC721', async () => {
     const depositTokenId = mockValues.numbers[4]
     const depositForAccount = mockValues.addresses[0]
     let contracts
@@ -666,19 +666,19 @@ contract('RootChainManager', async(accounts) => {
     let lockedLog
     let stateSyncedlog
 
-    before(async() => {
+    before(async () => {
       contracts = await deployer.deployInitializedContracts(accounts)
       dummyERC721 = contracts.root.dummyERC721
       rootChainManager = contracts.root.rootChainManager
       await dummyERC721.mint(depositTokenId)
     })
 
-    it('Depositor should have token', async() => {
+    it('Depositor should have token', async () => {
       const owner = await dummyERC721.ownerOf(depositTokenId)
       owner.should.equal(accounts[0])
     })
 
-    it('Depositor should be able to approve and deposit', async() => {
+    it('Depositor should be able to approve and deposit', async () => {
       await dummyERC721.approve(contracts.root.erc721Predicate.address, depositTokenId)
       const depositData = abi.encode(['uint256'], [depositTokenId.toString()])
       depositTx = await rootChainManager.depositFor(depositForAccount, dummyERC721.address, depositData)
@@ -758,13 +758,13 @@ contract('RootChainManager', async(accounts) => {
       })
     })
 
-    it('Token should be transfered to correct contract', async() => {
+    it('Token should be transfered to correct contract', async () => {
       const owner = await dummyERC721.ownerOf(depositTokenId)
       owner.should.equal(contracts.root.erc721Predicate.address)
     })
   })
 
-  describe('Batch deposit ERC721', async() => {
+  describe('Batch deposit ERC721', async () => {
     const tokenId1 = mockValues.numbers[4]
     const tokenId2 = mockValues.numbers[5]
     const tokenId3 = mockValues.numbers[6]
@@ -776,7 +776,7 @@ contract('RootChainManager', async(accounts) => {
     let lockedLog
     let stateSyncedlog
 
-    before(async() => {
+    before(async () => {
       contracts = await deployer.deployInitializedContracts(accounts)
       dummyERC721 = contracts.root.dummyERC721
       rootChainManager = contracts.root.rootChainManager
@@ -785,7 +785,7 @@ contract('RootChainManager', async(accounts) => {
       await dummyERC721.mint(tokenId3)
     })
 
-    it('Depositor should have the tokens', async() => {
+    it('Depositor should have the tokens', async () => {
       {
         const owner = await dummyERC721.ownerOf(tokenId1)
         owner.should.equal(accounts[0])
@@ -800,7 +800,7 @@ contract('RootChainManager', async(accounts) => {
       }
     })
 
-    it('Depositor should be able to approve and deposit', async() => {
+    it('Depositor should be able to approve and deposit', async () => {
       await dummyERC721.setApprovalForAll(contracts.root.erc721Predicate.address, true)
       const depositData = abi.encode(
         ['uint256[]'],
@@ -890,7 +890,7 @@ contract('RootChainManager', async(accounts) => {
       })
     })
 
-    it('Tokens should be transfered to correct contract', async() => {
+    it('Tokens should be transfered to correct contract', async () => {
       {
         const owner = await dummyERC721.ownerOf(tokenId1)
         owner.should.equal(contracts.root.erc721Predicate.address)
@@ -906,13 +906,13 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Deposit ERC721 for zero address', async() => {
+  describe('Deposit ERC721 for zero address', async () => {
     const depositTokenId = mockValues.numbers[4]
     const depositForAccount = mockValues.zeroAddress
     let rootChainManager
     let dummyERC721
 
-    before(async() => {
+    before(async () => {
       const contracts = await deployer.deployInitializedContracts(accounts)
       rootChainManager = contracts.root.rootChainManager
       dummyERC721 = contracts.root.dummyERC721
@@ -920,7 +920,7 @@ contract('RootChainManager', async(accounts) => {
       await dummyERC721.approve(contracts.root.erc721Predicate.address, depositTokenId)
     })
 
-    it('transaction should revert', async() => {
+    it('transaction should revert', async () => {
       const depositData = abi.encode(['uint256'], [depositTokenId.toString()])
       await expectRevert(
         rootChainManager.depositFor(depositForAccount, dummyERC721.address, depositData),
@@ -929,7 +929,7 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Deposit Single ERC1155', async() => {
+  describe('Deposit Single ERC1155', async () => {
     const depositTokenId = mockValues.numbers[4]
     const depositAmount = mockValues.amounts[1]
     const depositForAccount = mockValues.addresses[0]
@@ -943,7 +943,7 @@ contract('RootChainManager', async(accounts) => {
     let oldAccountBalance
     let oldContractBalance
 
-    before(async() => {
+    before(async () => {
       contracts = await deployer.deployInitializedContracts(accounts)
       dummyERC1155 = contracts.root.dummyERC1155
       erc1155Predicate = contracts.root.erc1155Predicate
@@ -956,11 +956,11 @@ contract('RootChainManager', async(accounts) => {
       oldContractBalance = await dummyERC1155.balanceOf(erc1155Predicate.address, depositTokenId)
     })
 
-    it('Depositor should have enough balance', async() => {
+    it('Depositor should have enough balance', async () => {
       depositAmount.should.be.a.bignumber.lessThan(oldAccountBalance)
     })
 
-    it('Depositor should be able to approve and deposit', async() => {
+    it('Depositor should be able to approve and deposit', async () => {
       await dummyERC1155.setApprovalForAll(erc1155Predicate.address, true)
       const depositData = constructERC1155DepositData([depositTokenId], [depositAmount])
       depositTx = await rootChainManager.depositFor(depositForAccount, dummyERC1155.address, depositData)
@@ -1066,14 +1066,14 @@ contract('RootChainManager', async(accounts) => {
       })
     })
 
-    it('Deposit amount should be deducted from depositor account', async() => {
+    it('Deposit amount should be deducted from depositor account', async () => {
       const newAccountBalance = await dummyERC1155.balanceOf(accounts[0], depositTokenId)
       newAccountBalance.should.be.a.bignumber.that.equals(
         oldAccountBalance.sub(depositAmount)
       )
     })
 
-    it('Deposit amount should be credited to correct contract', async() => {
+    it('Deposit amount should be credited to correct contract', async () => {
       const newContractBalance = await dummyERC1155.balanceOf(erc1155Predicate.address, depositTokenId)
       newContractBalance.should.be.a.bignumber.that.equals(
         oldContractBalance.add(depositAmount)
@@ -1081,7 +1081,7 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Deposit Batch ERC1155', async() => {
+  describe('Deposit Batch ERC1155', async () => {
     const depositTokenIdA = mockValues.numbers[4]
     const depositAmountA = mockValues.amounts[3]
     const depositTokenIdB = mockValues.numbers[6]
@@ -1103,7 +1103,7 @@ contract('RootChainManager', async(accounts) => {
     let oldContractBalanceB
     let oldContractBalanceC
 
-    before(async() => {
+    before(async () => {
       contracts = await deployer.deployInitializedContracts(accounts)
       dummyERC1155 = contracts.root.dummyERC1155
       erc1155Predicate = contracts.root.erc1155Predicate
@@ -1124,19 +1124,19 @@ contract('RootChainManager', async(accounts) => {
       oldContractBalanceC = await dummyERC1155.balanceOf(erc1155Predicate.address, depositTokenIdC)
     })
 
-    it('Depositor should have enough balance for A', async() => {
+    it('Depositor should have enough balance for A', async () => {
       depositAmountA.should.be.a.bignumber.lessThan(oldAccountBalanceA)
     })
 
-    it('Depositor should have enough balance for B', async() => {
+    it('Depositor should have enough balance for B', async () => {
       depositAmountB.should.be.a.bignumber.lessThan(oldAccountBalanceB)
     })
 
-    it('Depositor should have enough balance for C', async() => {
+    it('Depositor should have enough balance for C', async () => {
       depositAmountC.should.be.a.bignumber.lessThan(oldAccountBalanceC)
     })
 
-    it('Depositor should be able to approve and deposit', async() => {
+    it('Depositor should be able to approve and deposit', async () => {
       await dummyERC1155.setApprovalForAll(erc1155Predicate.address, true)
       const depositData = constructERC1155DepositData(
         [depositTokenIdA, depositTokenIdB, depositTokenIdC],
@@ -1275,42 +1275,42 @@ contract('RootChainManager', async(accounts) => {
       })
     })
 
-    it('Deposit amount should be deducted from depositor account for A', async() => {
+    it('Deposit amount should be deducted from depositor account for A', async () => {
       const newAccountBalance = await dummyERC1155.balanceOf(accounts[0], depositTokenIdA)
       newAccountBalance.should.be.a.bignumber.that.equals(
         oldAccountBalanceA.sub(depositAmountA)
       )
     })
 
-    it('Deposit amount should be deducted from depositor account for B', async() => {
+    it('Deposit amount should be deducted from depositor account for B', async () => {
       const newAccountBalance = await dummyERC1155.balanceOf(accounts[0], depositTokenIdB)
       newAccountBalance.should.be.a.bignumber.that.equals(
         oldAccountBalanceB.sub(depositAmountB)
       )
     })
 
-    it('Deposit amount should be deducted from depositor account for C', async() => {
+    it('Deposit amount should be deducted from depositor account for C', async () => {
       const newAccountBalance = await dummyERC1155.balanceOf(accounts[0], depositTokenIdC)
       newAccountBalance.should.be.a.bignumber.that.equals(
         oldAccountBalanceC.sub(depositAmountC)
       )
     })
 
-    it('Deposit amount should be credited to correct contract for A', async() => {
+    it('Deposit amount should be credited to correct contract for A', async () => {
       const newContractBalance = await dummyERC1155.balanceOf(erc1155Predicate.address, depositTokenIdA)
       newContractBalance.should.be.a.bignumber.that.equals(
         oldContractBalanceA.add(depositAmountA)
       )
     })
 
-    it('Deposit amount should be credited to correct contract for B', async() => {
+    it('Deposit amount should be credited to correct contract for B', async () => {
       const newContractBalance = await dummyERC1155.balanceOf(erc1155Predicate.address, depositTokenIdB)
       newContractBalance.should.be.a.bignumber.that.equals(
         oldContractBalanceB.add(depositAmountB)
       )
     })
 
-    it('Deposit amount should be credited to correct contract for C', async() => {
+    it('Deposit amount should be credited to correct contract for C', async () => {
       const newContractBalance = await dummyERC1155.balanceOf(erc1155Predicate.address, depositTokenIdC)
       newContractBalance.should.be.a.bignumber.that.equals(
         oldContractBalanceC.add(depositAmountC)
@@ -1318,14 +1318,14 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Deposit ERC1155 for zero address', async() => {
+  describe('Deposit ERC1155 for zero address', async () => {
     const depositTokenId = mockValues.numbers[4]
     const depositAmount = mockValues.amounts[1]
     const depositForAccount = mockValues.zeroAddress
     let rootChainManager
     let dummyERC1155
 
-    before(async() => {
+    before(async () => {
       const contracts = await deployer.deployInitializedContracts(accounts)
       rootChainManager = contracts.root.rootChainManager
       dummyERC1155 = contracts.root.dummyERC1155
@@ -1333,7 +1333,7 @@ contract('RootChainManager', async(accounts) => {
       await dummyERC1155.setApprovalForAll(contracts.root.erc1155Predicate.address, true)
     })
 
-    it('transaction should revert', async() => {
+    it('transaction should revert', async () => {
       const depositData = constructERC1155DepositData([depositTokenId], [depositAmount])
       await expectRevert(
         rootChainManager.depositFor(depositForAccount, dummyERC1155.address, depositData),
@@ -1342,7 +1342,7 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Depoist token before it is mapped', async() => {
+  describe('Depoist token before it is mapped', async () => {
     const depositAmount = mockValues.amounts[1]
     const depositForAccount = mockValues.addresses[0]
     let contracts
@@ -1350,7 +1350,7 @@ contract('RootChainManager', async(accounts) => {
     let rootChainManager
     let erc20Predicate
 
-    before(async() => {
+    before(async () => {
       contracts = await deployer.deployFreshRootContracts(accounts)
       dummyERC20 = contracts.dummyERC20
       rootChainManager = contracts.rootChainManager
@@ -1358,7 +1358,7 @@ contract('RootChainManager', async(accounts) => {
       await dummyERC20.approve(erc20Predicate.address, depositAmount)
     })
 
-    it('Should revert with correct reason', async() => {
+    it('Should revert with correct reason', async () => {
       const depositData = abi.encode(['uint256'], [depositAmount.toString()])
       await expectRevert(
         rootChainManager.depositFor(depositForAccount, dummyERC20.address, depositData),
@@ -1367,7 +1367,7 @@ contract('RootChainManager', async(accounts) => {
     })
   })
 
-  describe('Depoist token whose predicate is disabled', async() => {
+  describe('Depoist token whose predicate is disabled', async () => {
     const depositAmount = mockValues.amounts[1]
     const depositForAccount = mockValues.addresses[0]
     const mockType = mockValues.bytes32[1]
@@ -1377,7 +1377,7 @@ contract('RootChainManager', async(accounts) => {
     let rootChainManager
     let erc20Predicate
 
-    before(async() => {
+    before(async () => {
       contracts = await deployer.deployFreshRootContracts(accounts)
       dummyERC20 = contracts.dummyERC20
       rootChainManager = contracts.rootChainManager
@@ -1390,7 +1390,7 @@ contract('RootChainManager', async(accounts) => {
       await rootChainManager.registerPredicate(mockType, mockValues.zeroAddress)
     })
 
-    it('Should revert with correct reason', async() => {
+    it('Should revert with correct reason', async () => {
       const depositData = abi.encode(['uint256'], [depositAmount.toString()])
       await expectRevert(
         rootChainManager.depositFor(depositForAccount, dummyERC20.address, depositData),

@@ -4,8 +4,8 @@ const ERC20Predicate = artifacts.require('ERC20Predicate')
 
 // const DummyMintableERC20 = artifacts.require('DummyMintableERC20')
 
-const utils = require('./utils')
-const config = require('./config')
+const utils = require('../migrations/utils')
+const config = require('../migrations/config')
 
 module.exports = async (deployer) => {
   const contractAddresses = utils.getContractAddresses()
@@ -37,4 +37,14 @@ module.exports = async (deployer) => {
 
   console.log('Mapping DummyERC20')
   await RootChainManagerInstance.mapToken(contractAddresses.root.DummyERC20, contractAddresses.child.DummyERC20, ERC20Type)
+
+
+  console.log('Granting STATE_SYNCER_ROLE on RootChainManager')
+  const STATE_SYNCER_ROLE = await RootChainManagerInstance.STATE_SYNCER_ROLE()
+  await RootChainManagerInstance.grantRole(STATE_SYNCER_ROLE, config.stateReceiver)
+
+  console.log('Mapping ChildERC20')
+  await RootChainManagerInstance.mapToken(contractAddresses.root.DummyERC20, contractAddresses.child.DummyERC20)
+
+
 }
