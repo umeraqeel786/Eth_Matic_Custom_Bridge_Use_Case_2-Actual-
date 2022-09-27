@@ -1,8 +1,7 @@
 require('dotenv').config();
 const ethers = require('ethers');
 
-const ALCHEMY_API_URL_POLYGON = process.env.ALCHEMY_API_URL_POLYGON;
-// const LOCALHOST_URL_ROOT = process.env.LOCALHOST_URL_ROOT;
+//const ALCHEMY_API_URL_POLYGON = process.env.ALCHEMY_API_URL_POLYGON;
 const LOCALHOST_URL_CHILD = process.env.LOCALHOST_URL_CHILD;
 const PRIVATE_KEY_CHILD = process.env.PRIVATE_KEY_CHILD;
 const childTokenAddress = process.env.CHILD_TOKEN_CONTRACT_ADDRESS;

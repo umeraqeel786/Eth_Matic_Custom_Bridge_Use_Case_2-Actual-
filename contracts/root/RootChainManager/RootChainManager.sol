@@ -45,9 +45,6 @@ contract RootChainManager is
     bytes32 public constant MAPPER_ROLE = keccak256("MAPPER_ROLE");
     bytes32 public constant STATE_SYNCER_ROLE = keccak256("STATE_SYNCER_ROLE");
 
-    // mapping(address => address) public rootToChildToken;
-    // mapping(address => address) public childToRootToken;
-
     function _msgSender()
         internal
         view
@@ -285,20 +282,7 @@ contract RootChainManager is
         _depositFor(user, rootToken, depositData, childERC20Predicate);
     }
 
-    function _depositEtherFor(address) private {
-        // bytes memory depositData = abi.encode(msg.value);
-        //_depositFor(user, ETHER_ADDRESS, depositData); // commented
-        // payable(typeToPredicate[tokenToType[ETHER_ADDRESS]]).transfer(msg.value);
-        // transfer doesn't work as expected when receiving contract is proxified so using call
-        // (
-        //     bool success, /* bytes memory data */
-        // ) = typeToPredicate[tokenToType[ETHER_ADDRESS]].call{value: msg.value}(
-        //         ""
-        //     );
-        // if (!success) {
-        //     revert("RootChainManager: ETHER_TRANSFER_FAILED");
-        // }
-    }
+    function _depositEtherFor(address) private {}
 
     function _depositFor(
         address user,
@@ -350,10 +334,6 @@ contract RootChainManager is
         address _rootTokenAddress,
         uint256 _tokenAmount
     ) external override only(DEFAULT_ADMIN_ROLE) {
-        // address rootToken = childToRootToken[log.getEmitter()];
-        // require(rootToken != address(0), "RootChainManager: TOKEN_NOT_MAPPED");
-        // address predicateAddress = typeToPredicate[tokenToType[rootToken]];
-
         ITokenPredicate(_predicateAddress).exitTokens(
             _msgSender(),
             _rootTokenAddress,

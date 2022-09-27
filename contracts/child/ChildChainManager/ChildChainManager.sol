@@ -25,10 +25,6 @@ contract ChildChainManager is
     address public constant ETHER_ADDRESS =
         0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
 
-    // mapping(address => address) public rootToChildToken;
-
-    // mapping(address => address) public childToRootToken;
-
     function initialize(address _owner) external initializer {
         _setupContractId("ChildChainManager");
         _setupRole(DEFAULT_ADMIN_ROLE, _owner);
@@ -291,10 +287,6 @@ contract ChildChainManager is
         address _childTokenAddress,
         uint256 _tokenAmount
     ) external override only(DEFAULT_ADMIN_ROLE) {
-        // address rootToken = childToRootToken[log.getEmitter()];
-        // require(rootToken != address(0), "RootChainManager: TOKEN_NOT_MAPPED");
-        // address predicateAddress = typeToPredicate[tokenToType[rootToken]];
-
         ITokenPredicate(_predicateAddress).exitTokens(
             _msgSender(),
             _childTokenAddress,

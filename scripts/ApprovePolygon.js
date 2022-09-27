@@ -1,7 +1,6 @@
 require('dotenv').config();
 const ethers = require('ethers');
 
-
 // const ALCHEMY_API_URL_POLYGON = process.env.ALCHEMY_API_URL_POLYGON;
 const LOCALHOST_URL_CHILD = process.env.LOCALHOST_URL_CHILD;
 const PRIVATE_KEY_CHILD = process.env.PRIVATE_KEY_CHILD;
@@ -30,6 +29,6 @@ async function approve(childERC20Predicate, tokenAmount) {
 let weiAmount = ethers.utils.parseEther('10');
 
 approve(
-    "0x23f24f7b7f4492d21b99d4884094d368C362a9B1",
+    "0x76C0B53249d50EE78CB96924a856371571Ea0C57",
     weiAmount
 );

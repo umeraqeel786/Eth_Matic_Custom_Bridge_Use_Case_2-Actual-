@@ -6,10 +6,7 @@ const ERC20Predicate = artifacts.require('ERC20Predicate')
 const ERC20PredicateProxy = artifacts.require('ERC20PredicateProxy')
 
 const ChildERC20 = artifacts.require('ChildERC20')
-// const ChildMintableERC20 = artifacts.require('ChildMintableERC20')
 
-
-// const MaticWETH = artifacts.require('MaticWETH')
 const utils = require('./utils')
 
 module.exports = async (deployer, network, accounts) => {
@@ -25,11 +22,7 @@ module.exports = async (deployer, network, accounts) => {
 
     await deployer.deploy(ChildDummyStateSender)
 
-
     await deployer.deploy(ChildERC20, 'WRLDTest', 'WRLDERC20', 18, ChildChainManagerProxy.address, ERC20PredicateProxy.address)
-    // await deployer.deploy(ChildMintableERC20, 'WRLDTest Mintable ERC20', 'WRLDMERC20', 18, ChildChainManagerProxy.address)
-
-    // await deployer.deploy(MaticWETH, ChildChainManagerProxy.address)
 
     const contractAddresses = utils.getContractAddresses()
 
@@ -42,9 +35,6 @@ module.exports = async (deployer, network, accounts) => {
     contractAddresses.child.ERC20PredicateProxy = ERC20PredicateProxy.address
 
     contractAddresses.child.DummyERC20 = ChildERC20.address
-    // contractAddresses.child.DummyMintableERC20 = ChildMintableERC20.address
-
-    // contractAddresses.child.MaticWETH = MaticWETH.address
 
     utils.writeContractAddresses(contractAddresses)
   })

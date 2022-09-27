@@ -36,11 +36,6 @@ contract DummyERC20 is
         _transfer(address(this), rootERC20Predicate_, amount);
     }
 
-    // function mint(uint256 amount) public {
-    //     require(amount < totalSupplyContract, "Minting limit reached");
-    //     _mint(_msgSender(), amount);
-    // }
-
     function transfer(
         address user,
         bytes calldata depositData,

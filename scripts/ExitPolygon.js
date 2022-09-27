@@ -1,7 +1,7 @@
 require('dotenv').config();
 const ethers = require('ethers');
 
-const ALCHEMY_API_URL_POLYGON = process.env.ALCHEMY_API_URL_POLYGON;
+//const ALCHEMY_API_URL_POLYGON = process.env.ALCHEMY_API_URL_POLYGON;
 const LOCALHOST_URL_CHILD = process.env.LOCALHOST_URL_CHILD;
 const PRIVATE_KEY_CHILD = process.env.PRIVATE_KEY_CHILD;
 const childChainManagerAddress = process.env.CHILD_CHAIN_MANAGER_CONTRACT_ADDRESS;
@@ -29,4 +29,4 @@ async function Exit(_childPredicateAddress, _childTokenAddress, _tokenAmount) {
 
 let weiAmount = ethers.utils.parseEther('50');
 
-Exit('0x23f24f7b7f4492d21b99d4884094d368C362a9B1', '0xA20040966B625c05485AE0C7a1d4ec904104bCE0', weiAmount);
+Exit('0x76C0B53249d50EE78CB96924a856371571Ea0C57', '0xa52d7F99f90f4CE1BcF2d904452C237AC82877B6', weiAmount);

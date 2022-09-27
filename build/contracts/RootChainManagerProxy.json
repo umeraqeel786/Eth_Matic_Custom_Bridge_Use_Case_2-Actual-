@@ -1064,10 +1064,145 @@
       "links": {},
       "address": "0x6c9e2D224CC196b618a7691e942E50f4F478C98c",
       "transactionHash": "0xe67c4f7dc15fbda2ff72ebd0189c3d22238f0ebe0472d820190345e4f5738d5e"
+    },
+    "1664281621369": {
+      "events": {
+        "0xdbe5fd65bcdbae152f24ab660ea68e72b4d4705b57b16e0caae994e214680ee2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_new",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_old",
+              "type": "address"
+            }
+          ],
+          "name": "ProxyOwnerUpdate",
+          "type": "event"
+        },
+        "0xd32d24edea94f55e932d9a008afc425a8561462d1b1f57bc6e508e9a6b9509e1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_new",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_old",
+              "type": "address"
+            }
+          ],
+          "name": "ProxyUpdated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x542C69E9223Ee3a473Fc66841E69D85bB8b753df",
+      "transactionHash": "0x69c92b7609616da2a0950d528696cea2d90fc984c33e3851bf819a690293c18f"
+    },
+    "1664282091194": {
+      "events": {
+        "0xdbe5fd65bcdbae152f24ab660ea68e72b4d4705b57b16e0caae994e214680ee2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_new",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_old",
+              "type": "address"
+            }
+          ],
+          "name": "ProxyOwnerUpdate",
+          "type": "event"
+        },
+        "0xd32d24edea94f55e932d9a008afc425a8561462d1b1f57bc6e508e9a6b9509e1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_new",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_old",
+              "type": "address"
+            }
+          ],
+          "name": "ProxyUpdated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x542C69E9223Ee3a473Fc66841E69D85bB8b753df",
+      "transactionHash": "0x69c92b7609616da2a0950d528696cea2d90fc984c33e3851bf819a690293c18f"
+    },
+    "1664282100631": {
+      "events": {
+        "0xdbe5fd65bcdbae152f24ab660ea68e72b4d4705b57b16e0caae994e214680ee2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_new",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_old",
+              "type": "address"
+            }
+          ],
+          "name": "ProxyOwnerUpdate",
+          "type": "event"
+        },
+        "0xd32d24edea94f55e932d9a008afc425a8561462d1b1f57bc6e508e9a6b9509e1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_new",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_old",
+              "type": "address"
+            }
+          ],
+          "name": "ProxyUpdated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x5f401ffdA176FCADEe6740bb73552A70C58D4B14",
+      "transactionHash": "0xa3ab58179d735a0b78017449d3f68d72235f58e2989e0c99913032bd46e6e441"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-27T10:27:31.919Z",
+  "updatedAt": "2022-09-27T12:36:46.974Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

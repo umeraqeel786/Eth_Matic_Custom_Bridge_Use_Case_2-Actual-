@@ -55,23 +55,6 @@ contract UChildERC20 is
         _setDomainSeperator(name_);
     }
 
-    // /**
-    //  * @notice called when token is deposited on root chain
-    //  * @dev Should be callable only by ChildChainManager
-    //  * Should handle deposit by minting the required amount for user
-    //  * Make sure minting is done only by this function
-    //  * @param user user address for whom deposit is being done
-    //  * @param depositData abi encoded amount
-    //  */
-    // function deposit(address user, bytes calldata depositData)
-    //     external
-    //     override
-    //     only(DEPOSITOR_ROLE)
-    // {
-    //     uint256 amount = abi.decode(depositData, (uint256));
-    //     _mint(user, amount);
-    // }
-
     function transfer(
         address user,
         bytes calldata depositData,

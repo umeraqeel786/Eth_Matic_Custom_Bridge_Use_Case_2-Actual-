@@ -2,10 +2,9 @@ const RootChainManager = artifacts.require('RootChainManager')
 
 const ERC20Predicate = artifacts.require('ERC20Predicate')
 
-// const DummyMintableERC20 = artifacts.require('DummyMintableERC20')
 
-const utils = require('../migrations/utils')
-const config = require('../migrations/config')
+const utils = require('./utils')
+const config = require('./config')
 
 module.exports = async (deployer) => {
   const contractAddresses = utils.getContractAddresses()
@@ -13,8 +12,6 @@ module.exports = async (deployer) => {
   const RootChainManagerInstance = await RootChainManager.at(contractAddresses.root.RootChainManagerProxy)
 
   const ERC20PredicateInstance = await ERC20Predicate.at(contractAddresses.root.ERC20PredicateProxy)
-
-  // const DummyMintableERC20Instance = await DummyMintableERC20.at(contractAddresses.root.DummyMintableERC20)
 
   console.log('Setting RootStateSender')
   await RootChainManagerInstance.setStateSender(contractAddresses.root.DummyStateSender)
@@ -28,8 +25,6 @@ module.exports = async (deployer) => {
   console.log('Granting manager role on RootERC20Predicate')
   const MANAGER_ROLE = await ERC20PredicateInstance.MANAGER_ROLE()
   await ERC20PredicateInstance.grantRole(MANAGER_ROLE, RootChainManagerInstance.address)
-
-  // const PREDICATE_ROLE = await DummyMintableERC20Instance.PREDICATE_ROLE()
 
   console.log('Registering RootERC20Predicate')
   const ERC20Type = await ERC20PredicateInstance.TOKEN_TYPE()

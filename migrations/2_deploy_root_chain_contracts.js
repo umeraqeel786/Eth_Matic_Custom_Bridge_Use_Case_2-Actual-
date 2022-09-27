@@ -14,12 +14,8 @@ const ERC20Predicate = artifacts.require('ERC20Predicate')
 const ERC20PredicateProxy = artifacts.require('ERC20PredicateProxy')
 
 const DummyERC20 = artifacts.require('DummyERC20')
-//const DummyMintableERC20 = artifacts.require('DummyMintableERC20')
 
-// const TestRootTunnel = artifacts.require('TestRootTunnel')
-// const TestChildTunnel = artifacts.require('TestChildTunnel')
-
-const utils = require('../migrations/utils')
+const utils = require('./utils')
 
 module.exports = async (deployer, network, accounts) => {
   await deployer
@@ -40,7 +36,7 @@ module.exports = async (deployer, network, accounts) => {
 
   // -- Dummy version of ERC20
   await deployer.deploy(DummyERC20, 'WRLDTest', 'WRLDERC20', RootChainManagerProxy.address, ERC20PredicateProxy.address)
-  // await deployer.deploy(DummyMintableERC20, 'WRLDTest Mintable ERC20', 'WRLDMERC20')
+
   // -- ends
 
   const contractAddresses = utils.getContractAddresses()
@@ -54,7 +50,7 @@ module.exports = async (deployer, network, accounts) => {
   contractAddresses.root.ERC20PredicateProxy = ERC20PredicateProxy.address
 
   contractAddresses.root.DummyERC20 = DummyERC20.address
-  // contractAddresses.root.DummyMintableERC20 = DummyMintableERC20.address
+
 
   utils.writeContractAddresses(contractAddresses)
 }

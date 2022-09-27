@@ -1,7 +1,7 @@
 require('dotenv').config();
 const ethers = require('ethers');
 
-const INFURA_API_URL_GOERLI = process.env.INFURA_API_URL_GOERLI;
+//const INFURA_API_URL_GOERLI = process.env.INFURA_API_URL_GOERLI;
 const LOCALHOST_URL_ROOT = process.env.LOCALHOST_URL_ROOT;
 const PRIVATE_KEY_ROOT = process.env.PRIVATE_KEY_ROOT;
 const rootChainManagerAddress = process.env.ROOT_CHAIN_MANAGER_CONTRACT_ADDRESS;
@@ -29,4 +29,4 @@ async function Exit(_rootPredicateAddress, _rootTokenAddress, _tokenAmount) {
 
 let weiAmount = ethers.utils.parseEther('50');
 
-Exit('0x1DAf03D5F32176049c4F7F6633ef4aCeb3d0C22C', '0x827C8765a8b354d9b1239F9e9117DA0Fab0F3168', weiAmount);
+Exit('0x431F55fDD78e73D87343034a65c8f41Ad71648c7', '0x353521c8bf6049e84B89fB7Fc77209908961456F', weiAmount);

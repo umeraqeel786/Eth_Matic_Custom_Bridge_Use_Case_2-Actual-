@@ -25,26 +25,26 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"depositData\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"childERC20Predicate\",\"type\":\"address\"}],\"name\":\"transfer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/child/ChildToken/IChildToken.sol\":\"IChildToken\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/child/ChildToken/IChildToken.sol\":{\"keccak256\":\"0x8a27c059fbc9ebb3a5c18aebd55a904bce71c926549408e0cfbb208dbfee4fd0\",\"urls\":[\"bzz-raw://3186b41fb73433a062f42a5e818d2ee0f147a24752c1464f0ec676ed2507cb2f\",\"dweb:/ipfs/QmbAB7ToBX5igk6koa59UiK3CSbtR4i3cY1PH2EarvXqMN\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"depositData\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"childERC20Predicate\",\"type\":\"address\"}],\"name\":\"transfer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/child/ChildToken/IChildToken.sol\":\"IChildToken\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/child/ChildToken/IChildToken.sol\":{\"keccak256\":\"0xc0cd7847c83d8389e5035899eb7ad384b40000076c8532c1d2ff26bfa8c95112\",\"urls\":[\"bzz-raw://5dbadabd04db9ddc28f23b848b8f0e1d88e302500f1c00edd2b95352ef6a98e9\",\"dweb:/ipfs/QmPSTnD6xvHvn8iRBZZCLsP6Va2nGUecKPpXwT8qFaYenP\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity 0.6.6;\n\ninterface IChildToken {\n    // function deposit(address user, bytes calldata depositData) external;\n\n    function transfer(\n        address user,\n        bytes calldata depositData,\n        address childERC20Predicate\n    ) external;\n}\n",
+  "source": "pragma solidity 0.6.6;\n\ninterface IChildToken {\n    function transfer(\n        address user,\n        bytes calldata depositData,\n        address childERC20Predicate\n    ) external;\n}\n",
   "sourcePath": "/home/moiz/Desktop/Eth_Matic_Custom_Bridge_Use_Case_2-Actual-/contracts/child/ChildToken/IChildToken.sol",
   "ast": {
     "absolutePath": "project:/contracts/child/ChildToken/IChildToken.sol",
     "exportedSymbols": {
       "IChildToken": [
-        2789
+        3061
       ]
     },
-    "id": 2790,
+    "id": 3062,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2779,
+        "id": 3051,
         "literals": [
           "solidity",
           "0.6",
@@ -60,9 +60,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 2789,
+        "id": 3061,
         "linearizedBaseContracts": [
-          2789
+          3061
         ],
         "name": "IChildToken",
         "nodeType": "ContractDefinition",
@@ -71,7 +71,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "49d5f3f2",
-            "id": 2788,
+            "id": 3060,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -79,18 +79,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 2786,
+              "id": 3058,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2781,
+                  "id": 3053,
                   "mutability": "mutable",
                   "name": "user",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 2788,
-                  "src": "156:12:13",
+                  "scope": 3060,
+                  "src": "79:12:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -98,10 +98,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2780,
+                    "id": 3052,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "156:7:13",
+                    "src": "79:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -113,13 +113,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2783,
+                  "id": 3055,
                   "mutability": "mutable",
                   "name": "depositData",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 2788,
-                  "src": "178:26:13",
+                  "scope": 3060,
+                  "src": "101:26:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -127,10 +127,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 2782,
+                    "id": 3054,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "178:5:13",
+                    "src": "101:5:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -141,13 +141,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2785,
+                  "id": 3057,
                   "mutability": "mutable",
                   "name": "childERC20Predicate",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 2788,
-                  "src": "214:27:13",
+                  "scope": 3060,
+                  "src": "137:27:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -155,10 +155,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2784,
+                    "id": 3056,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "214:7:13",
+                    "src": "137:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -169,33 +169,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "146:101:13"
+              "src": "69:101:13"
             },
             "returnParameters": {
-              "id": 2787,
+              "id": 3059,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "256:0:13"
+              "src": "179:0:13"
             },
-            "scope": 2789,
-            "src": "129:128:13",
+            "scope": 3061,
+            "src": "52:128:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 2790,
-        "src": "24:235:13"
+        "scope": 3062,
+        "src": "24:158:13"
       }
     ],
-    "src": "0:260:13"
+    "src": "0:183:13"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/child/ChildToken/IChildToken.sol",
       "exportedSymbols": {
         "IChildToken": [
-          2789
+          3061
         ]
       }
     },
@@ -208,7 +208,7 @@
             ".6"
           ]
         },
-        "id": 2779,
+        "id": 3051,
         "name": "PragmaDirective",
         "src": "0:22:13"
       },
@@ -225,10 +225,10 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            2789
+            3061
           ],
           "name": "IChildToken",
-          "scope": 2790
+          "scope": 3062
         },
         "children": [
           {
@@ -244,7 +244,7 @@
               ],
               "name": "transfer",
               "overrides": null,
-              "scope": 2789,
+              "scope": 3061,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -258,7 +258,7 @@
                       "mutability": "mutable",
                       "name": "user",
                       "overrides": null,
-                      "scope": 2788,
+                      "scope": 3060,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -272,14 +272,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 2780,
+                        "id": 3052,
                         "name": "ElementaryTypeName",
-                        "src": "156:7:13"
+                        "src": "79:7:13"
                       }
                     ],
-                    "id": 2781,
+                    "id": 3053,
                     "name": "VariableDeclaration",
-                    "src": "156:12:13"
+                    "src": "79:12:13"
                   },
                   {
                     "attributes": {
@@ -287,7 +287,7 @@
                       "mutability": "mutable",
                       "name": "depositData",
                       "overrides": null,
-                      "scope": 2788,
+                      "scope": 3060,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -300,14 +300,14 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 2782,
+                        "id": 3054,
                         "name": "ElementaryTypeName",
-                        "src": "178:5:13"
+                        "src": "101:5:13"
                       }
                     ],
-                    "id": 2783,
+                    "id": 3055,
                     "name": "VariableDeclaration",
-                    "src": "178:26:13"
+                    "src": "101:26:13"
                   },
                   {
                     "attributes": {
@@ -315,7 +315,7 @@
                       "mutability": "mutable",
                       "name": "childERC20Predicate",
                       "overrides": null,
-                      "scope": 2788,
+                      "scope": 3060,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -329,19 +329,19 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 2784,
+                        "id": 3056,
                         "name": "ElementaryTypeName",
-                        "src": "214:7:13"
+                        "src": "137:7:13"
                       }
                     ],
-                    "id": 2785,
+                    "id": 3057,
                     "name": "VariableDeclaration",
-                    "src": "214:27:13"
+                    "src": "137:27:13"
                   }
                 ],
-                "id": 2786,
+                "id": 3058,
                 "name": "ParameterList",
-                "src": "146:101:13"
+                "src": "69:101:13"
               },
               {
                 "attributes": {
@@ -350,24 +350,24 @@
                   ]
                 },
                 "children": [],
-                "id": 2787,
+                "id": 3059,
                 "name": "ParameterList",
-                "src": "256:0:13"
+                "src": "179:0:13"
               }
             ],
-            "id": 2788,
+            "id": 3060,
             "name": "FunctionDefinition",
-            "src": "129:128:13"
+            "src": "52:128:13"
           }
         ],
-        "id": 2789,
+        "id": 3061,
         "name": "ContractDefinition",
-        "src": "24:235:13"
+        "src": "24:158:13"
       }
     ],
-    "id": 2790,
+    "id": 3062,
     "name": "SourceUnit",
-    "src": "0:260:13"
+    "src": "0:183:13"
   },
   "compiler": {
     "name": "solc",
@@ -375,7 +375,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-26T07:14:52.801Z",
+  "updatedAt": "2022-09-27T12:27:36.603Z",
   "devdoc": {
     "methods": {}
   },

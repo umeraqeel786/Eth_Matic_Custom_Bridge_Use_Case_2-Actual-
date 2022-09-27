@@ -41,33 +41,33 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"headerBlocks\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"root\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"start\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"end\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"proposer\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/child/ICheckpointManager.sol\":\"ICheckpointManager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/child/ICheckpointManager.sol\":{\"keccak256\":\"0x25072d6d7bb929e75338478e0995e86a46a8e64617f109d9479aab65a2f40793\",\"urls\":[\"bzz-raw://dafccce1d0dd9f5a595e4674e83448016e3553c500699fd8da6a4e7432ddb80b\",\"dweb:/ipfs/QmUxowPJo7CNwKkrLZMvaiHwqVHxNYTRPM2oDu9VNrvpp4\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060e98061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c806341539d4a14602d575b600080fd5b604760048036036020811015604157600080fd5b5035607b565b6040805195865260208601949094528484019290925260608401526001600160a01b03166080830152519081900360a00190f35b60006020819052908152604090208054600182015460028301546003840154600490940154929391929091906001600160a01b03168556fea2646970667358221220a6224b8633c19d559bfe7af16e4748fd220071cc6b7422c3341720f6c6ae0b4464736f6c63430006060033",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c806341539d4a14602d575b600080fd5b604760048036036020811015604157600080fd5b5035607b565b6040805195865260208601949094528484019290925260608401526001600160a01b03166080830152519081900360a00190f35b60006020819052908152604090208054600182015460028301546003840154600490940154929391929091906001600160a01b03168556fea2646970667358221220a6224b8633c19d559bfe7af16e4748fd220071cc6b7422c3341720f6c6ae0b4464736f6c63430006060033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"headerBlocks\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"root\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"start\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"end\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"proposer\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/root/ICheckpointManager.sol\":\"ICheckpointManager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/root/ICheckpointManager.sol\":{\"keccak256\":\"0x25072d6d7bb929e75338478e0995e86a46a8e64617f109d9479aab65a2f40793\",\"urls\":[\"bzz-raw://dafccce1d0dd9f5a595e4674e83448016e3553c500699fd8da6a4e7432ddb80b\",\"dweb:/ipfs/QmUxowPJo7CNwKkrLZMvaiHwqVHxNYTRPM2oDu9VNrvpp4\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060e98061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c806341539d4a14602d575b600080fd5b604760048036036020811015604157600080fd5b5035607b565b6040805195865260208601949094528484019290925260608401526001600160a01b03166080830152519081900360a00190f35b60006020819052908152604090208054600182015460028301546003840154600490940154929391929091906001600160a01b03168556fea2646970667358221220eb9fd7dc921f0b281244f4299e910bf11cf0d301b11501b049735383de8180e764736f6c63430006060033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c806341539d4a14602d575b600080fd5b604760048036036020811015604157600080fd5b5035607b565b6040805195865260208601949094528484019290925260608401526001600160a01b03166080830152519081900360a00190f35b60006020819052908152604090208054600182015460028301546003840154600490940154929391929091906001600160a01b03168556fea2646970667358221220eb9fd7dc921f0b281244f4299e910bf11cf0d301b11501b049735383de8180e764736f6c63430006060033",
   "immutableReferences": {},
-  "sourceMap": "24:387:12:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;24:387:12;;;;;;;",
-  "deployedSourceMap": "24:387:12:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;24:387:12;;;;;;;;;;;;;;;;12:1:-1;9;2:12;357:51:12;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;357:51:12;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;357:51:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;357:51:12;;:::o",
+  "sourceMap": "24:387:24:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;24:387:24;;;;;;;",
+  "deployedSourceMap": "24:387:24:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;24:387:24;;;;;;;;;;;;;;;;12:1:-1;9;2:12;357:51:24;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;357:51:24;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;357:51:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;357:51:24;;:::o",
   "source": "pragma solidity 0.6.6;\n\ncontract ICheckpointManager {\n    struct HeaderBlock {\n        bytes32 root;\n        uint256 start;\n        uint256 end;\n        uint256 createdAt;\n        address proposer;\n    }\n\n    /**\n     * @notice mapping of checkpoint header numbers to block details\n     * @dev These checkpoints are submited by plasma contracts\n     */\n    mapping(uint256 => HeaderBlock) public headerBlocks;\n}\n",
-  "sourcePath": "/home/moiz/Desktop/Eth_Matic_Custom_Bridge_Use_Case_2-Actual-/contracts/child/ICheckpointManager.sol",
+  "sourcePath": "/home/moiz/Desktop/Eth_Matic_Custom_Bridge_Use_Case_2-Actual-/contracts/root/ICheckpointManager.sol",
   "ast": {
-    "absolutePath": "project:/contracts/child/ICheckpointManager.sol",
+    "absolutePath": "project:/contracts/root/ICheckpointManager.sol",
     "exportedSymbols": {
       "ICheckpointManager": [
-        2763
+        4576
       ]
     },
-    "id": 2764,
+    "id": 4577,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2747,
+        "id": 4560,
         "literals": [
           "solidity",
           "0.6",
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:22:12"
+        "src": "0:22:24"
       },
       {
         "abstract": false,
@@ -76,26 +76,26 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 2763,
+        "id": 4576,
         "linearizedBaseContracts": [
-          2763
+          4576
         ],
         "name": "ICheckpointManager",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "ICheckpointManager.HeaderBlock",
-            "id": 2758,
+            "id": 4571,
             "members": [
               {
                 "constant": false,
-                "id": 2749,
+                "id": 4562,
                 "mutability": "mutable",
                 "name": "root",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 2758,
-                "src": "87:12:12",
+                "scope": 4571,
+                "src": "87:12:24",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -103,10 +103,10 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 2748,
+                  "id": 4561,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "87:7:12",
+                  "src": "87:7:24",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bytes32",
                     "typeString": "bytes32"
@@ -117,13 +117,13 @@
               },
               {
                 "constant": false,
-                "id": 2751,
+                "id": 4564,
                 "mutability": "mutable",
                 "name": "start",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 2758,
-                "src": "109:13:12",
+                "scope": 4571,
+                "src": "109:13:24",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -131,10 +131,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2750,
+                  "id": 4563,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "109:7:12",
+                  "src": "109:7:24",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -145,13 +145,13 @@
               },
               {
                 "constant": false,
-                "id": 2753,
+                "id": 4566,
                 "mutability": "mutable",
                 "name": "end",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 2758,
-                "src": "132:11:12",
+                "scope": 4571,
+                "src": "132:11:24",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -159,10 +159,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2752,
+                  "id": 4565,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "132:7:12",
+                  "src": "132:7:24",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -173,13 +173,13 @@
               },
               {
                 "constant": false,
-                "id": 2755,
+                "id": 4568,
                 "mutability": "mutable",
                 "name": "createdAt",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 2758,
-                "src": "153:17:12",
+                "scope": 4571,
+                "src": "153:17:24",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -187,10 +187,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2754,
+                  "id": 4567,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "153:7:12",
+                  "src": "153:7:24",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -201,13 +201,13 @@
               },
               {
                 "constant": false,
-                "id": 2757,
+                "id": 4570,
                 "mutability": "mutable",
                 "name": "proposer",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 2758,
-                "src": "180:16:12",
+                "scope": 4571,
+                "src": "180:16:24",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -215,10 +215,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 2756,
+                  "id": 4569,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "180:7:12",
+                  "src": "180:7:24",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -231,53 +231,53 @@
             ],
             "name": "HeaderBlock",
             "nodeType": "StructDefinition",
-            "scope": 2763,
-            "src": "58:145:12",
+            "scope": 4576,
+            "src": "58:145:24",
             "visibility": "public"
           },
           {
             "constant": false,
             "functionSelector": "41539d4a",
-            "id": 2762,
+            "id": 4575,
             "mutability": "mutable",
             "name": "headerBlocks",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 2763,
-            "src": "357:51:12",
+            "scope": 4576,
+            "src": "357:51:24",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_HeaderBlock_$2758_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_HeaderBlock_$4571_storage_$",
               "typeString": "mapping(uint256 => struct ICheckpointManager.HeaderBlock)"
             },
             "typeName": {
-              "id": 2761,
+              "id": 4574,
               "keyType": {
-                "id": 2759,
+                "id": 4572,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "365:7:12",
+                "src": "365:7:24",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "357:31:12",
+              "src": "357:31:24",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_HeaderBlock_$2758_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_HeaderBlock_$4571_storage_$",
                 "typeString": "mapping(uint256 => struct ICheckpointManager.HeaderBlock)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 2760,
+                "id": 4573,
                 "name": "HeaderBlock",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 2758,
-                "src": "376:11:12",
+                "referencedDeclaration": 4571,
+                "src": "376:11:24",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_HeaderBlock_$2758_storage_ptr",
+                  "typeIdentifier": "t_struct$_HeaderBlock_$4571_storage_ptr",
                   "typeString": "struct ICheckpointManager.HeaderBlock"
                 }
               }
@@ -286,18 +286,18 @@
             "visibility": "public"
           }
         ],
-        "scope": 2764,
-        "src": "24:387:12"
+        "scope": 4577,
+        "src": "24:387:24"
       }
     ],
-    "src": "0:412:12"
+    "src": "0:412:24"
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "project:/contracts/child/ICheckpointManager.sol",
+      "absolutePath": "project:/contracts/root/ICheckpointManager.sol",
       "exportedSymbols": {
         "ICheckpointManager": [
-          2763
+          4576
         ]
       }
     },
@@ -310,9 +310,9 @@
             ".6"
           ]
         },
-        "id": 2747,
+        "id": 4560,
         "name": "PragmaDirective",
-        "src": "0:22:12"
+        "src": "0:22:24"
       },
       {
         "attributes": {
@@ -327,17 +327,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            2763
+            4576
           ],
           "name": "ICheckpointManager",
-          "scope": 2764
+          "scope": 4577
         },
         "children": [
           {
             "attributes": {
               "canonicalName": "ICheckpointManager.HeaderBlock",
               "name": "HeaderBlock",
-              "scope": 2763,
+              "scope": 4576,
               "visibility": "public"
             },
             "children": [
@@ -347,7 +347,7 @@
                   "mutability": "mutable",
                   "name": "root",
                   "overrides": null,
-                  "scope": 2758,
+                  "scope": 4571,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "bytes32",
@@ -360,14 +360,14 @@
                       "name": "bytes32",
                       "type": "bytes32"
                     },
-                    "id": 2748,
+                    "id": 4561,
                     "name": "ElementaryTypeName",
-                    "src": "87:7:12"
+                    "src": "87:7:24"
                   }
                 ],
-                "id": 2749,
+                "id": 4562,
                 "name": "VariableDeclaration",
-                "src": "87:12:12"
+                "src": "87:12:24"
               },
               {
                 "attributes": {
@@ -375,7 +375,7 @@
                   "mutability": "mutable",
                   "name": "start",
                   "overrides": null,
-                  "scope": 2758,
+                  "scope": 4571,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -388,14 +388,14 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 2750,
+                    "id": 4563,
                     "name": "ElementaryTypeName",
-                    "src": "109:7:12"
+                    "src": "109:7:24"
                   }
                 ],
-                "id": 2751,
+                "id": 4564,
                 "name": "VariableDeclaration",
-                "src": "109:13:12"
+                "src": "109:13:24"
               },
               {
                 "attributes": {
@@ -403,7 +403,7 @@
                   "mutability": "mutable",
                   "name": "end",
                   "overrides": null,
-                  "scope": 2758,
+                  "scope": 4571,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -416,14 +416,14 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 2752,
+                    "id": 4565,
                     "name": "ElementaryTypeName",
-                    "src": "132:7:12"
+                    "src": "132:7:24"
                   }
                 ],
-                "id": 2753,
+                "id": 4566,
                 "name": "VariableDeclaration",
-                "src": "132:11:12"
+                "src": "132:11:24"
               },
               {
                 "attributes": {
@@ -431,7 +431,7 @@
                   "mutability": "mutable",
                   "name": "createdAt",
                   "overrides": null,
-                  "scope": 2758,
+                  "scope": 4571,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -444,14 +444,14 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 2754,
+                    "id": 4567,
                     "name": "ElementaryTypeName",
-                    "src": "153:7:12"
+                    "src": "153:7:24"
                   }
                 ],
-                "id": 2755,
+                "id": 4568,
                 "name": "VariableDeclaration",
-                "src": "153:17:12"
+                "src": "153:17:24"
               },
               {
                 "attributes": {
@@ -459,7 +459,7 @@
                   "mutability": "mutable",
                   "name": "proposer",
                   "overrides": null,
-                  "scope": 2758,
+                  "scope": 4571,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "address",
@@ -473,19 +473,19 @@
                       "stateMutability": "nonpayable",
                       "type": "address"
                     },
-                    "id": 2756,
+                    "id": 4569,
                     "name": "ElementaryTypeName",
-                    "src": "180:7:12"
+                    "src": "180:7:24"
                   }
                 ],
-                "id": 2757,
+                "id": 4570,
                 "name": "VariableDeclaration",
-                "src": "180:16:12"
+                "src": "180:16:24"
               }
             ],
-            "id": 2758,
+            "id": 4571,
             "name": "StructDefinition",
-            "src": "58:145:12"
+            "src": "58:145:24"
           },
           {
             "attributes": {
@@ -494,7 +494,7 @@
               "mutability": "mutable",
               "name": "headerBlocks",
               "overrides": null,
-              "scope": 2763,
+              "scope": 4576,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(uint256 => struct ICheckpointManager.HeaderBlock)",
@@ -512,40 +512,40 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 2759,
+                    "id": 4572,
                     "name": "ElementaryTypeName",
-                    "src": "365:7:12"
+                    "src": "365:7:24"
                   },
                   {
                     "attributes": {
                       "contractScope": null,
                       "name": "HeaderBlock",
-                      "referencedDeclaration": 2758,
+                      "referencedDeclaration": 4571,
                       "type": "struct ICheckpointManager.HeaderBlock"
                     },
-                    "id": 2760,
+                    "id": 4573,
                     "name": "UserDefinedTypeName",
-                    "src": "376:11:12"
+                    "src": "376:11:24"
                   }
                 ],
-                "id": 2761,
+                "id": 4574,
                 "name": "Mapping",
-                "src": "357:31:12"
+                "src": "357:31:24"
               }
             ],
-            "id": 2762,
+            "id": 4575,
             "name": "VariableDeclaration",
-            "src": "357:51:12"
+            "src": "357:51:24"
           }
         ],
-        "id": 2763,
+        "id": 4576,
         "name": "ContractDefinition",
-        "src": "24:387:12"
+        "src": "24:387:24"
       }
     ],
-    "id": 2764,
+    "id": 4577,
     "name": "SourceUnit",
-    "src": "0:412:12"
+    "src": "0:412:24"
   },
   "compiler": {
     "name": "solc",
@@ -553,7 +553,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-27T10:31:04.851Z",
+  "updatedAt": "2022-09-27T12:38:09.845Z",
   "devdoc": {
     "methods": {}
   },

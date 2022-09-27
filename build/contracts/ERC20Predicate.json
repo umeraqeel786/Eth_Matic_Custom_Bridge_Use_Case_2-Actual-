@@ -148,8 +148,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -162,8 +161,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -176,8 +174,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -190,8 +187,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -210,8 +206,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -235,8 +230,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -255,8 +249,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -298,8 +291,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -6057,11 +6049,298 @@
       "links": {},
       "address": "0x5f401ffdA176FCADEe6740bb73552A70C58D4B14",
       "transactionHash": "0x4a479ebeb039f074cccc90430bc44276eff92b35b6fb6ca3054b1a2960396575"
+    },
+    "1664281621369": {
+      "events": {
+        "0xbb61bd1b26b3684c7c028ff1a8f6dabcac2fac8ac57b66fa6b1efb6edeab03c4": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "exitor",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "rootToken",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "ExitedERC20",
+          "type": "event"
+        },
+        "0x9b217a401a5ddf7c4d474074aff9958a18d48690d77cc2151c4706aa7348b401": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "depositor",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "depositReceiver",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "rootToken",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LockedERC20",
+          "type": "event"
+        },
+        "0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "role",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "previousAdminRole",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "newAdminRole",
+              "type": "bytes32"
+            }
+          ],
+          "name": "RoleAdminChanged",
+          "type": "event"
+        },
+        "0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "role",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "name": "RoleGranted",
+          "type": "event"
+        },
+        "0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "role",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "name": "RoleRevoked",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x1EF750b31DC206C4fC46Fe414DDD44CfB713b370",
+      "transactionHash": "0x43986fcff349a6b0663e4f277b5604890f04c75266c2fc7a091ad43f4444c290"
+    },
+    "1664281627849": {
+      "events": {},
+      "links": {},
+      "address": "0xe28017457EEa873FA79040dc41B0cF22187Bdfe6",
+      "transactionHash": "0x5781f13e59a3514f823565073b92f95909fb715960f65fbdd2afc01b0f3b3a6e"
+    },
+    "1664282091194": {
+      "events": {
+        "0xbb61bd1b26b3684c7c028ff1a8f6dabcac2fac8ac57b66fa6b1efb6edeab03c4": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "exitor",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "rootToken",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "ExitedERC20",
+          "type": "event"
+        },
+        "0x9b217a401a5ddf7c4d474074aff9958a18d48690d77cc2151c4706aa7348b401": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "depositor",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "depositReceiver",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "rootToken",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LockedERC20",
+          "type": "event"
+        },
+        "0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "role",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "previousAdminRole",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "newAdminRole",
+              "type": "bytes32"
+            }
+          ],
+          "name": "RoleAdminChanged",
+          "type": "event"
+        },
+        "0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "role",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "name": "RoleGranted",
+          "type": "event"
+        },
+        "0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "role",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "name": "RoleRevoked",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x1EF750b31DC206C4fC46Fe414DDD44CfB713b370",
+      "transactionHash": "0x43986fcff349a6b0663e4f277b5604890f04c75266c2fc7a091ad43f4444c290"
+    },
+    "1664282100631": {
+      "events": {},
+      "links": {},
+      "address": "0x542C69E9223Ee3a473Fc66841E69D85bB8b753df",
+      "transactionHash": "0x26e55d1e504bc637d96a6d68f32e7f4e0f492bbcb94e6042171e0e671fa22d10"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-27T10:29:40.114Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-09-27T12:38:09.867Z",
   "devdoc": {
     "methods": {
       "exitTokens(address,address,uint256)": {

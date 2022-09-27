@@ -1,7 +1,6 @@
 require('dotenv').config();
 const ethers = require('ethers');
 
-
 //const INFURA_API_URL_GOERLI = process.env.INFURA_API_URL_GOERLI;
 const LOCALHOST_URL_ROOT = process.env.LOCALHOST_URL_ROOT;
 const PRIVATE_KEY_ROOT = process.env.PRIVATE_KEY_ROOT;

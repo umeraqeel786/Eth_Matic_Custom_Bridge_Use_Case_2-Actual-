@@ -1,8 +1,8 @@
 const ChildChainManager = artifacts.require('ChildChainManager')
 const ChildERC20Predicate = artifacts.require('ChildERC20Predicate')
 
-const utils = require('./utils')
-const config = require('./config')
+const utils = require('../migrations/utils')
+const config = require('../migrations/config')
 
 module.exports = async (deployer) => {
   const contractAddresses = utils.getContractAddresses()
@@ -46,9 +46,5 @@ module.exports = async (deployer) => {
   console.log('Mapping DummyERC20')
   await ChildChainManagerInstance.mapToken(contractAddresses.root.DummyERC20, contractAddresses.child.DummyERC20)
 
-  console.log('Mapping DummyMintableERC20')
-  await ChildChainManagerInstance.mapToken(contractAddresses.root.DummyMintableERC20, contractAddresses.child.DummyMintableERC20)
 
-  console.log('Mapping WETH')
-  await ChildChainManagerInstance.mapToken('0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', contractAddresses.child.MaticWETH)
 }
