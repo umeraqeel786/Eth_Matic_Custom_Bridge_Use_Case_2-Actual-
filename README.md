@@ -95,4 +95,4 @@ CHILD_STATE_SENDER_CONTRACT_ADDRESS = ''
 
     Now run the `ExitPolygon.js` script by replacing the `_childPredicateAddress` and `_childTokenAddress` with the updated ones in the `ExitPolygon.js` and wait for the `WRLDERC20` tokens amount which you passed to get transfered to the Owner address on Polygon side.
 
-    `async function Burn_And_Exit(_childPredicateAddress, _childTokenAddress, _tokenAmount)`
+    `async function Exit(_childPredicateAddress, _childTokenAddress, _tokenAmount)`
